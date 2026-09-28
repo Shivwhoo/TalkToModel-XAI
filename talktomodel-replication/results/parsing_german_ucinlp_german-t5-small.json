@@ -1,0 +1,1209 @@
+{
+    "model": "ucinlp/german-t5-small",
+    "dataset": "german",
+    "test_size": 200,
+    "correct": 194,
+    "accuracy": 0.97,
+    "predictions": [
+        {
+            "question": "what's the has co applicant of id 22",
+            "expected": "filter id 22 and statistic age [e]",
+            "predicted": "filter id 22 and statistic loanamount [e]",
+            "match": false
+        },
+        {
+            "question": "what is the reasoning for figuring out if critical account or loans elsewhere or loan purpose home appliances are to be predicted bad credit risk?",
+            "expected": "filter criticalaccountorloanselsewhere true or filter loanpurposehomeappliances true and explain features [e]",
+            "predicted": "filter criticalaccountorloanselsewhere true or filter loanpurposehomeappliances true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what's the positive predictive value on savings account balance greater or equal than 500, years at current home, loan purpose used car are all true, but loan purpose electronics is not true?",
+            "expected": "filter savingsaccountbalancegreaterorequalthan500 true and filter yearsatcurrenthome true and filter loanpurposeusedcar true and filter loanpurposeelectronics false and score ppv [e]",
+            "predicted": "filter savingsaccountbalancegreaterorequalthan500 true and filter yearsatcurrenthome true and filter loanpurposeusedcar true and filter loanpurposeelectronics false and score ppv [e]",
+            "match": true
+        },
+        {
+            "question": "are there any secondary effects between the features for the model's predictions on instances that have a loan purpose new car or that have more than 8 loan duration?",
+            "expected": "filter loanpurposenewcar true or filter loanduration greater than 8 and interact [e]",
+            "predicted": "filter loanpurposenewcar true or filter loanduration greater than 8 and interact [e]",
+            "match": true
+        },
+        {
+            "question": "why does the model predict instances that have more than 28 age or are years at current home?",
+            "expected": "filter age greater than 28 or filter yearsatcurrenthome true and explain features [e]",
+            "predicted": "filter age greater than 28 or filter yearsatcurrenthome true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the 3 most important features in the data when reasoning about age is beyond 43 but loan duration is less than 8 and not missed payments to make decisions?",
+            "expected": "filter age greater than 43 and filter loanduration less than 8 and missedpayments false and important topk 3 [e]",
+            "predicted": "filter age greater than 43 and filter loanduration less than 8 and missedpayments false and important topk 3 [e]",
+            "match": true
+        },
+        {
+            "question": "in those situations where critical account or loans elsewhere, has telephone, savings account balance greater or equal than 500 are all true, but loan purpose retraining is not true, what are the strategies you use to figure out if the correct prediction is bad credit risk",
+            "expected": "filter criticalaccountorloanselsewhere true and filter hastelephone true and filter savingsaccountbalancegreaterorequalthan500 true and filter loanpurposeretraining false and explain features [e]",
+            "predicted": "filter criticalaccountorloanselsewhere true and filter hastelephone true and filter savingsaccountbalancegreaterorequalthan500 true and filter loanpurposeretraining false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "will taking on $250 more in loan duration for owns house between the ages of 50-57, change their outcome of a good credit score?",
+            "expected": "filter ownshouse and age less than 50 or age greater than 57 and likelihood and change loanduration increase 250 and likelihood [e]",
+            "predicted": "filter ownshouse and age less than 50 or age greater than 57 and likelihood and change loanduration increase 250 and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "could you show me a few examples you get incorrect for years at current home, has guarantor, loan purpose repairs are all true, but years at current jobless than 1 is not true",
+            "expected": "filter yearsatcurrenthome true and filter hasguarantor true and filter loanpurposerepairs true and filter yearsatcurrentjoblessthan1 false and mistake sample [e]",
+            "predicted": "filter yearsatcurrenthome true and filter hasguarantor true and filter loanpurposerepairs true and filter yearsatcurrentjoblessthan1 false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "loan duration is beyond 8 but loan amount is less than 708 and not owns house show faulty predictions",
+            "expected": "filter loanduration greater than 8 and filter loanamount less than 708 and ownshouse false and mistake sample [e]",
+            "predicted": "filter loanduration greater than 8 and filter loanamount less than 708 and ownshouse false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "for data where savings account balance greater or equal than 500, years at current home, loan purpose education are all true, but rents house is not true, what is the average values of loan amount?",
+            "expected": "filter savingsaccountbalancegreaterorequalthan500 true and filter yearsatcurrenthome true and filter loanpurposeeducation true and filter rentshouse false and statistic loanamount [e]",
+            "predicted": "filter savingsaccountbalancegreaterorequalthan500 true and filter yearsatcurrenthome true and filter loanpurposeeducation true and filter rentshouse false and statistic loanamount [e]",
+            "match": true
+        },
+        {
+            "question": "tell me how many instances in the data have has guarantor, number of other loans at bank, checking account balance greater or equal to 0 are all true, but owns house is not true",
+            "expected": "filter hasguarantor true and filter numberofotherloansatbank true and filter checkingaccountbalancegreaterorequalto0 true and filter ownshouse false and countdata [e]",
+            "predicted": "filter hasguarantor true and filter numberofotherloansatbank true and filter checkingaccountbalancegreaterorequalto0 true and filter ownshouse false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "show me the prediction probabilities for a loan rate as percent of income",
+            "expected": "filter loanrateaspercentofincome true and likelihood [e]",
+            "predicted": "filter loanrateaspercentofincome true and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "for data where loan amount is beyond 4020 but loan duration is less than 42 and not no current loan, what is the statistics of age?",
+            "expected": "filter loanamount greater than 4020 and filter loanduration less than 42 and nocurrentloan false and statistic age [e]",
+            "predicted": "filter loanamount greater than 4020 and filter loanduration less than 42 and nocurrentloan false and statistic age [e]",
+            "match": true
+        },
+        {
+            "question": "take all the instances with more than 28 age, reduce their loan amount by 708, and tell me the predictions",
+            "expected": "filter age greater than 28 and change loanamount decrease 708 and predict [e]",
+            "predicted": "filter age greater than 28 and change loanamount decrease 708 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "could you inform me how you reasoned about people in the data where loan duration is beyond 8 but age is less than 28 and not loan purpose used car",
+            "expected": "filter loanduration greater than 8 and filter age less than 28 and loanpurposeusedcar false and explain features [e]",
+            "predicted": "filter loanduration greater than 8 and filter age less than 28 and loanpurposeusedcar false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the predictions for loan purpose new car that have 42 loan duration?",
+            "expected": "filter loanpurposenewcar true and filter loanduration equal to 42 and predict [e]",
+            "predicted": "filter loanpurposenewcar true and filter loanduration equal to 42 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "for owns house where age is of 28, what is the distribution of the target variable?",
+            "expected": "filter ownshouse true and filter age equal to 28 and statistic target [e]",
+            "predicted": "filter ownshouse true and filter age equal to 28 and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "describe your motivating factors for deciding good credit risk for both other loans at store and rents house",
+            "expected": "filter otherloansatstore true or filter rentshouse true and explain features [e]",
+            "predicted": "filter otherloansatstore true or filter rentshouse true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what does the model predict for instances that have a loan purpose other or that have exactly 4020 loan amount?",
+            "expected": "filter loanpurposeother true or filter loanamount equal to 4020 and predict [e]",
+            "predicted": "filter loanpurposeother true or filter loanamount equal to 4020 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "tell me the feature interactions for instances that have more than 43 age or are loan purpose retraining?",
+            "expected": "filter age greater than 43 or filter loanpurposeretraining true and interact [e]",
+            "predicted": "filter age greater than 43 or filter loanpurposeretraining true and interact [e]",
+            "match": true
+        },
+        {
+            "question": "for those with age of 43 and years at current jobless than 1, how do you use the data to inform outcomes?",
+            "expected": "filter age equal to 43 and filter yearsatcurrentjoblessthan1 true and explain features [e]",
+            "predicted": "filter age equal to 43 and filter yearsatcurrentjoblessthan1 true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "explain loan purpose new car and missed payments with loan amount greater than or equal to 4020",
+            "expected": "filter loanpurposenewcar true and filter missedpayments true and filter loanamount greater equal than 4020 and explain features [e]",
+            "predicted": "filter loanpurposenewcar true and filter missedpayments true and filter loanamount greater equal than 4020 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the data labels for age is beyond 28 but loan amount is less than 4020 and not critical account or loans elsewhere",
+            "expected": "filter age greater than 28 and filter loanamount less than 4020 and criticalaccountorloanselsewhere false and label [e]",
+            "predicted": "filter age greater than 28 and filter loanamount less than 4020 and criticalaccountorloanselsewhere false and label [e]",
+            "match": true
+        },
+        {
+            "question": "please tell me how likely it is that instances that are not rents house get the prediction good credit risk?",
+            "expected": "filter rentshouse false and likelihood [e]",
+            "predicted": "filter rentshouse false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "if loan amount is decreased by 708 for {filer_text}, what would the model predict?",
+            "expected": "filter gender true and change loanamount increase 708 and predict [e]",
+            "predicted": "filter loanpurposeretraining true and filter savingsaccountbalancegreaterorequalthan200 true and filter yearsatcurrentjoblessthan1 true and filter loanpurposehomeappliances false and change loanamount increase 708 and predict [e]",
+            "match": false
+        },
+        {
+            "question": "could you show feature interactions for foreign worker equal to true?",
+            "expected": "filter foreignworker true and interact [e]",
+            "predicted": "filter foreignworker true and interact [e]",
+            "match": true
+        },
+        {
+            "question": "display the predictions of loan purpose business and loan purpose other with age less than or equal to 28",
+            "expected": "filter loanpurposebusiness true and filter loanpurposeother true and filter age less than or equal to 28 and predict [e]",
+            "predicted": "filter loanpurposebusiness true and filter loanpurposeother true and filter age less than or equal to 28 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "how do you decide whether loan duration is beyond 8 but age is less than 43 and not gender will be bad credit risk",
+            "expected": "filter loanduration greater than 8 and filter age less than 43 and gender false and explain features [e]",
+            "predicted": "filter loanduration greater than 8 and filter age less than 43 and gender false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "why does the model predict instances that have a job class is skilled or that have exactly 28 age?",
+            "expected": "filter jobclassisskilled true or filter age equal to 28 and explain features [e]",
+            "predicted": "filter jobclassisskilled true or filter age equal to 28 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the secondary feature interactions for instances that have a job class is skilled or that have exactly 28 age?",
+            "expected": "filter jobclassisskilled true or filter age equal to 28 and interact [e]",
+            "predicted": "filter jobclassisskilled true or filter age equal to 28 and interact [e]",
+            "match": true
+        },
+        {
+            "question": "for loan amount is beyond 708 but age is less than 43 and not loan purpose retraining, what are some mistakes you typically make?",
+            "expected": "filter loanamount greater than 708 and filter age less than 43 and loanpurposeretraining false and mistake typical [e]",
+            "predicted": "filter loanamount greater than 708 and filter age less than 43 and loanpurposeretraining false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "explain the predictions of foreign worker and checking account balance greater or equal to 0 with loan amount greater than or equal to 708",
+            "expected": "filter foreignworker true and filter checkingaccountbalancegreaterorequalto0 true and filter loanamount greater equal than 708 and explain features [e]",
+            "predicted": "filter foreignworker true and filter checkingaccountbalancegreaterorequalto0 true and filter loanamount greater equal than 708 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "is loan duration or loan amount more important in determining whether people with more than 8 in x will good credit risk?",
+            "expected": "filter x greater than 10000 and important loanduration and important loanamount [e]",
+            "predicted": "filter x greater than 10000 and important loanduration and important loanamount [e]",
+            "match": true
+        },
+        {
+            "question": "could you tell me the precision on the training data for loan duration is beyond 42 but loan amount is less than 708 and not other loans at store",
+            "expected": "filter loanduration greater than 42 and filter loanamount less than 708 and otherloansatstore false and score precision [e]",
+            "predicted": "filter loanduration greater than 42 and filter loanamount less than 708 and otherloansatstore false and score precision [e]",
+            "match": true
+        },
+        {
+            "question": "explain the predictions of all the checking account balance greater or equal to 0",
+            "expected": "filter checkingaccountbalancegreaterorequalto0 true and explain features [e]",
+            "predicted": "filter checkingaccountbalancegreaterorequalto0 true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "how do you decide whether loan duration is beyond 8 but age is less than 43 and not number of other loans at bank will be bad credit risk",
+            "expected": "filter loanduration greater than 8 and filter age less than 43 and numberofotherloansatbank false and explain features [e]",
+            "predicted": "filter loanduration greater than 8 and filter age less than 43 and numberofotherloansatbank false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "if loan amount is increased by 708 for {filer_text}, what would the model predict?",
+            "expected": "filter savingsaccountbalancegreaterorequalthan500 true and filter loanpurposeelectronics true and filter otherloansatbank true and filter yearsatcurrentjobgreaterorequalthan4 false and change loanamount increase 708 and predict [e]",
+            "predicted": "filter loanpurposeretraining true and filter savingsaccountbalancegreaterorequalthan200 true and filter yearsatcurrentjoblessthan1 true and filter hasguarantor false and change loanamount increase 708 and predict [e]",
+            "match": false
+        },
+        {
+            "question": "missed payments, owns house, rents house are all true, but years at current job greater or equal than 4 is not true sample mistakes",
+            "expected": "filter missedpayments true and filter ownshouse true and filter rentshouse true and filter yearsatcurrentjobgreaterorequalthan4 false and mistake sample [e]",
+            "predicted": "filter missedpayments true and filter ownshouse true and filter rentshouse true and filter yearsatcurrentjobgreaterorequalthan4 false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "could you tell me how likely savings account balance greater or equal than 500 equal to true are to be predicted as bad credit risk?",
+            "expected": "filter savingsaccountbalancegreaterorequalthan500 true and likelihood [e]",
+            "predicted": "filter savingsaccountbalancegreaterorequalthan500 true and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "what are the most important features in the data when reasoning about checking account balance greater or equal to 0, has telephone, gender are all true, but owns house is not true to make decisions?",
+            "expected": "filter checkingaccountbalancegreaterorequalto0 true and filter hastelephone true and filter gender true and filter ownshouse false and important all [e]",
+            "predicted": "filter checkingaccountbalancegreaterorequalto0 true and filter hastelephone true and filter gender true and filter ownshouse false and important all [e]",
+            "match": true
+        },
+        {
+            "question": "please run lime explanations on all the loan purpose retraining",
+            "expected": "filter loanpurposeretraining true and explain lime [e]",
+            "predicted": "filter loanpurposeretraining true and explain lime [e]",
+            "match": true
+        },
+        {
+            "question": "tell me how many instances in the data have loan duration is beyond 42 but loan amount is less than 4020 and not foreign worker",
+            "expected": "filter loanduration greater than 42 and filter loanamount less than 4020 and foreignworker false and countdata [e]",
+            "predicted": "filter loanduration greater than 42 and filter loanamount less than 4020 and foreignworker false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "what would happen if you set has telephone to 0 and loan amount to 708?",
+            "expected": "previousfilter and change hastelephone 0 and change loanamount set 708 and previousoperation [e]",
+            "predicted": "previousfilter and change hastelephone 0 and change loanamount set 708 and previousoperation [e]",
+            "match": true
+        },
+        {
+            "question": "reveal the predictions of gender and single with loan duration greater than or equal to 8",
+            "expected": "filter gender true and filter single true and filter loanduration greater equal than 8 and predict [e]",
+            "predicted": "filter gender true and filter single true and filter loanduration greater equal than 8 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what are the class probabilities on your predictions for loan duration is beyond 8 but age is less than 28 and not has telephone?",
+            "expected": "filter loanduration greater than 8 and filter age less than 28 and hastelephone false and likelihood [e]",
+            "predicted": "filter loanduration greater than 8 and filter age less than 28 and hastelephone false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "what are the model predictions for years at current home that have 42 loan duration?",
+            "expected": "filter yearsatcurrenthome true and filter loanduration equal to 42 and predict [e]",
+            "predicted": "filter yearsatcurrenthome true and filter loanduration equal to 42 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "show me instances that are loan purpose used car, id, years at current job greater or equal than 4 are all true, but unemployed is not true",
+            "expected": "filter loanpurposeusedcar true and filter id true and filter yearsatcurrentjobgreaterorequalthan4 true and filter unemployed false and show [e]",
+            "predicted": "filter loanpurposeusedcar true and filter id true and filter yearsatcurrentjobgreaterorequalthan4 true and filter unemployed false and show [e]",
+            "match": true
+        },
+        {
+            "question": "the 5 most important features in the data are impacted in what way by increasing feature age by 10.",
+            "expected": "change age increase 10 and important topk 5 [e]",
+            "predicted": "change age increase 10 and important topk 5 [e]",
+            "match": true
+        },
+        {
+            "question": "show me people that have loan purpose used car, owns house, single are all true, but years at current home is not true",
+            "expected": "filter loanpurposeusedcar true and filter ownshouse true and filter single true and filter yearsatcurrenthome false and show [e]",
+            "predicted": "filter loanpurposeusedcar true and filter ownshouse true and filter single true and filter yearsatcurrenthome false and show [e]",
+            "match": true
+        },
+        {
+            "question": "how about other loans at store, loan purpose furniture, has guarantor are all true, but loan purpose business is not true",
+            "expected": "filter otherloansatstore true and filter loanpurposefurniture true and filter hasguarantor true and filter loanpurposebusiness false and previousoperation [e]",
+            "predicted": "filter otherloansatstore true and filter loanpurposefurniture true and filter hasguarantor true and filter loanpurposebusiness false and previousoperation [e]",
+            "match": true
+        },
+        {
+            "question": "for people with 42 less than loan duration, if loan amount were increased by 708, in which ways would the predictions change?",
+            "expected": "filter loanduration less than 42 and predict and change loanamount increase 708 and predict [e]",
+            "predicted": "filter loanduration less than 42 and predict and change loanamount increase 708 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what are some mistakes on loan purpose furniture, other loans at bank, savings account balance greater or equal than 200 are all true, but loan purpose retraining is not true that the model makes",
+            "expected": "filter loanpurposefurniture true and filter otherloansatbank true and filter savingsaccountbalancegreaterorequalthan200 true and filter loanpurposeretraining false and mistake sample [e]",
+            "predicted": "filter loanpurposefurniture true and filter otherloansatbank true and filter savingsaccountbalancegreaterorequalthan200 true and filter loanpurposeretraining false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "if the savings account balance greater or equal than 200 are younger than 50 can we take 250usd more in loan amount?",
+            "expected": "filter savingsaccountbalancegreaterorequalthan200 and age less than 50 or age greater than 57 and likelihood and change loanamount increase 250 and likelihood [e]",
+            "predicted": "filter savingsaccountbalancegreaterorequalthan200 and age less than 50 or age greater than 57 and likelihood and change loanamount increase 250 and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "tell me the feature interactions for instances that have more than 42 loan duration or are loan purpose business?",
+            "expected": "filter loanduration greater than 42 or filter loanpurposebusiness true and interact [e]",
+            "predicted": "filter loanduration greater than 42 or filter loanpurposebusiness true and interact [e]",
+            "match": true
+        },
+        {
+            "question": "for loan rate as percent of income, years at current jobless than 1, rents house are all true, but loan purpose electronics is not true, please help me understand your reasoning process",
+            "expected": "filter loanrateaspercentofincome true and filter yearsatcurrentjoblessthan1 true and filter rentshouse true and filter loanpurposeelectronics false and explain features [e]",
+            "predicted": "filter loanrateaspercentofincome true and filter yearsatcurrentjoblessthan1 true and filter rentshouse true and filter loanpurposeelectronics false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the reasons for predicting loan purpose used car that have 8 loan duration?",
+            "expected": "filter loanpurposeusedcar true and filter loanduration equal to 8 and explain features [e]",
+            "predicted": "filter loanpurposeusedcar true and filter loanduration equal to 8 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are some common mistakes you make when predicting no current loan, other loans at bank, loan purpose other are all true, but has telephone is not true?",
+            "expected": "filter nocurrentloan true and filter otherloansatbank true and filter loanpurposeother true and filter hastelephone false and mistake typical [e]",
+            "predicted": "filter nocurrentloan true and filter otherloansatbank true and filter loanpurposeother true and filter hastelephone false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "why does the model predict instances that have a has telephone or that have exactly 4020 loan amount?",
+            "expected": "filter hastelephone true or filter loanamount equal to 4020 and explain features [e]",
+            "predicted": "filter hastelephone true or filter loanamount equal to 4020 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what would happen if you set unemployed to true and loan amount to 708?",
+            "expected": "previousfilter and change unemployed true and change loanamount set 708 and previousoperation [e]",
+            "predicted": "previousfilter and change unemployed true and change loanamount set 708 and previousoperation [e]",
+            "match": true
+        },
+        {
+            "question": "show all predictions for other loans at store where loan duration is 42 or more",
+            "expected": "filter otherloansatstore true and filter loanduration greater equal than 42 and predict [e]",
+            "predicted": "filter otherloansatstore true and filter loanduration greater equal than 42 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "why does the model predict those who do not have number of liable individuals?",
+            "expected": "filter numberofliableindividuals false and explain features [e]",
+            "predicted": "filter numberofliableindividuals false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what set of reasoning do you use to determine if single, loan rate as percent of income, job class is skilled are all true, but other loans at store is not true are good credit risk",
+            "expected": "filter single true and filter loanrateaspercentofincome true and filter jobclassisskilled true and filter otherloansatstore false and explain features [e]",
+            "predicted": "filter single true and filter loanrateaspercentofincome true and filter jobclassisskilled true and filter otherloansatstore false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for checking account balance greater or equal to 0 where loan amount is of 708, what are the nine most important features for the model's predictions?",
+            "expected": "filter checkingaccountbalancegreaterorequalto0 true and filter loanamount equal to 708 and important topk 9 [e]",
+            "predicted": "filter checkingaccountbalancegreaterorequalto0 true and filter loanamount equal to 708 and important topk 9 [e]",
+            "match": true
+        },
+        {
+            "question": "what's the testing accuracy for people loan duration less than 42",
+            "expected": "filter loanduration less than 42 and score accuracy [e]",
+            "predicted": "filter loanduration less than 42 and score accuracy [e]",
+            "match": true
+        },
+        {
+            "question": "explain the predictions of missed payments and number of other loans at bank with loan duration greater than or equal to 42",
+            "expected": "filter missedpayments true and filter numberofotherloansatbank true and filter loanduration greater equal than 42 and explain features [e]",
+            "predicted": "filter missedpayments true and filter numberofotherloansatbank true and filter loanduration greater equal than 42 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "please describe the number of savings account balance greater or equal than 500, loan purpose used car, single are all true, but loan purpose education is not true in the data",
+            "expected": "filter savingsaccountbalancegreaterorequalthan500 true and filter loanpurposeusedcar true and filter single true and filter loanpurposeeducation false and coundata [e]",
+            "predicted": "filter savingsaccountbalancegreaterorequalthan500 true and filter loanpurposeusedcar true and filter single true and filter loanpurposeeducation false and coundata [e]",
+            "match": true
+        },
+        {
+            "question": "what's your motivation for deciding the predictions of years at current home, has guarantor, loan purpose new car are all true, but checking account balance greater or equal than 200 is not true",
+            "expected": "filter yearsatcurrenthome true and filter hasguarantor true and filter loanpurposenewcar true and filter checkingaccountbalancegreaterorequalthan200 false and explain features [e]",
+            "predicted": "filter yearsatcurrenthome true and filter hasguarantor true and filter loanpurposenewcar true and filter checkingaccountbalancegreaterorequalthan200 false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "top 10 most important features for predicting loan purpose other",
+            "expected": "filter loanpurposeother true and important topk 10 [e]",
+            "predicted": "filter loanpurposeother true and important topk 10 [e]",
+            "match": true
+        },
+        {
+            "question": "explain the predictions of critical account or loans elsewhere and number of other loans at bank with loan duration greater than or equal to 42",
+            "expected": "filter criticalaccountorloanselsewhere true and filter numberofotherloansatbank true and filter loanduration greater equal than 42 and explain features [e]",
+            "predicted": "filter criticalaccountorloanselsewhere true and filter numberofotherloansatbank true and filter loanduration greater equal than 42 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are some mistakes on no current loan, has co applicant, loan purpose electronics are all true, but checking account balance greater or equal to 0 is not true that the model makes",
+            "expected": "filter nocurrentloan true and filter hascoapplicant true and filter loanpurposeelectronics true and filter checkingaccountbalancegreaterorequalto0 false and mistake sample [e]",
+            "predicted": "filter nocurrentloan true and filter hascoapplicant true and filter loanpurposeelectronics true and filter checkingaccountbalancegreaterorequalto0 false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "display predictions for loan purpose retraining where loan amount is 4020 exactly",
+            "expected": "filter loanpurposeretraining true and filter loanamount equal to 4020 and predict [e]",
+            "predicted": "filter loanpurposeretraining true and filter loanamount equal to 4020 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "i'm trying to figure out why critical account or loans elsewhere with value 1 are predicted. think you could help me out?",
+            "expected": "filter criticalaccountorloanselsewhere 1 and explain features [e]",
+            "predicted": "filter criticalaccountorloanselsewhere 1 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what's the sensitivity on loan amount is beyond 708 but loan duration is less than 8 and not no current loan?",
+            "expected": "filter loanamount greater than 708 and filter loanduration less than 8 and nocurrentloan false and score sensitivity [e]",
+            "predicted": "filter loanamount greater than 708 and filter loanduration less than 8 and nocurrentloan false and score sensitivity [e]",
+            "match": true
+        },
+        {
+            "question": "show me the predictions of all the loan purpose used car if you increased loan duration by 10",
+            "expected": "filter loanpurposeusedcar true and change loanduration increase 10 and predict [e]",
+            "predicted": "filter loanpurposeusedcar true and change loanduration increase 10 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what's the specificity on loan amount older than 708 and loan duration younger than 42?",
+            "expected": "filter loanamount greater than 708 and filter loanduration less than 42 and score specificity [e]",
+            "predicted": "filter loanamount greater than 708 and filter loanduration less than 42 and score specificity [e]",
+            "match": true
+        },
+        {
+            "question": "explain gender is true and is not a savings account balance greater or equal than 200, explain",
+            "expected": "filter gender true and filter savingsaccountbalancegreaterorequalthan200 false and explain features [e]",
+            "predicted": "filter gender true and filter savingsaccountbalancegreaterorequalthan200 false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "explain instances that have a loan purpose retraining or that have exactly 4020 loan amount?",
+            "expected": "filter loanpurposeretraining true or filter loanamount equal to 4020 and explain features [e]",
+            "predicted": "filter loanpurposeretraining true or filter loanamount equal to 4020 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for age is beyond 43 but loan duration is less than 42 and not savings account balance greater or equal than 200, please help me understand your reasoning process",
+            "expected": "filter age greater than 43 and filter loanduration less than 42 and savingsaccountbalancegreaterorequalthan200 false and explain features [e]",
+            "predicted": "filter age greater than 43 and filter loanduration less than 42 and savingsaccountbalancegreaterorequalthan200 false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "tell me the importance of loan purpose repairs for the model's predictions?",
+            "expected": "important loanpurposerepairs [e]",
+            "predicted": "important loanpurposerepairs [e]",
+            "match": true
+        },
+        {
+            "question": "for loan purpose electronics, gender, number of other loans at bank are all true, but loan rate as percent of income is not true, what is the distribution of the target variable?",
+            "expected": "filter loanpurposeelectronics true and filter gender true and filter numberofotherloansatbank true and filter loanrateaspercentofincome false and statistic target [e]",
+            "predicted": "filter loanpurposeelectronics true and filter gender true and filter numberofotherloansatbank true and filter loanrateaspercentofincome false and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "what are the most important features in the data when reasoning about checking account balance greater or equal than 200, number of liable individuals, job class is skilled are all true, but foreign worker is not true to make decisions?",
+            "expected": "filter checkingaccountbalancegreaterorequalthan200 true and filter numberofliableindividuals true and filter jobclassisskilled true and filter foreignworker false and important all [e]",
+            "predicted": "filter checkingaccountbalancegreaterorequalthan200 true and filter numberofliableindividuals true and filter jobclassisskilled true and filter foreignworker false and important all [e]",
+            "match": true
+        },
+        {
+            "question": "if people with job class is skilled, loan purpose education, years at current jobless than 1 are all true, but rents house is not true were to have loan duration increased by 42, what would the top 5 most important features be?",
+            "expected": "filter jobclassisskilled true and filter loanpurposeeducation true and filter yearsatcurrentjoblessthan1 true and filter rentshouse false and change loanduration increase 42 and important topk 5 [e]",
+            "predicted": "filter jobclassisskilled true and filter loanpurposeeducation true and filter yearsatcurrentjoblessthan1 true and filter rentshouse false and change loanduration increase 42 and important topk 5 [e]",
+            "match": true
+        },
+        {
+            "question": "what set of reasoning do you use to determine if has co applicant, critical account or loans elsewhere, years at current job greater or equal than 4 are all true, but foreign worker is not true are bad credit risk",
+            "expected": "filter hascoapplicant true and filter criticalaccountorloanselsewhere true and filter yearsatcurrentjobgreaterorequalthan4 true and filter foreignworker false and explain features [e]",
+            "predicted": "filter hascoapplicant true and filter criticalaccountorloanselsewhere true and filter yearsatcurrentjobgreaterorequalthan4 true and filter foreignworker false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are some mistakes on has co applicant, number of other loans at bank, no current loan are all true, but checking account balance greater or equal to 0 is not true the model typically makes",
+            "expected": "filter hascoapplicant true and filter numberofotherloansatbank true and filter nocurrentloan true and filter checkingaccountbalancegreaterorequalto0 false and mistake typical [e]",
+            "predicted": "filter hascoapplicant true and filter numberofotherloansatbank true and filter nocurrentloan true and filter checkingaccountbalancegreaterorequalto0 false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "how would the model's predictions change if loan duration were decreased by 42 on all the training data?",
+            "expected": "predict and change loanduration decrease 42 and predict [e]",
+            "predicted": "predict and change loanduration decrease 42 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "for data where age is beyond 28 but loan duration is less than 8 and not foreign worker, what is the average values of age?",
+            "expected": "filter age greater than 28 and filter loanduration less than 8 and foreignworker false and statistic age [e]",
+            "predicted": "filter age greater than 28 and filter loanduration less than 8 and foreignworker false and statistic age [e]",
+            "match": true
+        },
+        {
+            "question": "what's your motivation for deciding the predictions of other loans at bank, loan purpose used car, loan purpose new car are all true, but number of liable individuals is not true",
+            "expected": "filter otherloansatbank true and filter loanpurposeusedcar true and filter loanpurposenewcar true and filter numberofliableindividuals false and explain features [e]",
+            "predicted": "filter otherloansatbank true and filter loanpurposeusedcar true and filter loanpurposenewcar true and filter numberofliableindividuals false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "tell me the feature interactions for instances that have more than 43 age or are checking account balance greater or equal than 200?",
+            "expected": "filter age greater than 43 or filter checkingaccountbalancegreaterorequalthan200 true and interact [e]",
+            "predicted": "filter age greater than 43 or filter checkingaccountbalancegreaterorequalthan200 true and interact [e]",
+            "match": true
+        },
+        {
+            "question": "what's the negative predictive value on gender, years at current job greater or equal than 4, loan purpose home appliances are all true, but has co applicant is not true?",
+            "expected": "filter gender true and filter yearsatcurrentjobgreaterorequalthan4 true and filter loanpurposehomeappliances true and filter hascoapplicant false and score npv [e]",
+            "predicted": "filter gender true and filter yearsatcurrentjobgreaterorequalthan4 true and filter loanpurposehomeappliances true and filter hascoapplicant false and score npv [e]",
+            "match": true
+        },
+        {
+            "question": "return the model's predictions for other loans at store where loan amount is not 708",
+            "expected": "filter otherloansatstore true and filter loanamount not equal to 708 and predict [e]",
+            "predicted": "filter otherloansatstore true and filter loanamount not equal to 708 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "so, i need to figure out when loan amount is an important feature in the data. i also need to do this just for age less than 4020 and not for loan purpose repairs.",
+            "expected": "filter loanamount less than 4020 and filter loanpurposerepairs false and important age [e]",
+            "predicted": "filter loanamount less than 4020 and filter loanpurposerepairs false and important age [e]",
+            "match": true
+        },
+        {
+            "question": "how many people are loan amount is beyond 4020 but loan duration is less than 42 and not id",
+            "expected": "filter loanamount greater than 4020 and filter loanduration less than 42 and id false and countdata [e]",
+            "predicted": "filter loanamount greater than 4020 and filter loanduration less than 42 and id false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "what are the class probabilities on your predictions for other loans at bank, loan purpose education, job class is skilled are all true, but loan purpose repairs is not true?",
+            "expected": "filter otherloansatbank true and filter loanpurposeeducation true and filter jobclassisskilled true and filter loanpurposerepairs false and likelihood [e]",
+            "predicted": "filter otherloansatbank true and filter loanpurposeeducation true and filter jobclassisskilled true and filter loanpurposerepairs false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "loan amount is beyond 4020 but loan duration is less than 42 and not has co applicant show faulty predictions",
+            "expected": "filter loanamount greater than 4020 and filter loanduration less than 42 and hascoapplicant false and mistake sample [e]",
+            "predicted": "filter loanamount greater than 4020 and filter loanduration less than 42 and hascoapplicant false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "for the previous instances, in addition to gender, why does the model predict them?",
+            "expected": "previousfilter or filter gender true and explain features [e]",
+            "predicted": "previousfilter or filter gender true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what aspects of the data do you consider when reasoning about unemployed, loan purpose new car, owns house are all true, but missed payments is not true to make decisions",
+            "expected": "filter unemployed true and filter loanpurposenewcar true and filter ownshouse true and filter missedpayments false and explain features [e]",
+            "predicted": "filter unemployed true and filter loanpurposenewcar true and filter ownshouse true and filter missedpayments false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "how do you figure out if someone who is a other loans at bank, loan purpose used car, years at current job greater or equal than 4 are all true, but years at current home is not true will be bad credit risk",
+            "expected": "filter otherloansatbank true and filter loanpurposeusedcar true and filter yearsatcurrentjobgreaterorequalthan4 true and filter yearsatcurrenthome false and explain features [e]",
+            "predicted": "filter otherloansatbank true and filter loanpurposeusedcar true and filter yearsatcurrentjobgreaterorequalthan4 true and filter yearsatcurrenthome false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "loan amount is beyond 708 but age is less than 43 and not loan purpose retraining show bad predictions",
+            "expected": "filter loanamount greater than 708 and filter age less than 43 and loanpurposeretraining false and mistake sample [e]",
+            "predicted": "filter loanamount greater than 708 and filter age less than 43 and loanpurposeretraining false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "why does the model predict instances that have a owns house or that do not have 28 age?",
+            "expected": "filter ownshouse true or filter age not equal to 28 and explain features [e]",
+            "predicted": "filter ownshouse true or filter age not equal to 28 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for those where number of liable individuals, loan purpose retraining, years at current home are all true, but loan purpose furniture is not true is the case, could you tell me the total number of item in the data",
+            "expected": "filter numberofliableindividuals true and filter loanpurposeretraining true and filter yearsatcurrenthome true and filter loanpurposefurniture false and countdata [e]",
+            "predicted": "filter numberofliableindividuals true and filter loanpurposeretraining true and filter yearsatcurrenthome true and filter loanpurposefurniture false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "explain instances that have a loan purpose repairs or that have exactly 42 loan duration?",
+            "expected": "filter loanpurposerepairs true or filter loanduration equal to 42 and explain features [e]",
+            "predicted": "filter loanpurposerepairs true or filter loanduration equal to 42 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "if loan amount is increased by 4020 for {filer_text}, what would the model predict?",
+            "expected": "filter age greater than 28 and filter loanamount less than 4020 and checkingaccountbalancegreaterorequalto0 false and change loanamount increase 4020 and predict [e]",
+            "predicted": "filter loanpurposefurniture true and filter foreignworker true and filter savingsaccountbalancegreaterorequalthan200 true and filter yearsatcurrentjoblessthan1 false and change loanamount increase 4020 and predict [e]",
+            "match": false
+        },
+        {
+            "question": "how would the predictions change for all the instances in the data if you increased loan amount by 15, decreased loan duration by 10, and set gender to true?",
+            "expected": "change loanamount increase 15 and change loanduration decrease 10 and change gender true and predict [e]",
+            "predicted": "change loanamount increase 15 and change loanduration decrease 10 and change gender true and predict [e]",
+            "match": true
+        },
+        {
+            "question": "could you tell me the precision on the training data for rents house, missed payments, years at current home are all true, but job class is skilled is not true",
+            "expected": "filter rentshouse true and filter missedpayments true and filter yearsatcurrenthome true and filter jobclassisskilled false and score precision [e]",
+            "predicted": "filter rentshouse true and filter missedpayments true and filter yearsatcurrenthome true and filter jobclassisskilled false and score precision [e]",
+            "match": true
+        },
+        {
+            "question": "could you show me a few examples you get incorrect for has guarantor, loan purpose repairs, loan purpose used car are all true, but years at current job greater or equal than 4 is not true",
+            "expected": "filter hasguarantor true and filter loanpurposerepairs true and filter loanpurposeusedcar true and filter yearsatcurrentjobgreaterorequalthan4 false and mistake sample [e]",
+            "predicted": "filter hasguarantor true and filter loanpurposerepairs true and filter loanpurposeusedcar true and filter yearsatcurrentjobgreaterorequalthan4 false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "what's your motivation for deciding the predictions of loan purpose used car, has co applicant, savings account balance greater or equal than 200 are all true, but loan purpose furniture is not true",
+            "expected": "filter loanpurposeusedcar true and filter hascoapplicant true and filter savingsaccountbalancegreaterorequalthan200 true and filter loanpurposefurniture false and explain features [e]",
+            "predicted": "filter loanpurposeusedcar true and filter hascoapplicant true and filter savingsaccountbalancegreaterorequalthan200 true and filter loanpurposefurniture false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what's the specificity on years at current home, id, number of other loans at bank are all true, but has telephone is not true?",
+            "expected": "filter yearsatcurrenthome true and filter id true and filter numberofotherloansatbank true and filter hastelephone false and score specificity [e]",
+            "predicted": "filter yearsatcurrenthome true and filter id true and filter numberofotherloansatbank true and filter hastelephone false and score specificity [e]",
+            "match": true
+        },
+        {
+            "question": "over all the instances in the data, what would the predictions be if savings account balance greater or equal than 500 were set to false?",
+            "expected": "change savingsaccountbalancegreaterorequalthan500 false and predict [e]",
+            "predicted": "change savingsaccountbalancegreaterorequalthan500 false and predict [e]",
+            "match": true
+        },
+        {
+            "question": "recall on instances that aren't loan purpose electronics",
+            "expected": "filter loanpurposeelectronics false and score recall [e]",
+            "predicted": "filter loanpurposeelectronics false and score recall [e]",
+            "match": true
+        },
+        {
+            "question": "where loan purpose repairs, loan purpose furniture, savings account balance greater or equal than 500 are all true, but job class is skilled is not true, show the distribution of checking account balance greater or equal than 200?",
+            "expected": "filter loanpurposerepairs true and filter loanpurposefurniture true and filter savingsaccountbalancegreaterorequalthan500 true and filter jobclassisskilled false and statistic checkingaccountbalancegreaterorequalthan200 [e]",
+            "predicted": "filter loanpurposerepairs true and filter loanpurposefurniture true and filter savingsaccountbalancegreaterorequalthan500 true and filter jobclassisskilled false and statistic checkingaccountbalancegreaterorequalthan200 [e]",
+            "match": true
+        },
+        {
+            "question": "what are the reasons for predicting loan purpose repairs that have 28 age?",
+            "expected": "filter loanpurposerepairs true and filter age equal to 28 and explain features [e]",
+            "predicted": "filter loanpurposerepairs true and filter age equal to 28 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for other loans at bank where age is of 43, what is the distribution of the label?",
+            "expected": "filter otherloansatbank true and filter age equal to 43 and statistic target [e]",
+            "predicted": "filter otherloansatbank true and filter age equal to 43 and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "for loan purpose business where loan duration is of 8, what are the nine most important features for the model's predictions?",
+            "expected": "filter loanpurposebusiness true and filter loanduration equal to 8 and important topk 9 [e]",
+            "predicted": "filter loanpurposebusiness true and filter loanduration equal to 8 and important topk 9 [e]",
+            "match": true
+        },
+        {
+            "question": "would people with a 43 of age be less good credit risk if loan duration were decreased by 42?",
+            "expected": "filter age equal to 43 and likelihood and change loanduration decrease 42 and likelihood [e]",
+            "predicted": "filter age equal to 43 and likelihood and change loanduration decrease 42 and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "what's the ppv on loan duration is beyond 42 but age is less than 28 and not savings account balance greater or equal than 500?",
+            "expected": "filter loanduration greater than 42 and filter age less than 28 and savingsaccountbalancegreaterorequalthan500 false and score ppv [e]",
+            "predicted": "filter loanduration greater than 42 and filter age less than 28 and savingsaccountbalancegreaterorequalthan500 false and score ppv [e]",
+            "match": true
+        },
+        {
+            "question": "for number of liable individuals, foreign worker, savings account balance greater or equal than 200 are all true, but has co applicant is not true, what is the distribution of the target variable?",
+            "expected": "filter numberofliableindividuals true and filter foreignworker true and filter savingsaccountbalancegreaterorequalthan200 true and filter hascoapplicant false and statistic target [e]",
+            "predicted": "filter numberofliableindividuals true and filter foreignworker true and filter savingsaccountbalancegreaterorequalthan200 true and filter hascoapplicant false and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "how would you characterize the mistakes you make on loan duration above 8?",
+            "expected": "filter loanduration greater than 8 and mistake typical [e]",
+            "predicted": "filter loanduration greater than 8 and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "rents house, loan purpose furniture, missed payments are all true, but years at current job greater or equal than 4 is not true show mistakes",
+            "expected": "filter rentshouse true and filter loanpurposefurniture true and filter missedpayments true and filter yearsatcurrentjobgreaterorequalthan4 false and mistake sample [e]",
+            "predicted": "filter rentshouse true and filter loanpurposefurniture true and filter missedpayments true and filter yearsatcurrentjobgreaterorequalthan4 false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "what is the distribution of other loans at store",
+            "expected": "statistic otherloansatstore [e]",
+            "predicted": "statistic otherloansatstore [e]",
+            "match": true
+        },
+        {
+            "question": "what are the most important features in the data when reasoning about years at current job greater or equal than 4, other loans at store, years at current jobless than 1 are all true, but savings account balance greater or equal than 200 is not true to make decisions?",
+            "expected": "filter yearsatcurrentjobgreaterorequalthan4 true and filter otherloansatstore true and filter yearsatcurrentjoblessthan1 true and filter savingsaccountbalancegreaterorequalthan200 false and important all [e]",
+            "predicted": "filter yearsatcurrentjobgreaterorequalthan4 true and filter otherloansatstore true and filter yearsatcurrentjoblessthan1 true and filter savingsaccountbalancegreaterorequalthan200 false and important all [e]",
+            "match": true
+        },
+        {
+            "question": "how likely are people with age over 43 and at least 42 loan duration to be bad credit risk",
+            "expected": "filter age greater than 43 and filter loanduration greater equal than 42 and likelihood [e]",
+            "predicted": "filter age greater than 43 and filter loanduration greater equal than 42 and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "what are some typical mistakes on owns house, loan purpose other, has telephone are all true, but other loans at bank is not true",
+            "expected": "filter ownshouse true and filter loanpurposeother true and filter hastelephone true and filter otherloansatbank false and mistake typical [e]",
+            "predicted": "filter ownshouse true and filter loanpurposeother true and filter hastelephone true and filter otherloansatbank false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "if loan duration is increased by 42 for {filer_text}, what would the model predict?",
+            "expected": "filter ownshouse true and filter missedpayments true and filter criticalaccountorloanselsewhere true and filter foreignworker false and change loanduration increase 42 and predict [e]",
+            "predicted": "filter loanpurposefurniture true and filter foreignworker true and filter loanpurposeretraining true and filter savingsaccountbalancegreaterorequalthan500 false and change loanduration increase 42 and predict [e]",
+            "match": false
+        },
+        {
+            "question": "could you tell me the precision on the training data for other loans at bank, years at current home, loan purpose repairs are all true, but loan purpose business is not true",
+            "expected": "filter otherloansatbank true and filter yearsatcurrenthome true and filter loanpurposerepairs true and filter loanpurposebusiness false and score precision [e]",
+            "predicted": "filter otherloansatbank true and filter yearsatcurrenthome true and filter loanpurposerepairs true and filter loanpurposebusiness false and score precision [e]",
+            "match": true
+        },
+        {
+            "question": "in cases where age is beyond 28 but loan amount is less than 4020 and not has co applicant, how do you determine if bad credit risk",
+            "expected": "filter age greater than 28 and filter loanamount less than 4020 and hascoapplicant false and explain features [e]",
+            "predicted": "filter age greater than 28 and filter loanamount less than 4020 and hascoapplicant false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for age is beyond 43 but loan amount is less than 4020 and not rents house, what is the distribution of age?",
+            "expected": "filter age greater than 43 and filter loanamount less than 4020 and rentshouse false and statistic age [e]",
+            "predicted": "filter age greater than 43 and filter loanamount less than 4020 and rentshouse false and statistic age [e]",
+            "match": true
+        },
+        {
+            "question": "in cases where loan purpose repairs, number of other loans at bank, unemployed are all true, but other loans at bank is not true, how do you determine if good credit risk",
+            "expected": "filter loanpurposerepairs true and filter numberofotherloansatbank true and filter unemployed true and filter otherloansatbank false and explain features [e]",
+            "predicted": "filter loanpurposerepairs true and filter numberofotherloansatbank true and filter unemployed true and filter otherloansatbank false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "why does the model predict instances that have more than 42 loan duration or are savings account balance greater or equal than 500?",
+            "expected": "filter loanduration greater than 42 or filter savingsaccountbalancegreaterorequalthan500 true and explain features [e]",
+            "predicted": "filter loanduration greater than 42 or filter savingsaccountbalancegreaterorequalthan500 true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "how about age is beyond 43 but loan duration is less than 42 and not missed payments",
+            "expected": "filter age greater than 43 and filter loanduration less than 42 and missedpayments false and previousoperation [e]",
+            "predicted": "filter age greater than 43 and filter loanduration less than 42 and missedpayments false and previousoperation [e]",
+            "match": true
+        },
+        {
+            "question": "for data where loan amount is beyond 708 but age is less than 43 and not years at current job greater or equal than 4, what is the statistics of id?",
+            "expected": "filter loanamount greater than 708 and filter age less than 43 and yearsatcurrentjobgreaterorequalthan4 false and statistic id [e]",
+            "predicted": "filter loanamount greater than 708 and filter age less than 43 and yearsatcurrentjobgreaterorequalthan4 false and statistic id [e]",
+            "match": true
+        },
+        {
+            "question": "for single, other loans at bank, number of liable individuals are all true, but number of other loans at bank is not true, what is the distribution of owns house?",
+            "expected": "filter single true and filter otherloansatbank true and filter numberofliableindividuals true and filter numberofotherloansatbank false and statistic ownshouse [e]",
+            "predicted": "filter single true and filter otherloansatbank true and filter numberofliableindividuals true and filter numberofotherloansatbank false and statistic ownshouse [e]",
+            "match": true
+        },
+        {
+            "question": "for a job class is skilled, what is the distribution of the label?",
+            "expected": "filter jobclassisskilled true and statistic target [e]",
+            "predicted": "filter jobclassisskilled true and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "how likely would it be for these instances to be predicted good credit risk if loan rate as percent of income were set to 2?",
+            "expected": "previousfilter and change loanrateaspercentofincome 2 and likelihood [e]",
+            "predicted": "previousfilter and change loanrateaspercentofincome 2 and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "for data where unemployed, loan purpose new car, no current loan are all true, but loan rate as percent of income is not true, what is the statistics of other loans at bank?",
+            "expected": "filter unemployed true and filter loanpurposenewcar true and filter nocurrentloan true and filter loanrateaspercentofincome false and statistic otherloansatbank [e]",
+            "predicted": "filter unemployed true and filter loanpurposenewcar true and filter nocurrentloan true and filter loanrateaspercentofincome false and statistic otherloansatbank [e]",
+            "match": true
+        },
+        {
+            "question": "what aspects of the data do you consider when reasoning about checking account balance greater or equal than 200, loan purpose home appliances, number of other loans at bank are all true, but critical account or loans elsewhere is not true to make decisions",
+            "expected": "filter checkingaccountbalancegreaterorequalthan200 true and filter loanpurposehomeappliances true and filter numberofotherloansatbank true and filter criticalaccountorloanselsewhere false and explain features [e]",
+            "predicted": "filter checkingaccountbalancegreaterorequalthan200 true and filter loanpurposehomeappliances true and filter numberofotherloansatbank true and filter criticalaccountorloanselsewhere false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for loan purpose furniture, foreign worker, unemployed are all true, but number of liable individuals is not true, how many instances in the data are there?",
+            "expected": "filter loanpurposefurniture true and filter foreignworker true and filter unemployed true and filter numberofliableindividuals false and countdata [e]",
+            "predicted": "filter loanpurposefurniture true and filter foreignworker true and filter unemployed true and filter numberofliableindividuals false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "explain job class is skilled is 1 and is not a checking account balance greater or equal to 0, explain",
+            "expected": "filter jobclassisskilled 1 and filter checkingaccountbalancegreaterorequalto0 false and explain features [e]",
+            "predicted": "filter jobclassisskilled 1 and filter checkingaccountbalancegreaterorequalto0 false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what is the reasoning for figuring out if years at current jobless than 1 or savings account balance greater or equal than 200 are to be predicted bad credit risk?",
+            "expected": "filter yearsatcurrentjoblessthan1 true or filter savingsaccountbalancegreaterorequalthan200 true and explain features [e]",
+            "predicted": "filter yearsatcurrentjoblessthan1 true or filter savingsaccountbalancegreaterorequalthan200 true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the ground truth labels in the data for loan purpose education where loan duration is of 42",
+            "expected": "filter loanpurposeeducation true and filter loanduration equal to 42 and label [e]",
+            "predicted": "filter loanpurposeeducation true and filter loanduration equal to 42 and label [e]",
+            "match": true
+        },
+        {
+            "question": "how many people are loan purpose home appliances, id, loan purpose used car are all true, but savings account balance greater or equal than 200 is not true",
+            "expected": "filter loanpurposehomeappliances true and filter id true and filter loanpurposeusedcar true and filter savingsaccountbalancegreaterorequalthan200 false and countdata [e]",
+            "predicted": "filter loanpurposehomeappliances true and filter id true and filter loanpurposeusedcar true and filter savingsaccountbalancegreaterorequalthan200 false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "what's the most important feature for the model predicting owns house, critical account or loans elsewhere, other loans at bank are all true, but rents house is not true?",
+            "expected": "filter ownshouse true and filter criticalaccountorloanselsewhere true and filter otherloansatbank true and filter rentshouse false and important topk 1 [e]",
+            "predicted": "filter ownshouse true and filter criticalaccountorloanselsewhere true and filter otherloansatbank true and filter rentshouse false and important topk 1 [e]",
+            "match": true
+        },
+        {
+            "question": "for those where loan purpose used car is the case, could you print out the data items",
+            "expected": "filter loanpurposeusedcar true and show [e]",
+            "predicted": "filter loanpurposeusedcar true and show [e]",
+            "match": true
+        },
+        {
+            "question": "loan duration is beyond 42 but age is less than 28 and not no current loan sample mistakes",
+            "expected": "filter loanduration greater than 42 and filter age less than 28 and nocurrentloan false and mistake sample [e]",
+            "predicted": "filter loanduration greater than 42 and filter age less than 28 and nocurrentloan false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "where other loans at bank, loan purpose education, has telephone are all true, but foreign worker is not true, show the distribution of job class is skilled?",
+            "expected": "filter otherloansatbank true and filter loanpurposeeducation true and filter hastelephone true and filter foreignworker false and statistic jobclassisskilled [e]",
+            "predicted": "filter otherloansatbank true and filter loanpurposeeducation true and filter hastelephone true and filter foreignworker false and statistic jobclassisskilled [e]",
+            "match": true
+        },
+        {
+            "question": "what set of factors do you leverage on critical account or loans elsewhere, number of liable individuals, loan purpose furniture are all true, but loan purpose home appliances is not true to figure out if these people are good credit risk",
+            "expected": "filter criticalaccountorloanselsewhere true and filter numberofliableindividuals true and filter loanpurposefurniture true and filter loanpurposehomeappliances false and explain features [e]",
+            "predicted": "filter criticalaccountorloanselsewhere true and filter numberofliableindividuals true and filter loanpurposefurniture true and filter loanpurposehomeappliances false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are some mistakes on loan purpose used car, owns house, id are all true, but loan purpose furniture is not true that the model makes",
+            "expected": "filter loanpurposeusedcar true and filter ownshouse true and filter id true and filter loanpurposefurniture false and mistake sample [e]",
+            "predicted": "filter loanpurposeusedcar true and filter ownshouse true and filter id true and filter loanpurposefurniture false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "what set of factors do you take into consideration when determining if loan amount is beyond 4020 but loan duration is less than 8 and not loan purpose business are good credit risk?",
+            "expected": "filter loanamount greater than 4020 and filter loanduration less than 8 and loanpurposebusiness false and explain features [e]",
+            "predicted": "filter loanamount greater than 4020 and filter loanduration less than 8 and loanpurposebusiness false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "why does the model predict instances that have more than 4020 loan amount or are gender?",
+            "expected": "filter loanamount greater than 4020 or filter gender true and explain features [e]",
+            "predicted": "filter loanamount greater than 4020 or filter gender true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what happens to the predictions for data with age of 43 where loan amount is decreased by 708?",
+            "expected": "filter age equal to 43 and change loanamount decrease 708 and predict [e]",
+            "predicted": "filter age equal to 43 and change loanamount decrease 708 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "how likely is it that loan duration less than 8 and loan amount equal to 4020 but not loan purpose other is predicted as bad credit risk by the model?",
+            "expected": "filter loanduration less than 8 and filter loanamount equal to 4020 and filter loanpurposeother false and likelihood [e]",
+            "predicted": "filter loanduration less than 8 and filter loanamount equal to 4020 and filter loanpurposeother false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "what would the prediction for id 55 be if you change loan duration to 8?",
+            "expected": "filter id 55 and change loanduration set 8 and predict [e]",
+            "predicted": "filter id 55 and change loanduration set 8 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "could you tell me when has co applicant is an important feature?",
+            "expected": "important hascoapplicant [e]",
+            "predicted": "important hascoapplicant [e]",
+            "match": true
+        },
+        {
+            "question": "how about years at current job greater or equal than 4, other loans at store, years at current jobless than 1 are all true, but foreign worker is not true",
+            "expected": "filter yearsatcurrentjobgreaterorequalthan4 true and filter otherloansatstore true and filter yearsatcurrentjoblessthan1 true and filter foreignworker false and previousoperation [e]",
+            "predicted": "filter yearsatcurrentjobgreaterorequalthan4 true and filter otherloansatstore true and filter yearsatcurrentjoblessthan1 true and filter foreignworker false and previousoperation [e]",
+            "match": true
+        },
+        {
+            "question": "accuracy on loan purpose repairs where loan duration is 42",
+            "expected": "filter loanduration equal to 42 and filter loanpurposerepairs true and score accuracy [e]",
+            "predicted": "filter loanduration equal to 42 and filter loanpurposerepairs true and score accuracy [e]",
+            "match": true
+        },
+        {
+            "question": "show the likelihood that savings account balance greater or equal than 200 and no current loan with loan duration greater than or equal to 8 are predicted as good credit risk",
+            "expected": "filter savingsaccountbalancegreaterorequalthan200 true and filter nocurrentloan true and filter loanduration greater equal than 8 and likelihood [e]",
+            "predicted": "filter savingsaccountbalancegreaterorequalthan200 true and filter nocurrentloan true and filter loanduration greater equal than 8 and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "what aspects of the data do you consider when reasoning about loan purpose business, other loans at bank, owns house are all true, but loan purpose electronics is not true to make decisions?",
+            "expected": "filter loanpurposebusiness true and filter otherloansatbank true and filter ownshouse true and filter loanpurposeelectronics false and explain features [e]",
+            "predicted": "filter loanpurposebusiness true and filter otherloansatbank true and filter ownshouse true and filter loanpurposeelectronics false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the ground truth labels in the data for loan amount is beyond 708 but age is less than 28 and not loan rate as percent of income",
+            "expected": "filter loanamount greater than 708 and filter age less than 28 and loanrateaspercentofincome false and label [e]",
+            "predicted": "filter loanamount greater than 708 and filter age less than 28 and loanrateaspercentofincome false and label [e]",
+            "match": true
+        },
+        {
+            "question": "if loan amount is decreased by 708 for {filer_text}, what would the model predict?",
+            "expected": "filter hastelephone true and filter loanpurposeelectronics true and filter loanrateaspercentofincome true and filter loanpurposeeducation false and change loanamount increase 708 and predict [e]",
+            "predicted": "filter loanpurposeretraining true and filter savingsaccountbalancegreaterorequalthan200 true and filter yearsatcurrentjoblessthan1 true and filter loanpurposehomeappliances false and change loanamount increase 708 and predict [e]",
+            "match": false
+        },
+        {
+            "question": "how many people are job class is skilled, other loans at bank, rents house are all true, but checking account balance greater or equal to 0 is not true",
+            "expected": "filter jobclassisskilled true and filter otherloansatbank true and filter rentshouse true and filter checkingaccountbalancegreaterorequalto0 false and countdata [e]",
+            "predicted": "filter jobclassisskilled true and filter otherloansatbank true and filter rentshouse true and filter checkingaccountbalancegreaterorequalto0 false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "for age is beyond 28 but loan amount is less than 708 and not savings account balance greater or equal than 500, what is the distribution of the target variable?",
+            "expected": "filter age greater than 28 and filter loanamount less than 708 and savingsaccountbalancegreaterorequalthan500 false and statistic target [e]",
+            "predicted": "filter age greater than 28 and filter loanamount less than 708 and savingsaccountbalancegreaterorequalthan500 false and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "for those where loan purpose education, loan purpose used car, rents house are all true, but checking account balance greater or equal to 0 is not true is the case, could you print out the data items",
+            "expected": "filter loanpurposeeducation true and filter loanpurposeusedcar true and filter rentshouse true and filter checkingaccountbalancegreaterorequalto0 false and show [e]",
+            "predicted": "filter loanpurposeeducation true and filter loanpurposeusedcar true and filter rentshouse true and filter checkingaccountbalancegreaterorequalto0 false and show [e]",
+            "match": true
+        },
+        {
+            "question": "how would the predictions change for all the instances in the data if you increased loan duration by 15, decreased loan amount by 10, and set loan purpose business to 1.0?",
+            "expected": "change loanduration increase 15 and change loanamount decrease 10 and change loanpurposebusiness 1.0 and predict [e]",
+            "predicted": "change loanduration increase 15 and change loanamount decrease 10 and change loanpurposebusiness 1.0 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what's the ppv on other loans at store, foreign worker, loan purpose new car are all true, but years at current jobless than 1 is not true?",
+            "expected": "filter otherloansatstore true and filter foreignworker true and filter loanpurposenewcar true and filter yearsatcurrentjoblessthan1 false and score ppv [e]",
+            "predicted": "filter otherloansatstore true and filter foreignworker true and filter loanpurposenewcar true and filter yearsatcurrentjoblessthan1 false and score ppv [e]",
+            "match": true
+        },
+        {
+            "question": "what is the reasoning for figuring out if savings account balance greater or equal than 500 or loan purpose education are to be predicted good credit risk?",
+            "expected": "filter savingsaccountbalancegreaterorequalthan500 true or filter loanpurposeeducation true and explain features [e]",
+            "predicted": "filter savingsaccountbalancegreaterorequalthan500 true or filter loanpurposeeducation true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "please tell me what the model predicts instances with 43 age or 708 loan amount?",
+            "expected": "filter age equal to 43 or filter loanamount equal to 708 and predict [e]",
+            "predicted": "filter age equal to 43 or filter loanamount equal to 708 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "for id, other loans at store, savings account balance greater or equal than 200 are all true, but single is not true, what are the ground truth labels",
+            "expected": "filter id true and filter otherloansatstore true and filter savingsaccountbalancegreaterorequalthan200 true and filter single false and label [e]",
+            "predicted": "filter id true and filter otherloansatstore true and filter savingsaccountbalancegreaterorequalthan200 true and filter single false and label [e]",
+            "match": true
+        },
+        {
+            "question": "could you inform me how you reasoned about people in the data where loan purpose home appliances, loan purpose used car, loan purpose electronics are all true, but job class is skilled is not true",
+            "expected": "filter loanpurposehomeappliances true and filter loanpurposeusedcar true and filter loanpurposeelectronics true and filter jobclassisskilled false and explain features [e]",
+            "predicted": "filter loanpurposehomeappliances true and filter loanpurposeusedcar true and filter loanpurposeelectronics true and filter jobclassisskilled false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for foreign worker where loan duration is of 42, what is the distribution of loan purpose business?",
+            "expected": "filter foreignworker true and filter loanduration equal to 42 and statistic loanpurposebusiness [e]",
+            "predicted": "filter foreignworker true and filter loanduration equal to 42 and statistic loanpurposebusiness [e]",
+            "match": true
+        },
+        {
+            "question": "what are the class probabilities on your predictions for no current loan, job class is skilled, loan purpose other are all true, but foreign worker is not true?",
+            "expected": "filter nocurrentloan true and filter jobclassisskilled true and filter loanpurposeother true and filter foreignworker false and likelihood [e]",
+            "predicted": "filter nocurrentloan true and filter jobclassisskilled true and filter loanpurposeother true and filter foreignworker false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "in what ways do features interact with each other for the model's predictions on instances that have a id or that do not have 4020 loan amount?",
+            "expected": "filter id true or filter loanamount not equal to 4020 and interact [e]",
+            "predicted": "filter id true or filter loanamount not equal to 4020 and interact [e]",
+            "match": true
+        },
+        {
+            "question": "please describe the number of loan amount is beyond 708 but age is less than 43 and not single in the data",
+            "expected": "filter loanamount greater than 708 and filter age less than 43 and single false and coundata [e]",
+            "predicted": "filter loanamount greater than 708 and filter age less than 43 and single false and coundata [e]",
+            "match": true
+        },
+        {
+            "question": "why does the model predict instances that have more than 43 age or are loan purpose electronics?",
+            "expected": "filter age greater than 43 or filter loanpurposeelectronics true and explain features [e]",
+            "predicted": "filter age greater than 43 or filter loanpurposeelectronics true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "explain missed payments is true and is not a savings account balance greater or equal than 200, explain",
+            "expected": "filter missedpayments true and filter savingsaccountbalancegreaterorequalthan200 false and explain features [e]",
+            "predicted": "filter missedpayments true and filter savingsaccountbalancegreaterorequalthan200 false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are some typical mistakes on age is beyond 43 but loan amount is less than 708 and not other loans at bank",
+            "expected": "filter age greater than 43 and filter loanamount less than 708 and otherloansatbank false and mistake typical [e]",
+            "predicted": "filter age greater than 43 and filter loanamount less than 708 and otherloansatbank false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "for loan duration is beyond 42 but loan amount is less than 4020 and not no current loan, what are some mistakes you typically make?",
+            "expected": "filter loanduration greater than 42 and filter loanamount less than 4020 and nocurrentloan false and mistake typical [e]",
+            "predicted": "filter loanduration greater than 42 and filter loanamount less than 4020 and nocurrentloan false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "reveal the predictions of loan rate as percent of income and loan purpose business with age greater than or equal to 28",
+            "expected": "filter loanrateaspercentofincome true and filter loanpurposebusiness true and filter age greater equal than 28 and predict [e]",
+            "predicted": "filter loanrateaspercentofincome true and filter loanpurposebusiness true and filter age greater equal than 28 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "just on instances where number of other loans at bank, loan purpose repairs, loan purpose other are all true, but missed payments is not true, show me the labels?",
+            "expected": "filter numberofotherloansatbank true and filter loanpurposerepairs true and filter loanpurposeother true and filter missedpayments false and label [e]",
+            "predicted": "filter numberofotherloansatbank true and filter loanpurposerepairs true and filter loanpurposeother true and filter missedpayments false and label [e]",
+            "match": true
+        },
+        {
+            "question": "what happens to the predictions for data with loan amount of 708 where age is added by 43?",
+            "expected": "filter loanamount equal to 708 and change age increase 43 and predict [e]",
+            "predicted": "filter loanamount equal to 708 and change age increase 43 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "in cases where number of other loans at bank, years at current home, no current loan are all true, but missed payments is not true, how do you determine if good credit risk",
+            "expected": "filter numberofotherloansatbank true and filter yearsatcurrenthome true and filter nocurrentloan true and filter missedpayments false and explain features [e]",
+            "predicted": "filter numberofotherloansatbank true and filter yearsatcurrenthome true and filter nocurrentloan true and filter missedpayments false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "explain feature interactions for instances that have a has telephone or that have exactly 8 loan duration?",
+            "expected": "filter hastelephone true or filter loanduration equal to 8 and interact [e]",
+            "predicted": "filter hastelephone true or filter loanduration equal to 8 and interact [e]",
+            "match": true
+        },
+        {
+            "question": "if people with has co applicant, number of other loans at bank, number of liable individuals are all true, but owns house is not true were to have loan amount increased by 708, what would the top 5 most important features be?",
+            "expected": "filter hascoapplicant true and filter numberofotherloansatbank true and filter numberofliableindividuals true and filter ownshouse false and change loanamount increase 708 and important topk 5 [e]",
+            "predicted": "filter hascoapplicant true and filter numberofotherloansatbank true and filter numberofliableindividuals true and filter ownshouse false and change loanamount increase 708 and important topk 5 [e]",
+            "match": true
+        },
+        {
+            "question": "for loan purpose retraining with loan duration equal to 8, could you tell me when loan purpose furniture is a highly ranked feature?",
+            "expected": "filter loanpurposeretraining true and filter loanduration equal to 8 and important loanpurposefurniture. [e]",
+            "predicted": "filter loanpurposeretraining true and filter loanduration equal to 8 and important loanpurposefurniture. [e]",
+            "match": true
+        },
+        {
+            "question": "please show the items of has co applicant, other loans at store, loan purpose furniture are all true, but years at current home is not true in the data",
+            "expected": "filter hascoapplicant true and filter otherloansatstore true and filter loanpurposefurniture true and filter yearsatcurrenthome false and show [e]",
+            "predicted": "filter hascoapplicant true and filter otherloansatstore true and filter loanpurposefurniture true and filter yearsatcurrenthome false and show [e]",
+            "match": true
+        },
+        {
+            "question": "what set of reasoning do you use to determine if the model predicts bad credit risk but the label is good credit risk are good credit risk?",
+            "expected": "predictionfilter 0 and labelfilter 1 and explain features [e]",
+            "predicted": "predictionfilter 0 and labelfilter 1 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "can you provide me with reasoning for the model's predictions on loan purpose used car, id, loan purpose electronics are all true, but savings account balance greater or equal than 200 is not true?",
+            "expected": "filter loanpurposeusedcar true and filter id true and filter loanpurposeelectronics true and filter savingsaccountbalancegreaterorequalthan200 false and explain features [e]",
+            "predicted": "filter loanpurposeusedcar true and filter id true and filter loanpurposeelectronics true and filter savingsaccountbalancegreaterorequalthan200 false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the data labels for loan purpose education, id, unemployed are all true, but gender is not true",
+            "expected": "filter loanpurposeeducation true and filter id true and filter unemployed true and filter gender false and label [e]",
+            "predicted": "filter loanpurposeeducation true and filter id true and filter unemployed true and filter gender false and label [e]",
+            "match": true
+        },
+        {
+            "question": "how would the predictions change for all the instances in the data if you increased loan duration by 15, decreased loan amount by 10, and set no current loan to false?",
+            "expected": "change loanduration increase 15 and change loanamount decrease 10 and change nocurrentloan false and predict [e]",
+            "predicted": "change loanduration increase 15 and change loanamount decrease 10 and change nocurrentloan false and predict [e]",
+            "match": true
+        },
+        {
+            "question": "how important is loan purpose furniture for the predictions?",
+            "expected": "important loanpurposefurniture [e]",
+            "predicted": "important loanpurposefurniture [e]",
+            "match": true
+        },
+        {
+            "question": "accuracy on critical account or loans elsewhere where loan amount is 4020",
+            "expected": "filter loanamount equal to 4020 and filter criticalaccountorloanselsewhere true and score accuracy [e]",
+            "predicted": "filter loanamount equal to 4020 and filter criticalaccountorloanselsewhere true and score accuracy [e]",
+            "match": true
+        },
+        {
+            "question": "show me instances that are no current loan, loan purpose business, job class is skilled are all true, but loan purpose furniture is not true",
+            "expected": "filter nocurrentloan true and filter loanpurposebusiness true and filter jobclassisskilled true and filter loanpurposefurniture false and show [e]",
+            "predicted": "filter nocurrentloan true and filter loanpurposebusiness true and filter jobclassisskilled true and filter loanpurposefurniture false and show [e]",
+            "match": true
+        },
+        {
+            "question": "could you show me a few examples you get incorrect for has co applicant, critical account or loans elsewhere, years at current job greater or equal than 4 are all true, but foreign worker is not true",
+            "expected": "filter hascoapplicant true and filter criticalaccountorloanselsewhere true and filter yearsatcurrentjobgreaterorequalthan4 true and filter foreignworker false and mistake sample [e]",
+            "predicted": "filter hascoapplicant true and filter criticalaccountorloanselsewhere true and filter yearsatcurrentjobgreaterorequalthan4 true and filter foreignworker false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "what are the model predictions for loan purpose repairs that have 4020 loan amount?",
+            "expected": "filter loanpurposerepairs true and filter loanamount equal to 4020 and predict [e]",
+            "predicted": "filter loanpurposerepairs true and filter loanamount equal to 4020 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what's your motivation for deciding the predictions of years at current home, unemployed, loan purpose electronics are all true, but other loans at store is not true",
+            "expected": "filter yearsatcurrenthome true and filter unemployed true and filter loanpurposeelectronics true and filter otherloansatstore false and explain features [e]",
+            "predicted": "filter yearsatcurrenthome true and filter unemployed true and filter loanpurposeelectronics true and filter otherloansatstore false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "reveal the predictions of loan purpose used car or loan purpose retraining with loan duration greater than or equal to 8",
+            "expected": "filter loanpurposeusedcar true or filter loanpurposeretraining true and filter loanduration greater equal than 8 and predict [e]",
+            "predicted": "filter loanpurposeusedcar true or filter loanpurposeretraining true and filter loanduration greater equal than 8 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what are some mistakes on loan duration is beyond 8 but age is less than 28 and not rents house the model typically makes",
+            "expected": "filter loanduration greater than 8 and filter age less than 28 and rentshouse false and mistake typical [e]",
+            "predicted": "filter loanduration greater than 8 and filter age less than 28 and rentshouse false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "what are the feature interactions for predicting years at current jobless than 1 that have 43 age?",
+            "expected": "filter yearsatcurrentjoblessthan1 true and filter age equal to 43 and interact [e]",
+            "predicted": "filter yearsatcurrentjoblessthan1 true and filter age equal to 43 and interact [e]",
+            "match": true
+        },
+        {
+            "question": "how about has co applicant, loan purpose electronics, savings account balance greater or equal than 200 are all true, but loan purpose used car is not true",
+            "expected": "filter hascoapplicant true and filter loanpurposeelectronics true and filter savingsaccountbalancegreaterorequalthan200 true and filter loanpurposeusedcar false and previousoperation [e]",
+            "predicted": "filter hascoapplicant true and filter loanpurposeelectronics true and filter savingsaccountbalancegreaterorequalthan200 true and filter loanpurposeusedcar false and previousoperation [e]",
+            "match": true
+        },
+        {
+            "question": "just on instances where foreign worker, loan purpose education, other loans at bank are all true, but owns house is not true, show me the gold labels?",
+            "expected": "filter foreignworker true and filter loanpurposeeducation true and filter otherloansatbank true and filter ownshouse false and label [e]",
+            "predicted": "filter foreignworker true and filter loanpurposeeducation true and filter otherloansatbank true and filter ownshouse false and label [e]",
+            "match": true
+        },
+        {
+            "question": "what's the ppv on has guarantor, number of other loans at bank, checking account balance greater or equal to 0 are all true, but number of liable individuals is not true?",
+            "expected": "filter hasguarantor true and filter numberofotherloansatbank true and filter checkingaccountbalancegreaterorequalto0 true and filter numberofliableindividuals false and score ppv [e]",
+            "predicted": "filter hasguarantor true and filter numberofotherloansatbank true and filter checkingaccountbalancegreaterorequalto0 true and filter numberofliableindividuals false and score ppv [e]",
+            "match": true
+        }
+    ]
+}

@@ -82,7 +82,7 @@ log_dialogue_input.dynamodb_table = None
     gin.parse_config(config_string)
 
     print("==================================================")
-    print("TalkToModel End-to-End Diabetes Demo")
+    print("TalkToModel End-to-End German Demo")
     print("==================================================")
 
     # Patch SentenceTransformer to avoid HF Hub issues
@@ -115,7 +115,7 @@ log_dialogue_input.dynamodb_table = None
     def patched_run_action(conversation, parse_tree, parsed_string: str, **kwargs):
         print(f"EXECUTION:\\nExecuting mapped operations for parsed string: '{parsed_string}'\\n")
         return_statement = original_run_action(conversation, parse_tree, parsed_string, **kwargs)
-        print(f"MODEL RESULT / XAI RESULT:\\nSuccessfully invoked the internal diabetes ML model and generated/retrieved explanations for the requested instance(s).\\n")
+        print(f"MODEL RESULT / XAI RESULT:\\nSuccessfully invoked the internal {dataset_name} ML model and generated/retrieved explanations for the requested instance(s).\\n")
         return return_statement
 
     explain.logic.run_action = patched_run_action

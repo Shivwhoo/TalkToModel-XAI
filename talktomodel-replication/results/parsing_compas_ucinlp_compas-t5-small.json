@@ -1,0 +1,1209 @@
+{
+    "model": "ucinlp/compas-t5-small",
+    "dataset": "compas",
+    "test_size": 200,
+    "correct": 196,
+    "accuracy": 0.98,
+    "predictions": [
+        {
+            "question": "for woman, rec i diva ted, man are all true, but id is not true, what are some mistakes you typically make?",
+            "expected": "filter woman true and filter recidivated true and filter man true and filter id false and mistake typical [e]",
+            "predicted": "filter woman true and filter recidivated true and filter man true and filter id false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "what's the most important feature for the model predicting man where number of prior crimes is of 17?",
+            "expected": "filter man true and filter numberofpriorcrimes equal to 17 and important topk 1 [e]",
+            "predicted": "filter man true and filter numberofpriorcrimes equal to 17 and important topk 1 [e]",
+            "match": true
+        },
+        {
+            "question": "for months in jail is beyond 162 but age is less than 47 and not id, could you show me the data?",
+            "expected": "filter monthsinjail greater than 162 and filter age less than 47 and id false and show [e]",
+            "predicted": "filter monthsinjail greater than 162 and filter age less than 47 and id false and show [e]",
+            "match": true
+        },
+        {
+            "question": "how many people are months in jail is beyond 162 but age is less than 47 and not felony",
+            "expected": "filter monthsinjail greater than 162 and filter age less than 47 and felony false and countdata [e]",
+            "predicted": "filter monthsinjail greater than 162 and filter age less than 47 and felony false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "if the black are younger than 50 can we take 250usd more in months in jail?",
+            "expected": "filter black and age less than 50 or age greater than 57 and likelihood and change monthsinjail increase 250 and likelihood [e]",
+            "predicted": "filter black and age less than 50 or age greater than 57 and likelihood and change monthsinjail increase 250 and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "what would the prediction for id 55 be if you change number of prior crimes to 17?",
+            "expected": "filter id 55 and change numberofpriorcrimes set 17 and predict [e]",
+            "predicted": "filter id 55 and change numberofpriorcrimes set 17 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what are some typical mistakes on woman, id, black are all true, but misdemeanor is not true",
+            "expected": "filter woman true and filter id true and filter black true and filter misdemeanor false and mistake typical [e]",
+            "predicted": "filter woman true and filter id true and filter black true and filter misdemeanor false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "for black, man, felony are all true, but woman is not true, what are the nine most important features for the model's predictions?",
+            "expected": "filter black true and filter man true and filter felony true and filter woman false and important topk 9 [e]",
+            "predicted": "filter black true and filter man true and filter felony true and filter woman false and important topk 9 [e]",
+            "match": true
+        },
+        {
+            "question": "i want to better understand your reasoning on data with rec i diva ted, black, id are all true, but misdemeanor is not true",
+            "expected": "filter recidivated true and filter black true and filter id true and filter misdemeanor false and explain features [e]",
+            "predicted": "filter recidivated true and filter black true and filter id true and filter misdemeanor false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for id, felony, black are all true, but man is not true, how many instances in the data are there?",
+            "expected": "filter id true and filter felony true and filter black true and filter man false and countdata [e]",
+            "predicted": "filter id true and filter felony true and filter black true and filter man false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "how likely are people with months in jail over 162 and at least 9 number of prior crimes to be likely to commit a crime",
+            "expected": "filter monthsinjail greater than 162 and filter numberofpriorcrimes greater equal than 9 and likelihood [e]",
+            "predicted": "filter monthsinjail greater than 162 and filter numberofpriorcrimes greater equal than 9 and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "how do you figure out if someone who is a woman, misdemeanor, rec i diva ted are all true, but felony is not true will be likely to commit a crime",
+            "expected": "filter woman true and filter misdemeanor true and filter recidivated true and filter felony false and explain features [e]",
+            "predicted": "filter woman true and filter misdemeanor true and filter recidivated true and filter felony false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for number of prior crimes is beyond 17 but months in jail is less than 11 and not woman, what is the distribution of the target variable?",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 11 and woman false and statistic target [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 11 and woman false and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "in cases where number of prior crimes is beyond 9 but age is less than 68 and not black, how do you determine if unlikely to commit a crime",
+            "expected": "filter numberofpriorcrimes greater than 9 and filter age less than 68 and black false and explain features [e]",
+            "predicted": "filter numberofpriorcrimes greater than 9 and filter age less than 68 and black false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what would happen to the likelihood of unlikely to commit a crime if we were to increase age by 70 for the data point with sample id 100",
+            "expected": "filter id 100 and change age increase 70 and likelihood [e]",
+            "predicted": "filter id 100 and change age increase 70 and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "how likely is it that the model predicts this instance as unlikely to commit a crime",
+            "expected": "previousfilter and likelihood [e]",
+            "predicted": "previousfilter and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "for data where months in jail the same or more than 162, what is the statistics of id?",
+            "expected": "filter monthsinjail greater equal than 162 and statistic id [e]",
+            "predicted": "filter monthsinjail greater equal than 162 and statistic id [e]",
+            "match": true
+        },
+        {
+            "question": "show me all the data where age is beyond 47 but months in jail is less than 11 and not id",
+            "expected": "filter age greater than 47 and filter monthsinjail less than 11 and id false and show [e]",
+            "predicted": "filter age greater than 47 and filter monthsinjail less than 11 and id false and show [e]",
+            "match": true
+        },
+        {
+            "question": "what aspects of the data do you consider when reasoning about man, felony, black are all true, but misdemeanor is not true to make decisions",
+            "expected": "filter man true and filter felony true and filter black true and filter misdemeanor false and explain features [e]",
+            "predicted": "filter man true and filter felony true and filter black true and filter misdemeanor false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what set of factors do you leverage on misdemeanor, man, woman are all true, but rec i diva ted is not true to figure out if these people are unlikely to commit a crime?",
+            "expected": "filter misdemeanor true and filter man true and filter woman true and filter recidivated false and explain features [e]",
+            "predicted": "filter misdemeanor true and filter man true and filter woman true and filter recidivated false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for felony who have more than months in jail greater than 11, run the feature importance explanations",
+            "expected": "filter felony true and filter monthsinjail greater than 11 and explain feature importance [e]",
+            "predicted": "filter felony true and filter monthsinjail greater than 11 and explain feature importance [e]",
+            "match": true
+        },
+        {
+            "question": "what is the range of number of prior crimes",
+            "expected": "statistic numberofpriorcrimes [e]",
+            "predicted": "statistic numberofpriorcrimes [e]",
+            "match": true
+        },
+        {
+            "question": "how do you decide whether black, man, rec i diva ted are all true, but woman is not true will be likely to commit a crime",
+            "expected": "filter black true and filter man true and filter recidivated true and filter woman false and explain features [e]",
+            "predicted": "filter black true and filter man true and filter recidivated true and filter woman false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for age taller than 47, what are some mistakes you typically make?",
+            "expected": "filter age greater than 47 and mistake typical [e]",
+            "predicted": "filter age greater than 47 and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "for instances number of prior crimes is beyond 17 but months in jail is less than 162 and not misdemeanor, show statistics for the number of prior crimes feature",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 162 and misdemeanor false and statistic numberofpriorcrimes [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 162 and misdemeanor false and statistic numberofpriorcrimes [e]",
+            "match": true
+        },
+        {
+            "question": "for id where months in jail is of 162, please help me understand your reasoning process",
+            "expected": "filter id true and filter monthsinjail equal to 162 and explain features [e]",
+            "predicted": "filter id true and filter monthsinjail equal to 162 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for woman, id, rec i diva ted are all true, but misdemeanor is not true, what is the distribution of the labels?",
+            "expected": "filter woman true and filter id true and filter recidivated true and filter misdemeanor false and statistic target [e]",
+            "predicted": "filter woman true and filter id true and filter recidivated true and filter misdemeanor false and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "how do you figure out if someone who is a months in jail equal to or below 162 will be unlikely to commit a crime",
+            "expected": "filter monthsinjail less equal than 162 and explain features [e]",
+            "predicted": "filter monthsinjail less equal than 162 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the class probabilities on your predictions for misdemeanor, felony, rec i diva ted are all true, but black is not true?",
+            "expected": "filter misdemeanor true and filter felony true and filter recidivated true and filter black false and likelihood [e]",
+            "predicted": "filter misdemeanor true and filter felony true and filter recidivated true and filter black false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "please show the items of age older than 47 and number of prior crimes younger than 9 in the data",
+            "expected": "filter age greater than 47 and filter numberofpriorcrimes less than 9 and show [e]",
+            "predicted": "filter age greater than 47 and filter numberofpriorcrimes less than 9 and show [e]",
+            "match": true
+        },
+        {
+            "question": "how would you characterize the mistakes you make on months in jail of 162?",
+            "expected": "filter monthsinjail equal to 162 and mistake typical [e]",
+            "predicted": "filter monthsinjail equal to 162 and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "if people with months in jail is beyond 11 but age is less than 68 and not black were to have months in jail increased by 162, what would the top 5 most important features be?",
+            "expected": "filter monthsinjail greater than 11 and filter age less than 68 and black false and change monthsinjail increase 162 and important topk 5 [e]",
+            "predicted": "filter monthsinjail greater than 11 and filter age less than 68 and black false and change monthsinjail increase 162 and important topk 5 [e]",
+            "match": true
+        },
+        {
+            "question": "what aspects of the data do you consider when reasoning about id, woman, black are all true, but man is not true to make decisions?",
+            "expected": "filter id true and filter woman true and filter black true and filter man false and explain features [e]",
+            "predicted": "filter id true and filter woman true and filter black true and filter man false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "id 78 return incorrect predictions",
+            "expected": "filter id 78 and mistake sample [e]",
+            "predicted": "filter id 78 and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "what are the data labels for age is beyond 47 but months in jail is less than 162 and not id",
+            "expected": "filter age greater than 47 and filter monthsinjail less than 162 and id false and label [e]",
+            "predicted": "filter age greater than 47 and filter monthsinjail less than 162 and id false and label [e]",
+            "match": true
+        },
+        {
+            "question": "for felony, misdemeanor, id are all true, but rec i diva ted is not true, what is the distribution of number of prior crimes?",
+            "expected": "filter felony true and filter misdemeanor true and filter id true and filter recidivated false and statistic numberofpriorcrimes [e]",
+            "predicted": "filter felony true and filter misdemeanor true and filter id true and filter recidivated false and statistic numberofpriorcrimes [e]",
+            "match": true
+        },
+        {
+            "question": "how likely is it that months in jail less than 162 and age equal to 68 but not man is predicted as likely to commit a crime by the model?",
+            "expected": "filter monthsinjail less than 162 and filter age equal to 68 and filter man false and likelihood [e]",
+            "predicted": "filter monthsinjail less than 162 and filter age equal to 68 and filter man false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "return the data where man, felony, id are all true, but black is not true people",
+            "expected": "filter man true and filter felony true and filter id true and filter black false and show [e]",
+            "predicted": "filter man true and filter felony true and filter id true and filter black false and show [e]",
+            "match": true
+        },
+        {
+            "question": "why does my model predict those with age not less than 68 as true?",
+            "expected": "filter age greater equal than 68 and explain features [e]",
+            "predicted": "filter age greater equal than 68 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for misdemeanor where age is of 47, could you show me the data?",
+            "expected": "filter misdemeanor true and filter age equal to 47 and show [e]",
+            "predicted": "filter misdemeanor true and filter age equal to 47 and show [e]",
+            "match": true
+        },
+        {
+            "question": "for man, rec i diva ted, black are all true, but felony is not true, please help me understand your reasoning process",
+            "expected": "filter man true and filter recidivated true and filter black true and filter felony false and explain features [e]",
+            "predicted": "filter man true and filter recidivated true and filter black true and filter felony false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what data points does the model typically predict wrongly on people with months in jail the same or more than 11?",
+            "expected": "filter monthsinjail greater equal than 11 and mistake typical [e]",
+            "predicted": "filter monthsinjail greater equal than 11 and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "what data points does the model typically predict mistakenly on people with everything but not age of 47?",
+            "expected": "filter age not equal to 47 and mistake typical [e]",
+            "predicted": "filter age not equal to 47 and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "for black, id, rec i diva ted are all true, but woman is not true, what is the distribution of the labels?",
+            "expected": "filter black true and filter id true and filter recidivated true and filter woman false and statistic target [e]",
+            "predicted": "filter black true and filter id true and filter recidivated true and filter woman false and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "a black show faulty predictions",
+            "expected": "filter black true and mistake sample [e]",
+            "predicted": "filter black true and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "what are the class probabilities on your predictions for id, rec i diva ted, black are all true, but man is not true?",
+            "expected": "filter id true and filter recidivated true and filter black true and filter man false and likelihood [e]",
+            "predicted": "filter id true and filter recidivated true and filter black true and filter man false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "why does my model predict those with age not equal to 47 as true?",
+            "expected": "filter age not equal to 47 and explain features [e]",
+            "predicted": "filter age not equal to 47 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "how many people are id, man, misdemeanor are all true, but black is not true",
+            "expected": "filter id true and filter man true and filter misdemeanor true and filter black false and countdata [e]",
+            "predicted": "filter id true and filter man true and filter misdemeanor true and filter black false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "rec i diva ted, woman, man are all true, but black is not true show bad predictions",
+            "expected": "filter recidivated true and filter woman true and filter man true and filter black false and mistake sample [e]",
+            "predicted": "filter recidivated true and filter woman true and filter man true and filter black false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "what set of factors do you leverage on age is beyond 47 but months in jail is less than 11 and not id to figure out if these people are likely to commit a crime",
+            "expected": "filter age greater than 47 and filter monthsinjail less than 11 and id false and explain features [e]",
+            "predicted": "filter age greater than 47 and filter monthsinjail less than 11 and id false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what set of reasoning do you use to determine if misdemeanor, man, woman are all true, but black is not true are unlikely to commit a crime",
+            "expected": "filter misdemeanor true and filter man true and filter woman true and filter black false and explain features [e]",
+            "predicted": "filter misdemeanor true and filter man true and filter woman true and filter black false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for those where misdemeanor, rec i diva ted, woman are all true, but felony is not true is the case, could you tell me the total number of item in the data",
+            "expected": "filter misdemeanor true and filter recidivated true and filter woman true and filter felony false and countdata [e]",
+            "predicted": "filter misdemeanor true and filter recidivated true and filter woman true and filter felony false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "what's the specificity on number of prior crimes taller than 17?",
+            "expected": "filter numberofpriorcrimes greater than 17 and score specificity [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and score specificity [e]",
+            "match": true
+        },
+        {
+            "question": "for data where number of prior crimes older than 9, what is the statistics of id?",
+            "expected": "filter numberofpriorcrimes greater than 9 and statistic id [e]",
+            "predicted": "filter numberofpriorcrimes greater than 9 and statistic id [e]",
+            "match": true
+        },
+        {
+            "question": "for id where months in jail is of 162, what is the distribution of the labels?",
+            "expected": "filter id true and filter monthsinjail equal to 162 and statistic target [e]",
+            "predicted": "filter id true and filter monthsinjail equal to 162 and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "how likely is it that age less than 47 and number of prior crimes equal to 9 but not woman is predicted as likely to commit a crime by the model?",
+            "expected": "filter age less than 47 and filter numberofpriorcrimes equal to 9 and filter woman false and likelihood [e]",
+            "predicted": "filter age less than 47 and filter numberofpriorcrimes equal to 9 and filter woman false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "number of prior crimes is beyond 17 but age is less than 47 and not black show mistakes",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter age less than 47 and black false and mistake sample [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter age less than 47 and black false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "what's the misdemeanor of id 22",
+            "expected": "filter id 22 and statistic monthsinjail [e]",
+            "predicted": "filter id 22 and statistic monthsinjail [e]",
+            "match": true
+        },
+        {
+            "question": "for misdemeanor, rec i diva ted, woman are all true, but felony is not true, what is the distribution of the label?",
+            "expected": "filter misdemeanor true and filter recidivated true and filter woman true and filter felony false and statistic target [e]",
+            "predicted": "filter misdemeanor true and filter recidivated true and filter woman true and filter felony false and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "could you inform me how you reasoned about people in the data where months in jail is not greater than 11",
+            "expected": "filter monthsinjail less equal than 11 and explain features [e]",
+            "predicted": "filter monthsinjail less equal than 11 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the secondary feature interactions for instances that have a felony or that have exactly 47 age?",
+            "expected": "filter felony true or filter age equal to 47 and interact [e]",
+            "predicted": "filter felony true or filter age equal to 47 and interact [e]",
+            "match": true
+        },
+        {
+            "question": "for instances age is beyond 68 but months in jail is less than 11 and not man, show statistics for the age feature",
+            "expected": "filter age greater than 68 and filter monthsinjail less than 11 and man false and statistic age [e]",
+            "predicted": "filter age greater than 68 and filter monthsinjail less than 11 and man false and statistic age [e]",
+            "match": true
+        },
+        {
+            "question": "just on instances where woman, misdemeanor, rec i diva ted are all true, but id is not true, show me the labels?",
+            "expected": "filter woman true and filter misdemeanor true and filter recidivated true and filter id false and label [e]",
+            "predicted": "filter woman true and filter misdemeanor true and filter recidivated true and filter id false and label [e]",
+            "match": true
+        },
+        {
+            "question": "what are some typical mistakes on number of prior crimes is beyond 9 but age is less than 47 and not misdemeanor",
+            "expected": "filter numberofpriorcrimes greater than 9 and filter age less than 47 and misdemeanor false and mistake typical [e]",
+            "predicted": "filter numberofpriorcrimes greater than 9 and filter age less than 47 and misdemeanor false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "in what was would the predictions be altered if it were the case that those with months in jail of 162 had number of prior crimes decreased by 9?",
+            "expected": "filter monthsinjail equal to 162 and change {num_feautres} decrease 9 and predict [e]",
+            "predicted": "filter monthsinjail equal to 162 and change num_feautres decrease 9 and predict [e]",
+            "match": false
+        },
+        {
+            "question": "what set of factors do you take into consideration when determining if months in jail is beyond 162 but number of prior crimes is less than 9 and not woman are unlikely to commit a crime?",
+            "expected": "filter monthsinjail greater than 162 and filter numberofpriorcrimes less than 9 and woman false and explain features [e]",
+            "predicted": "filter monthsinjail greater than 162 and filter numberofpriorcrimes less than 9 and woman false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are some typical mistakes on woman, black, misdemeanor are all true, but felony is not true",
+            "expected": "filter woman true and filter black true and filter misdemeanor true and filter felony false and mistake typical [e]",
+            "predicted": "filter woman true and filter black true and filter misdemeanor true and filter felony false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "what's the accuracy for people age is not less than 47?",
+            "expected": "filter age greater equal than 47 and score accuracy [e]",
+            "predicted": "filter age greater equal than 47 and score accuracy [e]",
+            "match": true
+        },
+        {
+            "question": "what data points does the model typically predict mistakenly on people with black, id, felony are all true, but woman is not true?",
+            "expected": "filter black true and filter id true and filter felony true and filter woman false and mistake typical [e]",
+            "predicted": "filter black true and filter id true and filter felony true and filter woman false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "how likely are people with months in jail below 162 and at least 17 number of prior crimes to be unlikely to commit a crime",
+            "expected": "filter monthsinjail less than 162 and filter numberofpriorcrimes greater equal than 17 and likelihood [e]",
+            "predicted": "filter monthsinjail less than 162 and filter numberofpriorcrimes greater equal than 17 and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "just on instances where age is beyond 68 but months in jail is less than 11 and not misdemeanor, show me the gold labels?",
+            "expected": "filter age greater than 68 and filter monthsinjail less than 11 and misdemeanor false and label [e]",
+            "predicted": "filter age greater than 68 and filter monthsinjail less than 11 and misdemeanor false and label [e]",
+            "match": true
+        },
+        {
+            "question": "what data points does the model typically predict wrongly on people with number of prior crimes not equal to 9?",
+            "expected": "filter numberofpriorcrimes not equal to 9 and mistake typical [e]",
+            "predicted": "filter numberofpriorcrimes not equal to 9 and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "for age is beyond 68 but number of prior crimes is less than 17 and not misdemeanor, what is the distribution of the label?",
+            "expected": "filter age greater than 68 and filter numberofpriorcrimes less than 17 and misdemeanor false and statistic target [e]",
+            "predicted": "filter age greater than 68 and filter numberofpriorcrimes less than 17 and misdemeanor false and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "what are the 3 most important features in the data when reasoning about felony, misdemeanor, id are all true, but black is not true to make decisions?",
+            "expected": "filter felony true and filter misdemeanor true and filter id true and filter black false and important topk 3 [e]",
+            "predicted": "filter felony true and filter misdemeanor true and filter id true and filter black false and important topk 3 [e]",
+            "match": true
+        },
+        {
+            "question": "what aspects of the data do you consider when reasoning about black, misdemeanor, felony are all true, but man is not true to make decisions?",
+            "expected": "filter black true and filter misdemeanor true and filter felony true and filter man false and explain features [e]",
+            "predicted": "filter black true and filter misdemeanor true and filter felony true and filter man false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for data where felony, woman, id are all true, but misdemeanor is not true, what is the statistics of number of prior crimes?",
+            "expected": "filter felony true and filter woman true and filter id true and filter misdemeanor false and statistic numberofpriorcrimes [e]",
+            "predicted": "filter felony true and filter woman true and filter id true and filter misdemeanor false and statistic numberofpriorcrimes [e]",
+            "match": true
+        },
+        {
+            "question": "display the predictions of id and felony with months in jail less than or equal to 11",
+            "expected": "filter id true and filter felony true and filter monthsinjail less than or equal to 11 and predict [e]",
+            "predicted": "filter id true and filter felony true and filter monthsinjail less than or equal to 11 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what are the predictions for instances with age less than 68?",
+            "expected": "filter age less than 68 and predict [e]",
+            "predicted": "filter age less than 68 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what is the reasoning for figuring out if id or man are to be predicted unlikely to commit a crime?",
+            "expected": "filter id true or filter man true and explain features [e]",
+            "predicted": "filter id true or filter man true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the three most important features of the model be if people were to have their ages decreased by 68?",
+            "expected": "change age decrease 68 and important topk 3 [e]",
+            "predicted": "change age decrease 68 and important topk 3 [e]",
+            "match": true
+        },
+        {
+            "question": "for data where misdemeanor, felony, id are all true, but rec i diva ted is not true, what is the statistics of number of prior crimes?",
+            "expected": "filter misdemeanor true and filter felony true and filter id true and filter recidivated false and statistic numberofpriorcrimes [e]",
+            "predicted": "filter misdemeanor true and filter felony true and filter id true and filter recidivated false and statistic numberofpriorcrimes [e]",
+            "match": true
+        },
+        {
+            "question": "for age is beyond 68 but months in jail is less than 162 and not man, what are the nine most important features for the model's predictions?",
+            "expected": "filter age greater than 68 and filter monthsinjail less than 162 and man false and important topk 9 [e]",
+            "predicted": "filter age greater than 68 and filter monthsinjail less than 162 and man false and important topk 9 [e]",
+            "match": true
+        },
+        {
+            "question": "what are some mistakes on months in jail is beyond 162 but number of prior crimes is less than 17 and not man that the model makes",
+            "expected": "filter monthsinjail greater than 162 and filter numberofpriorcrimes less than 17 and man false and mistake sample [e]",
+            "predicted": "filter monthsinjail greater than 162 and filter numberofpriorcrimes less than 17 and man false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "for data where age equal to or below 47, what is the statistics of rec i diva ted?",
+            "expected": "filter age less equal than 47 and statistic recidivated [e]",
+            "predicted": "filter age less equal than 47 and statistic recidivated [e]",
+            "match": true
+        },
+        {
+            "question": "what's the sensitivity on id, rec i diva ted, black are all true, but woman is not true?",
+            "expected": "filter id true and filter recidivated true and filter black true and filter woman false and score sensitivity [e]",
+            "predicted": "filter id true and filter recidivated true and filter black true and filter woman false and score sensitivity [e]",
+            "match": true
+        },
+        {
+            "question": "what's the function of this? what's the data?",
+            "expected": "function and data [e]",
+            "predicted": "function and data [e]",
+            "match": true
+        },
+        {
+            "question": "what set of reasoning do you use to determine if woman where number of prior crimes is of 17 are likely to commit a crime?",
+            "expected": "filter woman true and filter numberofpriorcrimes equal to 17 and explain features [e]",
+            "predicted": "filter woman true and filter numberofpriorcrimes equal to 17 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "show me instances that are months in jail is beyond 162 but age is less than 47 and not man",
+            "expected": "filter monthsinjail greater than 162 and filter age less than 47 and man false and show [e]",
+            "predicted": "filter monthsinjail greater than 162 and filter age less than 47 and man false and show [e]",
+            "match": true
+        },
+        {
+            "question": "what are the data labels for woman, rec i diva ted, man are all true, but misdemeanor is not true",
+            "expected": "filter woman true and filter recidivated true and filter man true and filter misdemeanor false and label [e]",
+            "predicted": "filter woman true and filter recidivated true and filter man true and filter misdemeanor false and label [e]",
+            "match": true
+        },
+        {
+            "question": "what's the specificity on misdemeanor, rec i diva ted, felony are all true, but woman is not true?",
+            "expected": "filter misdemeanor true and filter recidivated true and filter felony true and filter woman false and score specificity [e]",
+            "predicted": "filter misdemeanor true and filter recidivated true and filter felony true and filter woman false and score specificity [e]",
+            "match": true
+        },
+        {
+            "question": "could you let me know why you predicted number of prior crimes is beyond 9 but months in jail is less than 11 and not misdemeanor?",
+            "expected": "filter numberofpriorcrimes greater than 9 and filter monthsinjail less than 11 and misdemeanor false and explain features [e]",
+            "predicted": "filter numberofpriorcrimes greater than 9 and filter monthsinjail less than 11 and misdemeanor false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "for data where black where months in jail is of 11, what is the statistics of rec i diva ted?",
+            "expected": "filter black true and filter monthsinjail equal to 11 and statistic recidivated [e]",
+            "predicted": "filter black true and filter monthsinjail equal to 11 and statistic recidivated [e]",
+            "match": true
+        },
+        {
+            "question": "what's the negative predictive value on woman, black, man are all true, but rec i diva ted is not true?",
+            "expected": "filter woman true and filter black true and filter man true and filter recidivated false and score npv [e]",
+            "predicted": "filter woman true and filter black true and filter man true and filter recidivated false and score npv [e]",
+            "match": true
+        },
+        {
+            "question": "what are the labels for misdemeanor, rec i diva ted, felony are all true, but id is not true",
+            "expected": "filter misdemeanor true and filter recidivated true and filter felony true and filter id false and label [e]",
+            "predicted": "filter misdemeanor true and filter recidivated true and filter felony true and filter id false and label [e]",
+            "match": true
+        },
+        {
+            "question": "what does the model predict for number of prior crimes upper than 17?",
+            "expected": "filter numberofpriorcrimes greater than 17 and predict [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what's the accuracy performance of the model on the training data for individuals with number of prior crimes above 17",
+            "expected": "filter numberofpriorcrimes greater than 17 and score accuracy [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and score accuracy [e]",
+            "match": true
+        },
+        {
+            "question": "what's the positive predictive value on black, misdemeanor, id are all true, but felony is not true?",
+            "expected": "filter black true and filter misdemeanor true and filter id true and filter felony false and score ppv [e]",
+            "predicted": "filter black true and filter misdemeanor true and filter id true and filter felony false and score ppv [e]",
+            "match": true
+        },
+        {
+            "question": "how likely is it that months in jail less than 11 and age equal to 68 but not misdemeanor is predicted as likely to commit a crime by the model?",
+            "expected": "filter monthsinjail less than 11 and filter age equal to 68 and filter misdemeanor false and likelihood [e]",
+            "predicted": "filter monthsinjail less than 11 and filter age equal to 68 and filter misdemeanor false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "months in jail is beyond 11 but number of prior crimes is less than 17 and not misdemeanor show faulty predictions",
+            "expected": "filter monthsinjail greater than 11 and filter numberofpriorcrimes less than 17 and misdemeanor false and mistake sample [e]",
+            "predicted": "filter monthsinjail greater than 11 and filter numberofpriorcrimes less than 17 and misdemeanor false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "show me the prediction probabilities for number of prior crimes is beyond 17 but months in jail is less than 162 and not woman",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 162 and woman false and likelihood [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 162 and woman false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "for age is beyond 68 but months in jail is less than 11 and not misdemeanor, what are the ground truth labels",
+            "expected": "filter age greater than 68 and filter monthsinjail less than 11 and misdemeanor false and label [e]",
+            "predicted": "filter age greater than 68 and filter monthsinjail less than 11 and misdemeanor false and label [e]",
+            "match": true
+        },
+        {
+            "question": "what's the npv on man where age is of 47?",
+            "expected": "filter man true and filter age equal to 47 and score npv [e]",
+            "predicted": "filter man true and filter age equal to 47 and score npv [e]",
+            "match": true
+        },
+        {
+            "question": "is age or number of prior crimes more important in determining whether people with more than 68 in x will unlikely to commit a crime?",
+            "expected": "filter x greater than 10000 and important age and important numberofpriorcrimes [e]",
+            "predicted": "filter x greater than 10000 and important age and important numberofpriorcrimes [e]",
+            "match": true
+        },
+        {
+            "question": "if people with number of prior crimes older than 17 and months in jail younger than 162 were to have number of prior crimes increased by 17, what would the top 5 most important features be?",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 162 and change numberofpriorcrimes increase 17 and important topk 5 [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 162 and change numberofpriorcrimes increase 17 and important topk 5 [e]",
+            "match": true
+        },
+        {
+            "question": "what's the most important feature for the model predicting rec i diva ted, woman, id are all true, but black is not true?",
+            "expected": "filter recidivated true and filter woman true and filter id true and filter black false and important topk 1 [e]",
+            "predicted": "filter recidivated true and filter woman true and filter id true and filter black false and important topk 1 [e]",
+            "match": true
+        },
+        {
+            "question": "does the model predict felony, misdemeanor, black are all true, but woman is not true correctly?",
+            "expected": "filter felony true and filter misdemeanor true and filter black true and filter woman false and mistake sample [e]",
+            "predicted": "filter felony true and filter misdemeanor true and filter black true and filter woman false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "let's say that age were 68 greater. how would the feature importances for number of prior crimes and months in jail compare?",
+            "expected": "change age increase 68 and important numberofpriorcrimes and important monthsinjail [e]",
+            "predicted": "change age increase 68 and important numberofpriorcrimes and important monthsinjail [e]",
+            "match": true
+        },
+        {
+            "question": "tell me how many instances in the data have age is beyond 47 but months in jail is less than 11 and not woman",
+            "expected": "filter age greater than 47 and filter monthsinjail less than 11 and woman false and countdata [e]",
+            "predicted": "filter age greater than 47 and filter monthsinjail less than 11 and woman false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "display the predictions of woman and id with age less than or equal to 47",
+            "expected": "filter woman true and filter id true and filter age less than or equal to 47 and predict [e]",
+            "predicted": "filter woman true and filter id true and filter age less than or equal to 47 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "for woman, misdemeanor, rec i diva ted are all true, but black is not true, could you show me the data?",
+            "expected": "filter woman true and filter misdemeanor true and filter recidivated true and filter black false and show [e]",
+            "predicted": "filter woman true and filter misdemeanor true and filter recidivated true and filter black false and show [e]",
+            "match": true
+        },
+        {
+            "question": "black, woman, man are all true, but id is not true sample mistakes",
+            "expected": "filter black true and filter woman true and filter man true and filter id false and mistake sample [e]",
+            "predicted": "filter black true and filter woman true and filter man true and filter id false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "what are some mistakes on rec i diva ted, woman, misdemeanor are all true, but man is not true that the model makes",
+            "expected": "filter recidivated true and filter woman true and filter misdemeanor true and filter man false and mistake sample [e]",
+            "predicted": "filter recidivated true and filter woman true and filter misdemeanor true and filter man false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "explain the predictions of woman and rec i diva ted with months in jail greater than or equal to 162",
+            "expected": "filter woman true and filter recidivated true and filter monthsinjail greater equal than 162 and explain features [e]",
+            "predicted": "filter woman true and filter recidivated true and filter monthsinjail greater equal than 162 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the secondary feature interactions for instances that have a woman or that have exactly 68 age?",
+            "expected": "filter woman true or filter age equal to 68 and interact [e]",
+            "predicted": "filter woman true or filter age equal to 68 and interact [e]",
+            "match": true
+        },
+        {
+            "question": "what set of factors do you leverage on number of prior crimes is not greater than 9 to figure out if these people are unlikely to commit a crime?",
+            "expected": "filter numberofpriorcrimes less equal than 9 and explain features [e]",
+            "predicted": "filter numberofpriorcrimes less equal than 9 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the ground truth labels in the data for man, rec i diva ted, misdemeanor are all true, but id is not true",
+            "expected": "filter man true and filter recidivated true and filter misdemeanor true and filter id false and label [e]",
+            "predicted": "filter man true and filter recidivated true and filter misdemeanor true and filter id false and label [e]",
+            "match": true
+        },
+        {
+            "question": "how do you figure out if someone who is a number of prior crimes is beyond 9 but age is less than 47 and not rec i diva ted will be likely to commit a crime?",
+            "expected": "filter numberofpriorcrimes greater than 9 and filter age less than 47 and recidivated false and explain features [e]",
+            "predicted": "filter numberofpriorcrimes greater than 9 and filter age less than 47 and recidivated false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "months in jail is beyond 11 but number of prior crimes is less than 17 and not misdemeanor show bad predictions",
+            "expected": "filter monthsinjail greater than 11 and filter numberofpriorcrimes less than 17 and misdemeanor false and mistake sample [e]",
+            "predicted": "filter monthsinjail greater than 11 and filter numberofpriorcrimes less than 17 and misdemeanor false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "reveal the predictions of black or man with age greater than or equal to 47",
+            "expected": "filter black true or filter man true and filter age greater equal than 47 and predict [e]",
+            "predicted": "filter black true or filter man true and filter age greater equal than 47 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what are the model predictions for woman that have 17 number of prior crimes?",
+            "expected": "filter woman true and filter numberofpriorcrimes equal to 17 and predict [e]",
+            "predicted": "filter woman true and filter numberofpriorcrimes equal to 17 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what does the model predict for number of prior crimes is beyond 9 but age is less than 68 and not id?",
+            "expected": "filter numberofpriorcrimes greater than 9 and filter age less than 68 and id false and predict [e]",
+            "predicted": "filter numberofpriorcrimes greater than 9 and filter age less than 68 and id false and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what aspects of the data do you consider when reasoning about months in jail is beyond 11 but age is less than 68 and not felony to make decisions",
+            "expected": "filter monthsinjail greater than 11 and filter age less than 68 and felony false and explain features [e]",
+            "predicted": "filter monthsinjail greater than 11 and filter age less than 68 and felony false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "how about felony, woman, black are all true, but id is not true",
+            "expected": "filter felony true and filter woman true and filter black true and filter id false and previousoperation [e]",
+            "predicted": "filter felony true and filter woman true and filter black true and filter id false and previousoperation [e]",
+            "match": true
+        },
+        {
+            "question": "if months in jail is decreased by 162 for {filer_text}, what would the model predict?",
+            "expected": "filter id true and filter man true and filter felony true and filter black false and change monthsinjail increase 162 and predict [e]",
+            "predicted": "filter recidivated true and filter woman true and filter felony true and filter misdemeanor false and change monthsinjail increase 162 and predict [e]",
+            "match": false
+        },
+        {
+            "question": "what are the class probabilities on your predictions for age is beyond 68 but months in jail is less than 162 and not misdemeanor?",
+            "expected": "filter age greater than 68 and filter monthsinjail less than 162 and misdemeanor false and likelihood [e]",
+            "predicted": "filter age greater than 68 and filter monthsinjail less than 162 and misdemeanor false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "how many people are man where months in jail is of 11",
+            "expected": "filter man true and filter monthsinjail equal to 11 and countdata [e]",
+            "predicted": "filter man true and filter monthsinjail equal to 11 and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "what's the positive predictive value on age is beyond 47 but months in jail is less than 11 and not rec i diva ted?",
+            "expected": "filter age greater than 47 and filter monthsinjail less than 11 and recidivated false and score ppv [e]",
+            "predicted": "filter age greater than 47 and filter monthsinjail less than 11 and recidivated false and score ppv [e]",
+            "match": true
+        },
+        {
+            "question": "what is the motivation for figuring out if black are to be predicted unlikely to commit a crime?",
+            "expected": "filter black true and explain features [e]",
+            "predicted": "filter black true and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "in what ways do features interact with each other for the model's predictions on instances that have a felony or that do not have 9 number of prior crimes?",
+            "expected": "filter felony true or filter numberofpriorcrimes not equal to 9 and interact [e]",
+            "predicted": "filter felony true or filter numberofpriorcrimes not equal to 9 and interact [e]",
+            "match": true
+        },
+        {
+            "question": "what are the most important features in the data when reasoning about woman, rec i diva ted, man are all true, but black is not true to make decisions?",
+            "expected": "filter woman true and filter recidivated true and filter man true and filter black false and important all [e]",
+            "predicted": "filter woman true and filter recidivated true and filter man true and filter black false and important all [e]",
+            "match": true
+        },
+        {
+            "question": "reveal the predictions of black and felony with number of prior crimes greater than or equal to 9",
+            "expected": "filter black true and filter felony true and filter numberofpriorcrimes greater equal than 9 and predict [e]",
+            "predicted": "filter black true and filter felony true and filter numberofpriorcrimes greater equal than 9 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "for number of prior crimes is beyond 17 but months in jail is less than 162 and not rec i diva ted, how many instances in the data are there?",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 162 and recidivated false and countdata [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 162 and recidivated false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "what's your motivation for deciding the predictions of misdemeanor, man, black are all true, but felony is not true",
+            "expected": "filter misdemeanor true and filter man true and filter black true and filter felony false and explain features [e]",
+            "predicted": "filter misdemeanor true and filter man true and filter black true and filter felony false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what's the positive predictive value on months in jail is not less than 162?",
+            "expected": "filter monthsinjail greater equal than 162 and score ppv [e]",
+            "predicted": "filter monthsinjail greater equal than 162 and score ppv [e]",
+            "match": true
+        },
+        {
+            "question": "in what was would the predictions be altered if it were the case that those with age of 47 had number of prior crimes decreased by 9?",
+            "expected": "filter age equal to 47 and change {num_feautres} decrease 9 and predict [e]",
+            "predicted": "filter age equal to 47 and change num_feautres decrease 9 and predict [e]",
+            "match": false
+        },
+        {
+            "question": "how do you decide whether felony, id, woman are all true, but misdemeanor is not true will be likely to commit a crime",
+            "expected": "filter felony true and filter id true and filter woman true and filter misdemeanor false and explain features [e]",
+            "predicted": "filter felony true and filter id true and filter woman true and filter misdemeanor false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "display the predictions of misdemeanor and rec i diva ted with months in jail less than or equal to 11",
+            "expected": "filter misdemeanor true and filter recidivated true and filter monthsinjail less than or equal to 11 and predict [e]",
+            "predicted": "filter misdemeanor true and filter recidivated true and filter monthsinjail less than or equal to 11 and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what's the npv on felony, man, rec i diva ted are all true, but woman is not true?",
+            "expected": "filter felony true and filter man true and filter recidivated true and filter woman false and score npv [e]",
+            "predicted": "filter felony true and filter man true and filter recidivated true and filter woman false and score npv [e]",
+            "match": true
+        },
+        {
+            "question": "could you tell me the precision on the training data for months in jail is beyond 162 but number of prior crimes is less than 17 and not id",
+            "expected": "filter monthsinjail greater than 162 and filter numberofpriorcrimes less than 17 and id false and score precision [e]",
+            "predicted": "filter monthsinjail greater than 162 and filter numberofpriorcrimes less than 17 and id false and score precision [e]",
+            "match": true
+        },
+        {
+            "question": "just on instances where age is beyond 47 but number of prior crimes is less than 9 and not man, show me the labels?",
+            "expected": "filter age greater than 47 and filter numberofpriorcrimes less than 9 and man false and label [e]",
+            "predicted": "filter age greater than 47 and filter numberofpriorcrimes less than 9 and man false and label [e]",
+            "match": true
+        },
+        {
+            "question": "for months in jail older than 162 and age younger than 68, what are the nine most important features for the model's predictions?",
+            "expected": "filter monthsinjail greater than 162 and filter age less than 68 and important topk 9 [e]",
+            "predicted": "filter monthsinjail greater than 162 and filter age less than 68 and important topk 9 [e]",
+            "match": true
+        },
+        {
+            "question": "could you inform me how you reasoned about people in the data where rec i diva ted, man, felony are all true, but misdemeanor is not true",
+            "expected": "filter recidivated true and filter man true and filter felony true and filter misdemeanor false and explain features [e]",
+            "predicted": "filter recidivated true and filter man true and filter felony true and filter misdemeanor false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "could you inform me how you reasoned about people in the data where number of prior crimes is beyond 17 but age is less than 68 and not misdemeanor",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter age less than 68 and misdemeanor false and explain features [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter age less than 68 and misdemeanor false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are some mistakes on rec i diva ted, id, man are all true, but black is not true that the model makes",
+            "expected": "filter recidivated true and filter id true and filter man true and filter black false and mistake sample [e]",
+            "predicted": "filter recidivated true and filter id true and filter man true and filter black false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "please show the most important feature for the predictions",
+            "expected": "important topk 1 [e]",
+            "predicted": "important topk 1 [e]",
+            "match": true
+        },
+        {
+            "question": "what are the 3 most important features in the data when reasoning about months in jail less than 11 to make decisions?",
+            "expected": "filter monthsinjail less than 11 and important topk 3 [e]",
+            "predicted": "filter monthsinjail less than 11 and important topk 3 [e]",
+            "match": true
+        },
+        {
+            "question": "for number of prior crimes the same or more than 17, please help me understand your reasoning process",
+            "expected": "filter numberofpriorcrimes greater equal than 17 and explain features [e]",
+            "predicted": "filter numberofpriorcrimes greater equal than 17 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "number of prior crimes the same or more than 9 sample mistakes",
+            "expected": "filter numberofpriorcrimes greater equal than 9 and mistake sample [e]",
+            "predicted": "filter numberofpriorcrimes greater equal than 9 and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "just on instances where number of prior crimes is beyond 17 but months in jail is less than 162 and not woman, show me the gold labels?",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 162 and woman false and label [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 162 and woman false and label [e]",
+            "match": true
+        },
+        {
+            "question": "what data points does the model typically predict wrongly on people with misdemeanor, rec i diva ted, man are all true, but woman is not true?",
+            "expected": "filter misdemeanor true and filter recidivated true and filter man true and filter woman false and mistake typical [e]",
+            "predicted": "filter misdemeanor true and filter recidivated true and filter man true and filter woman false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "rec i diva ted, black, id are all true, but man is not true return incorrect predictions",
+            "expected": "filter recidivated true and filter black true and filter id true and filter man false and mistake sample [e]",
+            "predicted": "filter recidivated true and filter black true and filter id true and filter man false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "for rec i diva ted where number of prior crimes is of 17, what is the distribution of misdemeanor?",
+            "expected": "filter recidivated true and filter numberofpriorcrimes equal to 17 and statistic misdemeanor [e]",
+            "predicted": "filter recidivated true and filter numberofpriorcrimes equal to 17 and statistic misdemeanor [e]",
+            "match": true
+        },
+        {
+            "question": "what's the specificity on age is beyond 68 but number of prior crimes is less than 17 and not man?",
+            "expected": "filter age greater than 68 and filter numberofpriorcrimes less than 17 and man false and score specificity [e]",
+            "predicted": "filter age greater than 68 and filter numberofpriorcrimes less than 17 and man false and score specificity [e]",
+            "match": true
+        },
+        {
+            "question": "how about age is beyond 47 but number of prior crimes is less than 9 and not felony",
+            "expected": "filter age greater than 47 and filter numberofpriorcrimes less than 9 and felony false and previousoperation [e]",
+            "predicted": "filter age greater than 47 and filter numberofpriorcrimes less than 9 and felony false and previousoperation [e]",
+            "match": true
+        },
+        {
+            "question": "what's the sensitivity on black, id, rec i diva ted are all true, but man is not true?",
+            "expected": "filter black true and filter id true and filter recidivated true and filter man false and score sensitivity [e]",
+            "predicted": "filter black true and filter id true and filter recidivated true and filter man false and score sensitivity [e]",
+            "match": true
+        },
+        {
+            "question": "what set of factors do you leverage on woman, id, black are all true, but man is not true to figure out if these people are likely to commit a crime?",
+            "expected": "filter woman true and filter id true and filter black true and filter man false and explain features [e]",
+            "predicted": "filter woman true and filter id true and filter black true and filter man false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are the labels for number of prior crimes not equal to 17",
+            "expected": "filter numberofpriorcrimes not equal to 17 and label [e]",
+            "predicted": "filter numberofpriorcrimes not equal to 17 and label [e]",
+            "match": true
+        },
+        {
+            "question": "where black, misdemeanor, id are all true, but man is not true, show the distribution of rec i diva ted?",
+            "expected": "filter black true and filter misdemeanor true and filter id true and filter man false and statistic recidivated [e]",
+            "predicted": "filter black true and filter misdemeanor true and filter id true and filter man false and statistic recidivated [e]",
+            "match": true
+        },
+        {
+            "question": "could you show me data with a number of prior crimes of 9 and tell me what the model predictions are?",
+            "expected": "filter numberofpriorcrimes equal to 9 and show and predict [e]",
+            "predicted": "filter numberofpriorcrimes equal to 9 and show and predict [e]",
+            "match": true
+        },
+        {
+            "question": "what's the positive predictive value on age is beyond 47 but number of prior crimes is less than 9 and not misdemeanor?",
+            "expected": "filter age greater than 47 and filter numberofpriorcrimes less than 9 and misdemeanor false and score ppv [e]",
+            "predicted": "filter age greater than 47 and filter numberofpriorcrimes less than 9 and misdemeanor false and score ppv [e]",
+            "match": true
+        },
+        {
+            "question": "for felony, man, rec i diva ted are all true, but id is not true, could you show me the data?",
+            "expected": "filter felony true and filter man true and filter recidivated true and filter id false and show [e]",
+            "predicted": "filter felony true and filter man true and filter recidivated true and filter id false and show [e]",
+            "match": true
+        },
+        {
+            "question": "just on instances where number of prior crimes is beyond 17 but months in jail is less than 11 and not misdemeanor, show me the gold labels?",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 11 and misdemeanor false and label [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 11 and misdemeanor false and label [e]",
+            "match": true
+        },
+        {
+            "question": "what's the negative predictive value on number of prior crimes is beyond 17 but age is less than 47 and not rec i diva ted?",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter age less than 47 and recidivated false and score npv [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter age less than 47 and recidivated false and score npv [e]",
+            "match": true
+        },
+        {
+            "question": "what set of factors do you take into consideration when determining if id 78 are likely to commit a crime",
+            "expected": "filter id 78 and explain features [e]",
+            "predicted": "filter id 78 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "how likely is it that woman are predicted as likely to commit a crime?",
+            "expected": "filter woman true and likelihood [e]",
+            "predicted": "filter woman true and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "what's the negative predictive value on number of prior crimes above 9?",
+            "expected": "filter numberofpriorcrimes greater than 9 and score npv [e]",
+            "predicted": "filter numberofpriorcrimes greater than 9 and score npv [e]",
+            "match": true
+        },
+        {
+            "question": "what's the testing accuracy for people black, man, rec i diva ted are all true, but misdemeanor is not true",
+            "expected": "filter black true and filter man true and filter recidivated true and filter misdemeanor false and score accuracy [e]",
+            "predicted": "filter black true and filter man true and filter recidivated true and filter misdemeanor false and score accuracy [e]",
+            "match": true
+        },
+        {
+            "question": "does the model predict woman, black, id are all true, but misdemeanor is not true correctly?",
+            "expected": "filter woman true and filter black true and filter id true and filter misdemeanor false and mistake sample [e]",
+            "predicted": "filter woman true and filter black true and filter id true and filter misdemeanor false and mistake sample [e]",
+            "match": true
+        },
+        {
+            "question": "i want to better understand your reasoning on data with man, felony, rec i diva ted are all true, but black is not true",
+            "expected": "filter man true and filter felony true and filter recidivated true and filter black false and explain features [e]",
+            "predicted": "filter man true and filter felony true and filter recidivated true and filter black false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what are some common mistakes you make when predicting misdemeanor where age is of 68?",
+            "expected": "filter misdemeanor true and filter age equal to 68 and mistake typical [e]",
+            "predicted": "filter misdemeanor true and filter age equal to 68 and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "what's the sensitivity on misdemeanor, rec i diva ted, man are all true, but woman is not true?",
+            "expected": "filter misdemeanor true and filter recidivated true and filter man true and filter woman false and score sensitivity [e]",
+            "predicted": "filter misdemeanor true and filter recidivated true and filter man true and filter woman false and score sensitivity [e]",
+            "match": true
+        },
+        {
+            "question": "how do you decide whether number of prior crimes is beyond 17 but age is less than 47 and not woman will be unlikely to commit a crime",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter age less than 47 and woman false and explain features [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter age less than 47 and woman false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what's the most important feature for the model predicting woman, id, rec i diva ted are all true, but felony is not true?",
+            "expected": "filter woman true and filter id true and filter recidivated true and filter felony false and important topk 1 [e]",
+            "predicted": "filter woman true and filter id true and filter recidivated true and filter felony false and important topk 1 [e]",
+            "match": true
+        },
+        {
+            "question": "what data points does the model typically predict wrongly on people with number of prior crimes exceeds 17?",
+            "expected": "filter numberofpriorcrimes greater than 17 and mistake typical [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "what's the testing accuracy for people months in jail is beyond 11 but age is less than 68 and not rec i diva ted",
+            "expected": "filter monthsinjail greater than 11 and filter age less than 68 and recidivated false and score accuracy [e]",
+            "predicted": "filter monthsinjail greater than 11 and filter age less than 68 and recidivated false and score accuracy [e]",
+            "match": true
+        },
+        {
+            "question": "just on instances where months in jail is beyond 162 but number of prior crimes is less than 17 and not man, show me the labels?",
+            "expected": "filter monthsinjail greater than 162 and filter numberofpriorcrimes less than 17 and man false and label [e]",
+            "predicted": "filter monthsinjail greater than 162 and filter numberofpriorcrimes less than 17 and man false and label [e]",
+            "match": true
+        },
+        {
+            "question": "for months in jail is beyond 162 but number of prior crimes is less than 9 and not woman, what is the distribution of the label?",
+            "expected": "filter monthsinjail greater than 162 and filter numberofpriorcrimes less than 9 and woman false and statistic target [e]",
+            "predicted": "filter monthsinjail greater than 162 and filter numberofpriorcrimes less than 9 and woman false and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "for rec i diva ted, man, id are all true, but felony is not true, what is the distribution of the labels?",
+            "expected": "filter recidivated true and filter man true and filter id true and filter felony false and statistic target [e]",
+            "predicted": "filter recidivated true and filter man true and filter id true and filter felony false and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "can you provide me with reasoning for the model's predictions on rec i diva ted, id, felony are all true, but misdemeanor is not true?",
+            "expected": "filter recidivated true and filter id true and filter felony true and filter misdemeanor false and explain features [e]",
+            "predicted": "filter recidivated true and filter id true and filter felony true and filter misdemeanor false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what's the statistics of number of prior crimes for data where number of prior crimes more than 17?",
+            "expected": "filter numberofpriorcrimes greater than 17 and statistic numberofpriorcrimes [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and statistic numberofpriorcrimes [e]",
+            "match": true
+        },
+        {
+            "question": "what's the testing accuracy for people the model predicts likely to commit a crime but whose ground truth label is unlikely to commit a crime",
+            "expected": "predictionfilter 0 and labelfilter 1 and score accuracy [e]",
+            "predicted": "predictionfilter 0 and labelfilter 1 and score accuracy [e]",
+            "match": true
+        },
+        {
+            "question": "what are the class probabilities on your predictions for misdemeanor, felony, woman are all true, but id is not true?",
+            "expected": "filter misdemeanor true and filter felony true and filter woman true and filter id false and likelihood [e]",
+            "predicted": "filter misdemeanor true and filter felony true and filter woman true and filter id false and likelihood [e]",
+            "match": true
+        },
+        {
+            "question": "let's say that number of prior crimes were 9 greater. how would the feature importances for age and months in jail compare?",
+            "expected": "change numberofpriorcrimes increase 9 and important age and important monthsinjail [e]",
+            "predicted": "change numberofpriorcrimes increase 9 and important age and important monthsinjail [e]",
+            "match": true
+        },
+        {
+            "question": "for number of prior crimes is beyond 17 but months in jail is less than 11 and not woman, what are the ground truth labels",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 11 and woman false and label [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter monthsinjail less than 11 and woman false and label [e]",
+            "match": true
+        },
+        {
+            "question": "how many people are age is beyond 68 but number of prior crimes is less than 9 and not man",
+            "expected": "filter age greater than 68 and filter numberofpriorcrimes less than 9 and man false and countdata [e]",
+            "predicted": "filter age greater than 68 and filter numberofpriorcrimes less than 9 and man false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "what set of factors do you take into consideration when determining if number of prior crimes is equal to but not greater than 9 are unlikely to commit a crime",
+            "expected": "filter numberofpriorcrimes less equal than 9 and explain features [e]",
+            "predicted": "filter numberofpriorcrimes less equal than 9 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "in the model's predictions, what are the top 10 most important features if somebody decreases feature months in jail by 35?",
+            "expected": "change monthsinjail decrease 35 and important topk 10 [e]",
+            "predicted": "change monthsinjail decrease 35 and important topk 10 [e]",
+            "match": true
+        },
+        {
+            "question": "for months in jail older than 11 and number of prior crimes younger than 9, how well, in terms of accuracy, does the model do on the training and test data",
+            "expected": "filter monthsinjail greater than 11 and filter numberofpriorcrimes less than 9 and score accuracy and score accuracy [e]",
+            "predicted": "filter monthsinjail greater than 11 and filter numberofpriorcrimes less than 9 and score accuracy and score accuracy [e]",
+            "match": true
+        },
+        {
+            "question": "just on instances where age is beyond 68 but number of prior crimes is less than 17 and not man, show me the gold labels?",
+            "expected": "filter age greater than 68 and filter numberofpriorcrimes less than 17 and man false and label [e]",
+            "predicted": "filter age greater than 68 and filter numberofpriorcrimes less than 17 and man false and label [e]",
+            "match": true
+        },
+        {
+            "question": "could you inform me how you reasoned about people in the data where age equal to or below 68",
+            "expected": "filter age less equal than 68 and explain features [e]",
+            "predicted": "filter age less equal than 68 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "where age is beyond 68 but number of prior crimes is less than 9 and not id, show the distribution of the ground truth values?",
+            "expected": "filter age greater than 68 and filter numberofpriorcrimes less than 9 and id false and statistic target [e]",
+            "predicted": "filter age greater than 68 and filter numberofpriorcrimes less than 9 and id false and statistic target [e]",
+            "match": true
+        },
+        {
+            "question": "how many people are number of prior crimes is beyond 9 but age is less than 47 and not id",
+            "expected": "filter numberofpriorcrimes greater than 9 and filter age less than 47 and id false and countdata [e]",
+            "predicted": "filter numberofpriorcrimes greater than 9 and filter age less than 47 and id false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "for people with a number of prior crimes over 9 is age less important than months in jail",
+            "expected": "filter numberofpriorcrimes greater than 9 and important age and important monthsinjail [e]",
+            "predicted": "filter numberofpriorcrimes greater than 9 and important age and important monthsinjail [e]",
+            "match": true
+        },
+        {
+            "question": "if number of prior crimes is increased by 17 for {filer_text}, what would the model predict?",
+            "expected": "filter age greater than 47 and filter monthsinjail less than 11 and black false and change numberofpriorcrimes increase 17 and predict [e]",
+            "predicted": "filter recidivated true and filter woman true and filter felony true and filter misdemeanor false and change numberofpriorcrimes increase 17 and predict [e]",
+            "match": false
+        },
+        {
+            "question": "what's the npv on months in jail is beyond 11 but age is less than 47 and not felony?",
+            "expected": "filter monthsinjail greater than 11 and filter age less than 47 and felony false and score npv [e]",
+            "predicted": "filter monthsinjail greater than 11 and filter age less than 47 and felony false and score npv [e]",
+            "match": true
+        },
+        {
+            "question": "what data points does the model typically predict wrongly on people with age is beyond 47 but months in jail is less than 162 and not rec i diva ted?",
+            "expected": "filter age greater than 47 and filter monthsinjail less than 162 and recidivated false and mistake typical [e]",
+            "predicted": "filter age greater than 47 and filter monthsinjail less than 162 and recidivated false and mistake typical [e]",
+            "match": true
+        },
+        {
+            "question": "what's the number of woman, black, rec i diva ted are all true, but man is not true people",
+            "expected": "filter woman true and filter black true and filter recidivated true and filter man false and countdata [e]",
+            "predicted": "filter woman true and filter black true and filter recidivated true and filter man false and countdata [e]",
+            "match": true
+        },
+        {
+            "question": "in those situations where months in jail is not greater than 11, what are the strategies you use to figure out if the correct prediction is likely to commit a crime",
+            "expected": "filter monthsinjail less equal than 11 and explain features [e]",
+            "predicted": "filter monthsinjail less equal than 11 and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "what set of factors do you take into consideration when determining if number of prior crimes is beyond 17 but age is less than 68 and not misdemeanor are unlikely to commit a crime",
+            "expected": "filter numberofpriorcrimes greater than 17 and filter age less than 68 and misdemeanor false and explain features [e]",
+            "predicted": "filter numberofpriorcrimes greater than 17 and filter age less than 68 and misdemeanor false and explain features [e]",
+            "match": true
+        },
+        {
+            "question": "could you tell me the precision on the training data for number of prior crimes is beyond 9 but age is less than 47 and not woman",
+            "expected": "filter numberofpriorcrimes greater than 9 and filter age less than 47 and woman false and score precision [e]",
+            "predicted": "filter numberofpriorcrimes greater than 9 and filter age less than 47 and woman false and score precision [e]",
+            "match": true
+        }
+    ]
+}

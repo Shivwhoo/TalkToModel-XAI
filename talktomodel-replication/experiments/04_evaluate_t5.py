@@ -6,11 +6,13 @@ import pandas as pd
 import torch
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 from sklearn.model_selection import train_test_split
+from tqdm import tqdm
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", type=str, required=True, help="Name of the dataset (e.g., diabetes)")
     parser.add_argument("--model", type=str, required=True, help="Hugging Face model ID (e.g., ucinlp/diabetes-t5-small)")
+    parser.add_argument("--limit", type=int, default=None, help="Limit the number of examples to evaluate for faster processing")
     args = parser.parse_args()
 
     os.makedirs("results", exist_ok=True)
@@ -47,12 +49,17 @@ def main():
     questions = test_df["natural_language"].astype(str).tolist()
     expected = test_df["parsed_utterance"].astype(str).str.lower().tolist()
 
+    if args.limit:
+        questions = questions[:args.limit]
+        expected = expected[:args.limit]
+        print(f"Limiting evaluation to {args.limit} examples.")
+
     inputs = [instruction + q for q in questions]
     predictions = []
     batch_size = 16
 
     print("Running inference...")
-    for start in range(0, len(inputs), batch_size):
+    for start in tqdm(range(0, len(inputs), batch_size), desc="Inference Batches"):
         batch = inputs[start:start + batch_size]
         encoded = tokenizer(batch, max_length=128, padding="max_length", truncation=True, return_tensors="pt")
         input_ids = encoded["input_ids"].to(device)
