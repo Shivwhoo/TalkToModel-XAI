@@ -1,2 +1,2 @@
-models/diabetes-t5-small/model.safetensors
-models/diabetes-t5-small/pytorch_model.bin
+models/**/model.safetensors
+models/**/pytorch_model.bin

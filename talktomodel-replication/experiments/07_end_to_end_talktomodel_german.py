@@ -16,7 +16,7 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", type=str, default="diabetes", help="Dataset name")
+    parser.add_argument("--dataset", type=str, default="german", help="Dataset name")
     args = parser.parse_args()
     dataset_name = args.dataset
 

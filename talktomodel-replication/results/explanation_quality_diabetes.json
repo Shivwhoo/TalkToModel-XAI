@@ -1,0 +1,306 @@
+{
+    "mean_top3_overlap": 0.5833333333333333,
+    "mean_spearman_corr": 0.3642857142857143,
+    "details": [
+        {
+            "patient_id": 288,
+            "shap_top_3": [
+                "BMI",
+                "Glucose",
+                "DiabetesPedigreeFunction"
+            ],
+            "lime_top_3": [
+                "DiabetesPedigreeFunction",
+                "Glucose",
+                "BMI"
+            ],
+            "overlap_ratio": 1.0,
+            "spearman_corr": 0.6904761904761906
+        },
+        {
+            "patient_id": 9,
+            "shap_top_3": [
+                "Pregnancies",
+                "Glucose",
+                "Age"
+            ],
+            "lime_top_3": [
+                "BMI",
+                "Glucose",
+                "DiabetesPedigreeFunction"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.023809523809523815
+        },
+        {
+            "patient_id": 57,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "DiabetesPedigreeFunction",
+                "Pregnancies"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.4285714285714286
+        },
+        {
+            "patient_id": 60,
+            "shap_top_3": [
+                "BMI",
+                "Glucose",
+                "DiabetesPedigreeFunction"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "DiabetesPedigreeFunction",
+                "BMI"
+            ],
+            "overlap_ratio": 1.0,
+            "spearman_corr": 0.5476190476190477
+        },
+        {
+            "patient_id": 25,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "BMI",
+                "Age"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.7380952380952381
+        },
+        {
+            "patient_id": 63,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "Pregnancies",
+                "Age",
+                "BloodPressure"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.2380952380952381
+        },
+        {
+            "patient_id": 92,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "DiabetesPedigreeFunction",
+                "Age"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": -0.04761904761904763
+        },
+        {
+            "patient_id": 184,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "Age",
+                "DiabetesPedigreeFunction"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.4047619047619048
+        },
+        {
+            "patient_id": 244,
+            "shap_top_3": [
+                "BMI",
+                "Glucose",
+                "SkinThickness"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "Age",
+                "Pregnancies"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": -0.30952380952380953
+        },
+        {
+            "patient_id": 46,
+            "shap_top_3": [
+                "BMI",
+                "Glucose",
+                "DiabetesPedigreeFunction"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "BMI",
+                "DiabetesPedigreeFunction"
+            ],
+            "overlap_ratio": 1.0,
+            "spearman_corr": 0.7142857142857144
+        },
+        {
+            "patient_id": 75,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "DiabetesPedigreeFunction",
+                "Age"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": -0.2142857142857143
+        },
+        {
+            "patient_id": 163,
+            "shap_top_3": [
+                "BMI",
+                "Glucose",
+                "SkinThickness"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "BMI",
+                "Age"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.4761904761904762
+        },
+        {
+            "patient_id": 294,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "Age",
+                "DiabetesPedigreeFunction"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.3333333333333334
+        },
+        {
+            "patient_id": 305,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "Age",
+                "Pregnancies",
+                "BMI"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.4761904761904762
+        },
+        {
+            "patient_id": 284,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "BMI",
+                "Glucose",
+                "Age"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.4047619047619048
+        },
+        {
+            "patient_id": 289,
+            "shap_top_3": [
+                "BMI",
+                "Glucose",
+                "Insulin"
+            ],
+            "lime_top_3": [
+                "DiabetesPedigreeFunction",
+                "BMI",
+                "Age"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.14285714285714288
+        },
+        {
+            "patient_id": 5,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "Age",
+                "DiabetesPedigreeFunction"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.3571428571428572
+        },
+        {
+            "patient_id": 155,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "BMI",
+                "Pregnancies",
+                "DiabetesPedigreeFunction"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.4285714285714286
+        },
+        {
+            "patient_id": 164,
+            "shap_top_3": [
+                "BMI",
+                "Glucose",
+                "Age"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "BMI",
+                "Age"
+            ],
+            "overlap_ratio": 1.0,
+            "spearman_corr": 0.7380952380952381
+        },
+        {
+            "patient_id": 168,
+            "shap_top_3": [
+                "BMI",
+                "Pregnancies",
+                "Glucose"
+            ],
+            "lime_top_3": [
+                "Glucose",
+                "BMI",
+                "Age"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.7142857142857144
+        }
+    ]
+}

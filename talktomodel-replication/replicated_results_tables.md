@@ -8,23 +8,32 @@ The following tables are automatically generated from the raw JSON results produ
 | :--- | :--- | :--- | :--- | :--- |
 | Diabetes | T5-Small | 66.8% | 97.33% | +30.53% |
 | Diabetes | T5-Base | 73.2% | N/A (Model missing) | - |
+| Diabetes | T5-Small | 50.5% | N/A | N/A |
+| Diabetes | T5-Small | 59.6% | N/A | N/A |
 
 
 ## 2. Explanation Quality (SHAP vs LIME)
 
+### Diabetes
 - **Mean Top-3 Feature Overlap:** 58.33%
 - **Mean Spearman Rank Correlation:** 0.364
+
+### Compas
+- **Mean Top-3 Feature Overlap:** 75.00%
+- **Mean Spearman Rank Correlation:** 0.848
+
+### German
+- **Mean Top-3 Feature Overlap:** 25.00%
+- **Mean Spearman Rank Correlation:** 0.121
 
 
 ## 3. End-to-End Latency
 
-| Question | Mean Latency (s) | Std Dev (s) |
-| :--- | :--- | :--- |
-| explain the feature importance for the patient with id 51 | 0.44s | 0.15s |
-| what is the model prediction for patient 10? | 0.39s | 0.08s |
-| how does age affect the prediction for patient 20? | 0.38s | 0.06s |
-| what would happen if we change glucose to 100 for patient 5? | 0.70s | 0.18s |
-| what are the top 3 features? | 0.33s | 0.07s |
+| Dataset | Question | Mean Latency (s) | Std Dev (s) |
+| :--- | :--- | :--- | :--- |
+| Diabetes | Pending... | N/A | N/A |
+| Compas | Pending... | N/A | N/A |
+| German | Pending... | N/A | N/A |
 
 
 ## 4. User Study Re-Analysis

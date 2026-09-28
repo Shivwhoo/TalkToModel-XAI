@@ -1,0 +1,306 @@
+{
+    "mean_top3_overlap": 0.24999999999999994,
+    "mean_spearman_corr": 0.12085609819078243,
+    "details": [
+        {
+            "patient_id": 95,
+            "shap_top_3": [
+                "LoanAmount",
+                "LoanDuration",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "LoanDuration"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.11589782056908512
+        },
+        {
+            "patient_id": 15,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "LoanDuration",
+                "loanpurposeUsedCar"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.10991104573174167
+        },
+        {
+            "patient_id": 30,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CriticalAccountOrLoansElsewhere"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "LoanDuration"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.10991104573174167
+        },
+        {
+            "patient_id": 158,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CriticalAccountOrLoansElsewhere"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "LoanAmount"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.10852948230773932
+        },
+        {
+            "patient_id": 128,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CriticalAccountOrLoansElsewhere"
+            ],
+            "lime_top_3": [
+                "loanpurposeUsedCar",
+                "NoCurrentLoan",
+                "LoanAmount"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.1076084400250711
+        },
+        {
+            "patient_id": 115,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CriticalAccountOrLoansElsewhere"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "HasCoapplicant"
+            ],
+            "overlap_ratio": 0.0,
+            "spearman_corr": 0.10484531317706641
+        },
+        {
+            "patient_id": 69,
+            "shap_top_3": [
+                "LoanAmount",
+                "LoanDuration",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "LoanDuration"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.1214240742650945
+        },
+        {
+            "patient_id": 170,
+            "shap_top_3": [
+                "LoanAmount",
+                "LoanDuration",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "LoanDuration",
+                "loanpurposeUsedCar"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.2288790072430542
+        },
+        {
+            "patient_id": 174,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CriticalAccountOrLoansElsewhere"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "LoanDuration"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.11896796151131256
+        },
+        {
+            "patient_id": 45,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "LoanDuration"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.14537117361446836
+        },
+        {
+            "patient_id": 66,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CriticalAccountOrLoansElsewhere"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "LoanDuration"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.1522789907344801
+        },
+        {
+            "patient_id": 182,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "LoanDuration",
+                "loanpurposeUsedCar"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.14291506086068645
+        },
+        {
+            "patient_id": 165,
+            "shap_top_3": [
+                "LoanAmount",
+                "LoanDuration",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "LoanDuration",
+                "NoCurrentLoan",
+                "loanpurposeUsedCar"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.28598362876848427
+        },
+        {
+            "patient_id": 78,
+            "shap_top_3": [
+                "LoanAmount",
+                "LoanDuration",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "LoanDuration"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.08258679134591762
+        },
+        {
+            "patient_id": 186,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "HasCoapplicant"
+            ],
+            "overlap_ratio": 0.0,
+            "spearman_corr": 0.048508226887193244
+        },
+        {
+            "patient_id": 177,
+            "shap_top_3": [
+                "LoanAmount",
+                "LoanDuration",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "HasCoapplicant"
+            ],
+            "overlap_ratio": 0.0,
+            "spearman_corr": 0.022412028878260173
+        },
+        {
+            "patient_id": 56,
+            "shap_top_3": [
+                "LoanAmount",
+                "LoanDuration",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "LoanDuration",
+                "NoCurrentLoan",
+                "loanpurposeUsedCar"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.19802409077366867
+        },
+        {
+            "patient_id": 152,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "HasCoapplicant"
+            ],
+            "overlap_ratio": 0.0,
+            "spearman_corr": 0.05863969199654374
+        },
+        {
+            "patient_id": 82,
+            "shap_top_3": [
+                "LoanDuration",
+                "LoanAmount",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "NoCurrentLoan",
+                "loanpurposeUsedCar",
+                "HasCoapplicant"
+            ],
+            "overlap_ratio": 0.0,
+            "spearman_corr": 0.04482405775652035
+        },
+        {
+            "patient_id": 68,
+            "shap_top_3": [
+                "LoanAmount",
+                "LoanDuration",
+                "CheckingAccountBalanceGreaterOrEqualTo0"
+            ],
+            "lime_top_3": [
+                "LoanDuration",
+                "NoCurrentLoan",
+                "loanpurposeUsedCar"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.10960403163751893
+        }
+    ]
+}

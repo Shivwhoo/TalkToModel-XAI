@@ -1,22 +1,38 @@
 import pandas as pd
+import os
 
-# Load the exact dataset used by TalkToModel
-df = pd.read_csv("data/diabetes.csv")
+datasets = ["diabetes", "compas", "german"]
 
-print("\n===== FIRST 5 ROWS =====")
-print(df.head())
+for dataset in datasets:
+    path = f"data/{dataset}.csv"
+    if not os.path.exists(path):
+        # Fallback to external submodule for compas and german
+        path = f"external/TalkToModel/data/{dataset}.csv"
+        if not os.path.exists(path):
+            print(f"Skipping {dataset}: not found.")
+            continue
 
-print("\n===== SHAPE =====")
-print(df.shape)
+    print(f"\n======================================")
+    print(f"      DATASET: {dataset.upper()}")
+    print(f"======================================")
+    
+    df = pd.read_csv(path)
 
-print("\n===== COLUMNS =====")
-print(df.columns.tolist())
+    print("\n===== FIRST 5 ROWS =====")
+    print(df.head())
 
-print("\n===== DATA TYPES =====")
-print(df.dtypes)
+    print("\n===== SHAPE =====")
+    print(df.shape)
 
-print("\n===== TARGET DISTRIBUTION =====")
-print(df["y"].value_counts())
+    print("\n===== COLUMNS =====")
+    print(df.columns.tolist())
 
-print("\n===== BASIC STATISTICS =====")
-print(df.describe())
+    print("\n===== DATA TYPES =====")
+    print(df.dtypes)
+
+    if "y" in df.columns:
+        print("\n===== TARGET DISTRIBUTION =====")
+        print(df["y"].value_counts())
+    
+    print("\n===== BASIC STATISTICS =====")
+    print(df.describe())

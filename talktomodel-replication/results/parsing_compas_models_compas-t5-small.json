@@ -1,0 +1,5 @@
+{
+    "model": "models/compas-t5-small",
+    "dataset": "compas",
+    "error": "INTERNAL: could not parse ModelProto from models/compas-t5-small/spiece.model"
+}

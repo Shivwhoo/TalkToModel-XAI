@@ -29,21 +29,27 @@ fi
 # echo "3. Run test inference..."
 # $PYTHON_BIN experiments/03_test_t5_inference.py || echo "Warning: 03_test_t5_inference.py failed."
 
-# echo "4. Evaluate Parsing - Diabetes - T5 Small"
-# .venv/bin/python experiments/04_evaluate_t5_diabetes.py --dataset diabetes --model /home/shivwhoo/xai_project/talktomodel-replication/models/diabetes-t5-small
-
-# echo "4. Evaluate Parsing - Diabetes - T5 Base"
-# T5-Base is not available on HuggingFace under ucinlp. Skip or run if we somehow find it.
-# $PYTHON_BIN experiments/04_evaluate_t5_diabetes.py --dataset diabetes --model ucinlp/diabetes-t5-base
+echo "4. Evaluate Parsing - Multiple Datasets"
+for DATASET in diabetes german compas; do
+    MODEL="models/${DATASET}-t5-small"
+    if [ ! -d "$MODEL" ]; then
+        echo "Warning: Model $MODEL not found, downloading if possible..."
+        $PYTHON_BIN download_model.py
+    fi
+    $PYTHON_BIN experiments/04_evaluate_t5.py --dataset $DATASET --model $MODEL
+done
 
 # echo "5. Latency Experiment (New)"
-# $PYTHON_BIN experiments/05_latency_experiment.py
+# for DATASET in diabetes german compas; do
+#     $PYTHON_BIN experiments/05_latency_experiment.py --dataset $DATASET
+# done
 
 echo "6. Explanation Quality Comparison (New)"
-$PYTHON_BIN experiments/06_explanation_quality.py
+for DATASET in diabetes german compas; do
+    $PYTHON_BIN experiments/06_explanation_quality.py --dataset $DATASET
+done
 
 echo "7. End-to-End Test (Sample input automatically provided for verification, if modified to take it, otherwise skip or run automatically)"
-# For automated runs, we skip 07 as it's interactive.
 # echo "exit" | $PYTHON_BIN experiments/07_end_to_end_talktomodel_diabetes.py
 
 echo "8. User Study Re-Analysis (New)"

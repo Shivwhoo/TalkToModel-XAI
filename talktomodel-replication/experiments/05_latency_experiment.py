@@ -3,6 +3,7 @@ import os
 import time
 import json
 import numpy as np
+import argparse
 
 # Ensure TalkToModel is in path
 repo_path = os.environ.get("TALKTOMODEL_DIR", "external/TalkToModel")
@@ -15,15 +16,34 @@ import explain.logic
 import explain.actions.get_action_functions
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dataset", type=str, default="diabetes", help="Dataset name")
+    args = parser.parse_args()
+
+    dataset_name = args.dataset
+    if dataset_name == "compas":
+        model_file = f"{repo_path}/data/{dataset_name}_model_grad_boosted_tree.pkl"
+    else:
+        model_file = f"{repo_path}/data/{dataset_name}_model_grad_tree.pkl"
+    
+    # We map dataset string to class names
+    class_names = '{0: "unlikely", 1: "likely"}'
+    if dataset_name == "diabetes":
+        class_names = '{0: "unlikely to have diabetes", 1: "likely to have diabetes"}'
+    elif dataset_name == "compas":
+        class_names = '{0: "likely to recidivate", 1: "unlikely to recidivate"}'
+    elif dataset_name == "german":
+        class_names = '{0: "good credit", 1: "bad credit"}'
+        
     config_string = f"""
 # ExplainBot Params
-ExplainBot.parsing_model_name = "/home/shivwhoo/xai_project/talktomodel-replication/models/diabetes-t5-small"
+ExplainBot.parsing_model_name = "/home/shivwhoo/xai_project/talktomodel-replication/models/{dataset_name}-t5-small"
 ExplainBot.t5_config = "{repo_path}/parsing/t5/gin_configs/inference-t5-small.gin"
 ExplainBot.seed = 0
-ExplainBot.name = "diabetes"
-ExplainBot.model_file_path = "{repo_path}/data/diabetes_model_grad_tree.pkl"
-ExplainBot.dataset_file_path = "{repo_path}/data/diabetes_test.csv"
-ExplainBot.background_dataset_file_path = "{repo_path}/data/diabetes_test.csv"
+ExplainBot.name = "{dataset_name}"
+ExplainBot.model_file_path = "{model_file}"
+ExplainBot.dataset_file_path = "{repo_path}/data/{dataset_name}_test.csv"
+ExplainBot.background_dataset_file_path = "{repo_path}/data/{dataset_name}_test.csv"
 
 ExplainBot.dataset_index_column = 0
 ExplainBot.target_variable_name = "y"
@@ -44,18 +64,18 @@ Prompts.num_prompt_template = 10
 Explanation.max_cache_size = 1_000_000
 
 # MegaExplainer Params
-MegaExplainer.cache_location = "{repo_path}/cache/diabetes-mega-explainer-tabular.pkl"
+MegaExplainer.cache_location = "{repo_path}/cache/{dataset_name}-mega-explainer-tabular.pkl"
 MegaExplainer.use_selection = False
 
 # Tabular Dice Params
-TabularDice.cache_location = "{repo_path}/cache/diabetes-dice-tabular-grad-tree.pkl"
+TabularDice.cache_location = "{repo_path}/cache/{dataset_name}-dice-tabular-grad-tree.pkl"
 
 # Conversation params
-Conversation.class_names = {{0: "unlikely to have diabetes", 1: "likely to have diabetes"}}
+Conversation.class_names = {class_names}
 
 # Dataset description
-DatasetDescription.dataset_objective = "predict whether someone has diabetes"
-DatasetDescription.dataset_description = "diabetes prediction"
+DatasetDescription.dataset_objective = "predict {dataset_name}"
+DatasetDescription.dataset_description = "{dataset_name} prediction"
 DatasetDescription.model_description = "gradient boosted tree"
 
 log_dialogue_input.dynamodb_table = None
@@ -109,9 +129,10 @@ log_dialogue_input.dynamodb_table = None
         print(f"Question: '{question}' -> Mean: {np.mean(times):.2f}s ± {np.std(times):.2f}s")
 
     os.makedirs("results", exist_ok=True)
-    with open("results/latency_experiment.json", "w") as f:
+    out_file = f"results/latency_experiment_{dataset_name}.json"
+    with open(out_file, "w") as f:
         json.dump(results, f, indent=4)
-    print("Latency experiment saved to results/latency_experiment.json")
+    print(f"Latency experiment saved to {out_file}")
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,306 @@
+{
+    "mean_top3_overlap": 0.7499999999999999,
+    "mean_spearman_corr": 0.8483333333333333,
+    "details": [
+        {
+            "patient_id": 323,
+            "shap_top_3": [
+                "number_of_prior_crimes",
+                "age",
+                "recidivated"
+            ],
+            "lime_top_3": [
+                "number_of_prior_crimes",
+                "age",
+                "months_in_jail"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.9
+        },
+        {
+            "patient_id": 601,
+            "shap_top_3": [
+                "black",
+                "recidivated",
+                "months_in_jail"
+            ],
+            "lime_top_3": [
+                "black",
+                "number_of_prior_crimes",
+                "recidivated"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.8833333333333333
+        },
+        {
+            "patient_id": 30,
+            "shap_top_3": [
+                "number_of_prior_crimes",
+                "recidivated",
+                "black"
+            ],
+            "lime_top_3": [
+                "number_of_prior_crimes",
+                "age",
+                "black"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.8833333333333333
+        },
+        {
+            "patient_id": 823,
+            "shap_top_3": [
+                "age",
+                "number_of_prior_crimes",
+                "recidivated"
+            ],
+            "lime_top_3": [
+                "age",
+                "number_of_prior_crimes",
+                "months_in_jail"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.9166666666666666
+        },
+        {
+            "patient_id": 294,
+            "shap_top_3": [
+                "months_in_jail",
+                "number_of_prior_crimes",
+                "recidivated"
+            ],
+            "lime_top_3": [
+                "number_of_prior_crimes",
+                "months_in_jail",
+                "black"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.9500000000000001
+        },
+        {
+            "patient_id": 63,
+            "shap_top_3": [
+                "age",
+                "number_of_prior_crimes",
+                "months_in_jail"
+            ],
+            "lime_top_3": [
+                "number_of_prior_crimes",
+                "months_in_jail",
+                "age"
+            ],
+            "overlap_ratio": 1.0,
+            "spearman_corr": 0.8166666666666667
+        },
+        {
+            "patient_id": 215,
+            "shap_top_3": [
+                "number_of_prior_crimes",
+                "black",
+                "recidivated"
+            ],
+            "lime_top_3": [
+                "number_of_prior_crimes",
+                "age",
+                "black"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.6166666666666666
+        },
+        {
+            "patient_id": 168,
+            "shap_top_3": [
+                "age",
+                "months_in_jail",
+                "number_of_prior_crimes"
+            ],
+            "lime_top_3": [
+                "number_of_prior_crimes",
+                "age",
+                "months_in_jail"
+            ],
+            "overlap_ratio": 1.0,
+            "spearman_corr": 0.8333333333333333
+        },
+        {
+            "patient_id": 754,
+            "shap_top_3": [
+                "number_of_prior_crimes",
+                "black",
+                "age"
+            ],
+            "lime_top_3": [
+                "number_of_prior_crimes",
+                "age",
+                "black"
+            ],
+            "overlap_ratio": 1.0,
+            "spearman_corr": 0.9333333333333332
+        },
+        {
+            "patient_id": 877,
+            "shap_top_3": [
+                "age",
+                "number_of_prior_crimes",
+                "black"
+            ],
+            "lime_top_3": [
+                "age",
+                "black",
+                "recidivated"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.9166666666666666
+        },
+        {
+            "patient_id": 67,
+            "shap_top_3": [
+                "number_of_prior_crimes",
+                "age",
+                "recidivated"
+            ],
+            "lime_top_3": [
+                "age",
+                "number_of_prior_crimes",
+                "months_in_jail"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.8666666666666667
+        },
+        {
+            "patient_id": 530,
+            "shap_top_3": [
+                "age",
+                "recidivated",
+                "months_in_jail"
+            ],
+            "lime_top_3": [
+                "age",
+                "black",
+                "recidivated"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.8166666666666667
+        },
+        {
+            "patient_id": 357,
+            "shap_top_3": [
+                "age",
+                "number_of_prior_crimes",
+                "recidivated"
+            ],
+            "lime_top_3": [
+                "number_of_prior_crimes",
+                "age",
+                "months_in_jail"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.7666666666666667
+        },
+        {
+            "patient_id": 432,
+            "shap_top_3": [
+                "age",
+                "months_in_jail",
+                "number_of_prior_crimes"
+            ],
+            "lime_top_3": [
+                "age",
+                "months_in_jail",
+                "recidivated"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.9166666666666666
+        },
+        {
+            "patient_id": 210,
+            "shap_top_3": [
+                "age",
+                "recidivated",
+                "black"
+            ],
+            "lime_top_3": [
+                "age",
+                "black",
+                "recidivated"
+            ],
+            "overlap_ratio": 1.0,
+            "spearman_corr": 0.8666666666666667
+        },
+        {
+            "patient_id": 239,
+            "shap_top_3": [
+                "months_in_jail",
+                "number_of_prior_crimes",
+                "black"
+            ],
+            "lime_top_3": [
+                "months_in_jail",
+                "black",
+                "number_of_prior_crimes"
+            ],
+            "overlap_ratio": 1.0,
+            "spearman_corr": 0.7999999999999999
+        },
+        {
+            "patient_id": 409,
+            "shap_top_3": [
+                "age",
+                "number_of_prior_crimes",
+                "recidivated"
+            ],
+            "lime_top_3": [
+                "age",
+                "number_of_prior_crimes",
+                "months_in_jail"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.8833333333333333
+        },
+        {
+            "patient_id": 39,
+            "shap_top_3": [
+                "number_of_prior_crimes",
+                "age",
+                "months_in_jail"
+            ],
+            "lime_top_3": [
+                "number_of_prior_crimes",
+                "months_in_jail",
+                "age"
+            ],
+            "overlap_ratio": 1.0,
+            "spearman_corr": 0.8499999999999999
+        },
+        {
+            "patient_id": 587,
+            "shap_top_3": [
+                "number_of_prior_crimes",
+                "recidivated",
+                "black"
+            ],
+            "lime_top_3": [
+                "number_of_prior_crimes",
+                "months_in_jail",
+                "age"
+            ],
+            "overlap_ratio": 0.3333333333333333,
+            "spearman_corr": 0.7833333333333333
+        },
+        {
+            "patient_id": 158,
+            "shap_top_3": [
+                "age",
+                "black",
+                "recidivated"
+            ],
+            "lime_top_3": [
+                "black",
+                "recidivated",
+                "number_of_prior_crimes"
+            ],
+            "overlap_ratio": 0.6666666666666666,
+            "spearman_corr": 0.7666666666666667
+        }
+    ]
+}
