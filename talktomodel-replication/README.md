@@ -22,6 +22,19 @@ The primary objective of this Phase 1 replication is to:
 - `xai/`: Custom explainer modules (e.g. `lime_explanation.py`).
 - `run_all.sh`: Master execution script.
 
+### Experiments Description
+- **`01_understand_data.py`**: Verifies data loading (loads `diabetes.csv` and prints columns/shape).
+- **`02_test_t5.py`**: Sanity check for loading the Hugging Face T5 Tokenizer.
+- **`03_test_t5_inference.py`**: Tests T5 model parsing on a single hardcoded English sentence.
+- **`04_evaluate_t5_diabetes.py`**: The heavy-lifter. Evaluates Parsing Accuracy on all 6,900 test sentences and saves the JSON results.
+- **`05_latency_experiment.py`**: Measures end-to-end inference speed on 5 questions (20 runs each) to prove real-time feasibility.
+- **`06_explanation_quality.py`**: Compares the default MegaExplainer (SHAP) against a custom LIME explainer, checking top-3 feature overlap.
+- **`07_end_to_end_talktomodel_diabetes.py`**: The live Interactive Demo connecting the NLP parser to the XAI engine.
+- **`08_user_study_analysis.py`**: Re-calculates percentages from the authors' raw User Study CSV to verify their claims.
+- **`09_generate_visualizations.py`**: Generates bar charts and graphs from the parsed JSON results.
+- **`10_compare_accuracy.py`**: Prints a terminal table comparing our replicated accuracy against the paper's reported accuracy.
+- **`11_comprehensive_visualizations.py` & `12_generate_markdown_tables.py`**: Stitches graphs into a master dashboard and auto-generates Markdown tables.
+
 ## What is Reused vs What I Implemented
 **Reused from Authors:**
 - Pretrained T5 Parsers (`ucinlp/diabetes-t5-small`, `ucinlp/diabetes-t5-base`)
