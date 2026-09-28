@@ -7,7 +7,7 @@ The following tables are automatically generated from the raw JSON results produ
 | Dataset | Model Architecture | Paper Reported | Our Replication | Difference |
 | :--- | :--- | :--- | :--- | :--- |
 | Diabetes | T5-Small | 66.8% | 97.33% | +30.53% |
-| Diabetes | T5-Base | 73.2% | 0.00% | -73.20% |
+| Diabetes | T5-Base | 73.2% | N/A (Model missing) | - |
 
 
 ## 2. Explanation Quality (SHAP vs LIME)

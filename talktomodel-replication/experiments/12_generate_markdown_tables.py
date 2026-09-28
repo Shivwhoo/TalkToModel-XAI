@@ -22,9 +22,12 @@ The following tables are automatically generated from the raw JSON results produ
         if os.path.exists(json_path):
             with open(json_path, 'r') as f:
                 data = json.load(f)
-                acc = data.get("accuracy", 0) * 100
-                diff = acc - paper_acc
-                md_content += f"| Diabetes | {name} | {paper_acc:.1f}% | {acc:.2f}% | {diff:+.2f}% |\n"
+                if "error" in data:
+                    md_content += f"| Diabetes | {name} | {paper_acc:.1f}% | N/A (Model missing) | - |\n"
+                else:
+                    acc = data.get("accuracy", 0) * 100
+                    diff = acc - paper_acc
+                    md_content += f"| Diabetes | {name} | {paper_acc:.1f}% | {acc:.2f}% | {diff:+.2f}% |\n"
         else:
             md_content += f"| Diabetes | {name} | {paper_acc:.1f}% | N/A | N/A |\n"
 

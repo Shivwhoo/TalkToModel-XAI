@@ -24,7 +24,7 @@ def main():
             with open(json_file, 'r') as f:
                 data = json.load(f)
                 if "error" in data:
-                    replicated_results[model_id] = f"Error: {data['error'][:20]}..."
+                    replicated_results[model_id] = "N/A (Model missing)"
                 else:
                     replicated_results[model_id] = data["accuracy"] * 100
         else:
