@@ -1,0 +1,16 @@
+{
+    "note": "This is a re-analysis of the authors' original user study data, not a new experiment.",
+    "recalculated": {
+        "easier_to_use": 86.20689655172413,
+        "faster_to_answer": 86.20689655172413,
+        "higher_confidence": 79.3103448275862,
+        "prefer_for_future": 68.96551724137932
+    },
+    "paper_reported": {
+        "easier_to_use": 86.2,
+        "faster_to_answer": 86.2,
+        "higher_confidence": 75.8,
+        "prefer_for_future": 86.2
+    },
+    "matches_paper": false
+}

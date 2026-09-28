@@ -1,0 +1,3 @@
+[submodule "talktomodel-replication/external/TalkToModel"]
+	path = talktomodel-replication/external/TalkToModel
+	url = https://github.com/dylan-slack/TalkToModel.git

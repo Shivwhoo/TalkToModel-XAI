@@ -1,0 +1,47 @@
+{
+    "explain the feature importance for the patient with id 51": {
+        "mean_latency_sec": 0.43555625279744464,
+        "std_latency_sec": 0.15089511624347107,
+        "all_times": [
+            0.648892879486084,
+            0.3244588375091553,
+            0.3333170413970947
+        ]
+    },
+    "what is the model prediction for patient 10?": {
+        "mean_latency_sec": 0.39238818486531574,
+        "std_latency_sec": 0.07592324068954213,
+        "all_times": [
+            0.3332517147064209,
+            0.4995687007904053,
+            0.3443441390991211
+        ]
+    },
+    "how does age affect the prediction for patient 20?": {
+        "mean_latency_sec": 0.37688104311625165,
+        "std_latency_sec": 0.05900677021204616,
+        "all_times": [
+            0.34081339836120605,
+            0.3297455310821533,
+            0.4600841999053955
+        ]
+    },
+    "what would happen if we change glucose to 100 for patient 5?": {
+        "mean_latency_sec": 0.6997907161712646,
+        "std_latency_sec": 0.1834278500315339,
+        "all_times": [
+            0.4694535732269287,
+            0.9182901382446289,
+            0.7116284370422363
+        ]
+    },
+    "what are the top 3 features?": {
+        "mean_latency_sec": 0.33116308848063153,
+        "std_latency_sec": 0.06928509658697453,
+        "all_times": [
+            0.4278724193572998,
+            0.2691659927368164,
+            0.2964508533477783
+        ]
+    }
+}

@@ -1,29 +1,37 @@
-# Replicated Quantitative Results
+# Replicated Results Tables
 
-## 1. System Parsing Accuracy (Table 1)
-*This evaluates the percentage of exact matches between the model's parsed token sequence and the true ground truth sequence on the held-out test suites.*
+The following tables are automatically generated from the raw JSON results produced by the evaluation scripts.
 
-| Dataset & Model | Original Paper Reported | Replicated Result |
-| :--- | :---: | :---: |
-| **DIABETES - T5-Small** | 66.8% | **68.06%** |
-| **DIABETES - T5-Base** | 73.2% | **72.77%** |
+## 1. Parsing Accuracy (Exact Match)
 
-*Note: Minor fluctuations (+1.26%, -0.43%) are well within the margin of error for different random seeds or PyTorch environment rounding errors during inference.*
+| Dataset | Model Architecture | Paper Reported | Our Replication | Difference |
+| :--- | :--- | :--- | :--- | :--- |
+| Diabetes | T5-Small | 66.8% | 97.33% | +30.53% |
+| Diabetes | T5-Base | 73.2% | 0.00% | -73.20% |
 
-![Parsing Accuracy Comparison](/home/shivwhoo/.gemini/antigravity-ide/brain/7ed70d93-8ad8-4e76-8775-e104b47d9935/visualizations/parsing_accuracy_comparison.png)
 
----
+## 2. Explanation Quality (SHAP vs LIME)
 
-## 2. User Study Comparative Results (Table 4)
-*Participants (N=29) were asked to compare the TalkToModel conversational interface against a standard point-and-click dashboard. The answers were scored on a Likert scale from 0 to 6.*
+- **Mean Top-3 Feature Overlap:** 58.33%
+- **Mean Spearman Rank Correlation:** 0.364
 
-| Metric (Conversational vs. Dashboard) | Mean Score (0-6) | Std Dev | % Agree ($\ge$ 4) | % Strongly Agree ($\ge$ 5) |
-| :--- | :---: | :---: | :---: | :---: |
-| **Found conversational interface easier to use** | 5.03 | 1.64 | **86.2%** | 75.9% |
-| **Felt faster to arrive at an answer** | 5.10 | 1.59 | **86.2%** | 72.4% |
-| **More confident in my answers** | 4.66 | 1.82 | **79.3%** | 62.1% |
-| **More likely to use in the future** | 4.34 | 2.07 | **69.0%** | 58.6% |
 
-*Conclusion:* The extracted data successfully replicates the claims in the paper—specifically, that **~86% of users found the conversational system easier to use** and faster than traditional dashboards.
+## 3. End-to-End Latency
 
-![User Study Results](/home/shivwhoo/.gemini/antigravity-ide/brain/7ed70d93-8ad8-4e76-8775-e104b47d9935/visualizations/user_study_results.png)
+| Question | Mean Latency (s) | Std Dev (s) |
+| :--- | :--- | :--- |
+| explain the feature importance for the patient with id 51 | 0.44s | 0.15s |
+| what is the model prediction for patient 10? | 0.39s | 0.08s |
+| how does age affect the prediction for patient 20? | 0.38s | 0.06s |
+| what would happen if we change glucose to 100 for patient 5? | 0.70s | 0.18s |
+| what are the top 3 features? | 0.33s | 0.07s |
+
+
+## 4. User Study Re-Analysis
+
+| Metric | Paper Reported | Recalculated | Matches? |
+| :--- | :--- | :--- | :--- |
+| Easier To Use | 86.2% | 86.2% | ✅ Yes |
+| Faster To Answer | 86.2% | 86.2% | ✅ Yes |
+| Higher Confidence | 75.8% | 79.3% | ❌ No |
+| Prefer For Future | 86.2% | 69.0% | ❌ No |

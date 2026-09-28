@@ -9,7 +9,8 @@ os.makedirs("visualizations", exist_ok=True)
 
 # 1. User Study Visualization
 # Load data
-df = pd.read_csv('data/ttm-user-study-responses.csv', header=0, skiprows=[1,2])
+talktomodel_dir = os.environ.get("TALKTOMODEL_DIR", "external/TalkToModel")
+df = pd.read_csv(os.path.join(talktomodel_dir, 'data', 'ttm-user-study-responses.csv'), header=0, skiprows=[1,2])
 
 cols = df.columns
 q_easier = [c for c in cols if 'found the conversational interface easier to use' in c][0]
@@ -52,7 +53,18 @@ print("Saved User Study Visualization: visualizations/user_study_results.png")
 # 2. Parsing Accuracy Visualization
 accuracy_labels = ['T5-Small', 'T5-Base']
 paper_accuracy = [66.8, 73.2]
-replicated_accuracy = [68.06, 72.77]
+
+# Load replicated accuracy dynamically
+replicated_accuracy = []
+import json
+for model_id in ["ucinlp/diabetes-t5-small", "ucinlp/diabetes-t5-base"]:
+    json_path = f"results/parsing_diabetes_{model_id.replace('/', '_')}.json"
+    if os.path.exists(json_path):
+        with open(json_path, 'r') as f:
+            data = json.load(f)
+            replicated_accuracy.append(data.get("accuracy", 0) * 100)
+    else:
+        replicated_accuracy.append(0)
 
 x = np.arange(len(accuracy_labels))
 width = 0.35
@@ -63,7 +75,7 @@ rects1 = ax.bar(x - width/2, paper_accuracy, width, label='Paper Reported', colo
 rects2 = ax.bar(x + width/2, replicated_accuracy, width, label='Our Replication', color='#ff7f0e')
 
 ax.set_ylabel('Exact Match Accuracy (%)', fontweight='bold')
-ax.set_title('Parsing Accuracy Validation (COMPAS)', fontweight='bold', pad=15)
+ax.set_title('Parsing Accuracy Validation (Diabetes)', fontweight='bold', pad=15)
 ax.set_xticks(x)
 ax.set_xticklabels(accuracy_labels, fontweight='bold')
 ax.legend()
