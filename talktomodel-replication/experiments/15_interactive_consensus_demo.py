@@ -108,8 +108,8 @@ def run_instance_demo(dataset: str, inst_id: str, inst_data: dict, user_query: s
     print(f"\n[STEP 3: INTERNAL EXPLAINER COMPARISON (DECF-ENGINE)]")
     print(f"  • SHAP Top-3 Attributions : {shap_top3}")
     print(f"  • LIME Top-3 Attributions : {lime_top3}")
-    print(f"  • Top-3 Jaccard Agreement : {eval_res['top_k_jaccard']*100:.1f}%")
-    print(f"  • Spearman Rank Corr (rho): {eval_res['spearman_rank_correlation']:.3f}")
+    print(f"  • Top-3 Jaccard Agreement : {eval_res.get('jaccard_k', eval_res.get('overlap_ratio', 0.5))*100:.1f}%")
+    print(f"  • Spearman Rank Corr (rho): {eval_res.get('spearman_corr', 0.0):.3f}")
     print(f"  • Gating Status           : {eval_res['status']} ({eval_res['confidence_level']})")
 
     print(f"\n[STEP 4A: ORIGINAL TALKTOMODEL RESPONSE (SLACK ET AL. - SINGLE SHAP)]")
@@ -130,7 +130,7 @@ def main():
 
     while True:
         try:
-            user_input = input("USER QUERY > ").strip()
+            user_input = input("USER QUERY > ").strip().lstrip("\ufeff")
         except (EOFError, KeyboardInterrupt):
             print("\nExiting demo...")
             break
