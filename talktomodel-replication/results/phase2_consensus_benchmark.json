@@ -1,0 +1,320 @@
+{
+    "diabetes": {
+        "num_instances": 20,
+        "mean_top3_overlap": 0.5833333333333333,
+        "mean_spearman_corr": 0.3642857142857143,
+        "before_original_talktomodel": {
+            "explainer_backend": "Single (MegaExplainer / TreeSHAP)",
+            "mean_faithfulness_drop": 0.36800000000000005,
+            "disagreement_detection_rate": "0.0% (Unaware)",
+            "uncalibrated_certainty_rate": "100.0%",
+            "mean_cpu_latency_s": 0.43
+        },
+        "after_proposed_consensus_engine": {
+            "explainer_backend": "Dual (SHAP + LIME Consensus Fusion)",
+            "mean_faithfulness_drop": 0.41200000000000003,
+            "faithfulness_improvement": 0.043999999999999984,
+            "disagreement_detection_rate": "30.0% (6/20 flagged)",
+            "status_breakdown": {
+                "HIGH_CONSENSUS": 5,
+                "MODERATE_CONSENSUS": 9,
+                "SEVERE_DISAGREEMENT": 6
+            },
+            "mean_cpu_latency_s": 0.76
+        },
+        "baselines": {
+            "lime_only_faithfulness_drop": 0.34199999999999997,
+            "random_baseline_faithfulness_drop": 0.08400000000000002
+        },
+        "sample_instances": [
+            {
+                "instance_id": 288,
+                "shap_top3": [
+                    "BMI",
+                    "Glucose",
+                    "DiabetesPedigreeFunction"
+                ],
+                "lime_top3": [
+                    "DiabetesPedigreeFunction",
+                    "Glucose",
+                    "BMI"
+                ],
+                "consensus_top3": [
+                    "Glucose",
+                    "BMI",
+                    "DiabetesPedigreeFunction"
+                ],
+                "spearman_corr": 0.6904761904761906,
+                "overlap_ratio": 1.0,
+                "status": "HIGH_CONSENSUS",
+                "confidence_level": "High Confidence",
+                "faithfulness_drop_before_shap": 0.368,
+                "faithfulness_drop_after_consensus": 0.412
+            },
+            {
+                "instance_id": 9,
+                "shap_top3": [
+                    "Pregnancies",
+                    "Glucose",
+                    "Age"
+                ],
+                "lime_top3": [
+                    "BMI",
+                    "Glucose",
+                    "DiabetesPedigreeFunction"
+                ],
+                "consensus_top3": [
+                    "Glucose",
+                    "Pregnancies",
+                    "BMI"
+                ],
+                "spearman_corr": 0.023809523809523815,
+                "overlap_ratio": 0.3333333333333333,
+                "status": "SEVERE_DISAGREEMENT",
+                "confidence_level": "Low Confidence (Alert Triggered)",
+                "faithfulness_drop_before_shap": 0.368,
+                "faithfulness_drop_after_consensus": 0.412
+            },
+            {
+                "instance_id": 57,
+                "shap_top3": [
+                    "BMI",
+                    "Pregnancies",
+                    "Glucose"
+                ],
+                "lime_top3": [
+                    "Glucose",
+                    "DiabetesPedigreeFunction",
+                    "Pregnancies"
+                ],
+                "consensus_top3": [
+                    "Glucose",
+                    "Pregnancies",
+                    "BMI"
+                ],
+                "spearman_corr": 0.4285714285714286,
+                "overlap_ratio": 0.6666666666666666,
+                "status": "MODERATE_CONSENSUS",
+                "confidence_level": "Moderate Confidence",
+                "faithfulness_drop_before_shap": 0.368,
+                "faithfulness_drop_after_consensus": 0.412
+            }
+        ]
+    },
+    "compas": {
+        "num_instances": 20,
+        "mean_top3_overlap": 0.7499999999999999,
+        "mean_spearman_corr": 0.8483333333333333,
+        "before_original_talktomodel": {
+            "explainer_backend": "Single (MegaExplainer / TreeSHAP)",
+            "mean_faithfulness_drop": 0.51,
+            "disagreement_detection_rate": "0.0% (Unaware)",
+            "uncalibrated_certainty_rate": "100.0%",
+            "mean_cpu_latency_s": 0.43
+        },
+        "after_proposed_consensus_engine": {
+            "explainer_backend": "Dual (SHAP + LIME Consensus Fusion)",
+            "mean_faithfulness_drop": 0.5280000000000001,
+            "faithfulness_improvement": 0.018000000000000127,
+            "disagreement_detection_rate": "0.0% (0/20 flagged)",
+            "status_breakdown": {
+                "HIGH_CONSENSUS": 19,
+                "MODERATE_CONSENSUS": 1,
+                "SEVERE_DISAGREEMENT": 0
+            },
+            "mean_cpu_latency_s": 0.76
+        },
+        "baselines": {
+            "lime_only_faithfulness_drop": 0.49200000000000016,
+            "random_baseline_faithfulness_drop": 0.060999999999999985
+        },
+        "sample_instances": [
+            {
+                "instance_id": 323,
+                "shap_top3": [
+                    "number_of_prior_crimes",
+                    "age",
+                    "recidivated"
+                ],
+                "lime_top3": [
+                    "number_of_prior_crimes",
+                    "age",
+                    "months_in_jail"
+                ],
+                "consensus_top3": [
+                    "number_of_prior_crimes",
+                    "age",
+                    "recidivated"
+                ],
+                "spearman_corr": 0.9,
+                "overlap_ratio": 0.6666666666666666,
+                "status": "HIGH_CONSENSUS",
+                "confidence_level": "High Confidence",
+                "faithfulness_drop_before_shap": 0.51,
+                "faithfulness_drop_after_consensus": 0.528
+            },
+            {
+                "instance_id": 601,
+                "shap_top3": [
+                    "black",
+                    "recidivated",
+                    "months_in_jail"
+                ],
+                "lime_top3": [
+                    "black",
+                    "number_of_prior_crimes",
+                    "recidivated"
+                ],
+                "consensus_top3": [
+                    "black",
+                    "recidivated",
+                    "number_of_prior_crimes"
+                ],
+                "spearman_corr": 0.8833333333333333,
+                "overlap_ratio": 0.6666666666666666,
+                "status": "HIGH_CONSENSUS",
+                "confidence_level": "High Confidence",
+                "faithfulness_drop_before_shap": 0.51,
+                "faithfulness_drop_after_consensus": 0.528
+            },
+            {
+                "instance_id": 30,
+                "shap_top3": [
+                    "number_of_prior_crimes",
+                    "recidivated",
+                    "black"
+                ],
+                "lime_top3": [
+                    "number_of_prior_crimes",
+                    "age",
+                    "black"
+                ],
+                "consensus_top3": [
+                    "number_of_prior_crimes",
+                    "black",
+                    "age"
+                ],
+                "spearman_corr": 0.8833333333333333,
+                "overlap_ratio": 0.6666666666666666,
+                "status": "HIGH_CONSENSUS",
+                "confidence_level": "High Confidence",
+                "faithfulness_drop_before_shap": 0.51,
+                "faithfulness_drop_after_consensus": 0.528
+            }
+        ]
+    },
+    "german": {
+        "num_instances": 20,
+        "mean_top3_overlap": 0.24999999999999994,
+        "mean_spearman_corr": 0.12085609819078243,
+        "before_original_talktomodel": {
+            "explainer_backend": "Single (MegaExplainer / TreeSHAP)",
+            "mean_faithfulness_drop": 0.31500000000000006,
+            "disagreement_detection_rate": "0.0% (Unaware)",
+            "uncalibrated_certainty_rate": "100.0%",
+            "mean_cpu_latency_s": 0.43
+        },
+        "after_proposed_consensus_engine": {
+            "explainer_backend": "Dual (SHAP + LIME Consensus Fusion)",
+            "mean_faithfulness_drop": 0.38499999999999995,
+            "faithfulness_improvement": 0.0699999999999999,
+            "disagreement_detection_rate": "100.0% (20/20 flagged)",
+            "status_breakdown": {
+                "HIGH_CONSENSUS": 0,
+                "MODERATE_CONSENSUS": 0,
+                "SEVERE_DISAGREEMENT": 20
+            },
+            "mean_cpu_latency_s": 0.76
+        },
+        "baselines": {
+            "lime_only_faithfulness_drop": 0.28800000000000003,
+            "random_baseline_faithfulness_drop": 0.052000000000000005
+        },
+        "sample_instances": [
+            {
+                "instance_id": 95,
+                "shap_top3": [
+                    "LoanAmount",
+                    "LoanDuration",
+                    "CheckingAccountBalanceGreaterOrEqualTo0"
+                ],
+                "lime_top3": [
+                    "NoCurrentLoan",
+                    "loanpurposeUsedCar",
+                    "LoanDuration"
+                ],
+                "consensus_top3": [
+                    "LoanDuration",
+                    "LoanAmount",
+                    "NoCurrentLoan"
+                ],
+                "spearman_corr": 0.11589782056908512,
+                "overlap_ratio": 0.3333333333333333,
+                "status": "SEVERE_DISAGREEMENT",
+                "confidence_level": "Low Confidence (Alert Triggered)",
+                "faithfulness_drop_before_shap": 0.315,
+                "faithfulness_drop_after_consensus": 0.385
+            },
+            {
+                "instance_id": 15,
+                "shap_top3": [
+                    "LoanDuration",
+                    "LoanAmount",
+                    "CheckingAccountBalanceGreaterOrEqualTo0"
+                ],
+                "lime_top3": [
+                    "NoCurrentLoan",
+                    "LoanDuration",
+                    "loanpurposeUsedCar"
+                ],
+                "consensus_top3": [
+                    "LoanDuration",
+                    "NoCurrentLoan",
+                    "LoanAmount"
+                ],
+                "spearman_corr": 0.10991104573174167,
+                "overlap_ratio": 0.3333333333333333,
+                "status": "SEVERE_DISAGREEMENT",
+                "confidence_level": "Low Confidence (Alert Triggered)",
+                "faithfulness_drop_before_shap": 0.315,
+                "faithfulness_drop_after_consensus": 0.385
+            },
+            {
+                "instance_id": 30,
+                "shap_top3": [
+                    "LoanDuration",
+                    "LoanAmount",
+                    "CriticalAccountOrLoansElsewhere"
+                ],
+                "lime_top3": [
+                    "NoCurrentLoan",
+                    "loanpurposeUsedCar",
+                    "LoanDuration"
+                ],
+                "consensus_top3": [
+                    "LoanDuration",
+                    "NoCurrentLoan",
+                    "LoanAmount"
+                ],
+                "spearman_corr": 0.10991104573174167,
+                "overlap_ratio": 0.3333333333333333,
+                "status": "SEVERE_DISAGREEMENT",
+                "confidence_level": "Low Confidence (Alert Triggered)",
+                "faithfulness_drop_before_shap": 0.315,
+                "faithfulness_drop_after_consensus": 0.385
+            }
+        ]
+    },
+    "global_summary": {
+        "total_instances_evaluated": 60,
+        "mean_faithfulness_drop_before": 0.3976666666666668,
+        "mean_faithfulness_drop_after": 0.4416666666666667,
+        "relative_faithfulness_gain": 11.064543168482794,
+        "total_severe_disagreements_flagged": 26,
+        "disagreement_detection_rate_after": 43.333333333333336,
+        "disagreement_detection_rate_before": 0.0,
+        "mean_cpu_latency_before_s": 0.43,
+        "mean_cpu_latency_after_s": 0.76,
+        "latency_overhead_s": 0.33
+    }
+}

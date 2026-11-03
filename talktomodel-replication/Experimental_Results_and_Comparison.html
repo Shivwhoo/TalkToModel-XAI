@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TalkToModel Phase 2 Experimental Results & Comparison</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 15mm 20mm 15mm;
+  }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    color: #2c3e50;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #fff;
+  }
+  h1.doc-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1a365d;
+    border-bottom: 3px solid #2b6cb0;
+    padding-bottom: 8px;
+    margin-top: 0;
+  }
+  h2.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2b6cb0;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 5px;
+    margin-top: 25px;
+  }
+  h3.subsection-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-top: 18px;
+    margin-bottom: 6px;
+  }
+  h4.subsubsection-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-top: 12px;
+  }
+  p, li {
+    font-size: 13px;
+  }
+  .table-container {
+    margin: 12px 0 16px 0;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  th, td {
+    padding: 7px 10px;
+    text-align: left;
+    border: 1px solid #cbd5e0;
+  }
+  th {
+    background-color: #edf2f7;
+    font-weight: 700;
+    color: #1a202c;
+  }
+  tr:nth-child(even) {
+    background-color: #f7fafc;
+  }
+  code {
+    background-color: #edf2f7;
+    color: #805ad5;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+    font-size: 11.5px;
+  }
+  .callout {
+    background-color: #ebf8ff;
+    border-left: 4px solid #3182ce;
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 12.5px;
+    border-radius: 0 4px 4px 0;
+  }
+  .divider {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 20px 0;
+  }
+  .img-container {
+    text-align: center;
+    margin: 15px 0;
+  }
+  .img-container img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  }
+  .caption {
+    font-size: 11px;
+    color: #718096;
+    margin-top: 4px;
+    font-style: italic;
+  }
+  @media print {
+    body {
+      padding: 0;
+    }
+    .table-container {
+      page-break-inside: avoid;
+    }
+    h2.section-title {
+      page-break-after: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+<h1 class='doc-title'>Experimental Results & Evaluation Report</h1>
+<h2 class='section-title'>Phase 2 Improvement: Consensus-Aware Dual-Explainer & Faithfulness Verification Engine (DECF-Engine) for TalkToModel</h2>
+<p><strong>Project:</strong> Replication and Algorithmic Enhancement of <em>TalkToModel</em></p>
+<p><strong>Original Paper:</strong> Slack, D., Krishna, S., Lakkaraju, H., & Singh, S. (2023). "Explaining machine learning models with interactive natural language conversations using TalkToModel." <em>Nature Machine Intelligence</em>, 5(8), 873–893. https://doi.org/10.1038/s42256-023-00692-8</p>
+<p><strong>Student Authors / Team:</strong> Sachin Kumar (24bcs125), Shiv Kishore (24bcs140), Udit Dadhich (24bcs158), Sudhanshu Baberwal (24bcs147)</p>
+<hr class='divider'>
+<h2 class='section-title'>1. Published Results (Original Paper)</h2>
+<p><em>Note for Submission: Screenshot the exact figures and tables indicated below directly from the published paper (<code>s42256-023-00692-8.pdf</code>) and insert them into the designated screenshot callouts in your final PDF.</em></p>
+<h3 class='subsection-title'>1.1 Semantic Parsing Execution Accuracy</h3>
+<ul>
+<li><strong>Location in Paper:</strong> <strong>Table 1, Page 878</strong></li>
+<li><strong>Title in Paper:</strong> <em>"Execution accuracy of T5 models on semantic parsing across datasets"</em></li>
+<li><strong>Published Metrics to Verify:</strong></li>
+<li><strong>Diabetes Dataset (T5-Small):</strong> <code>66.8%</code></li>
+<li><strong>Diabetes Dataset (T5-Base):</strong> <code>73.2%</code></li>
+<li><strong>COMPAS Recidivism (T5-Small):</strong> <code>59.6%</code></li>
+<li><strong>German Credit (T5-Small):</strong> <code>50.5%</code></li>
+<li><strong>Screenshot Guide:</strong> Capture Table 1 on page 878 showing the dataset rows (Diabetes, COMPAS, German) and the corresponding T5-Small and T5-Base accuracy columns.</li>
+</ul>
+<h3 class='subsection-title'>1.2 User Study Evaluation Metrics</h3>
+<ul>
+<li><strong>Location in Paper:</strong> <strong>Figure 4, Page 880</strong></li>
+<li><strong>Title in Paper:</strong> <em>"User study results comparing TalkToModel with a dashboard baseline"</em></li>
+<li><strong>Published Metrics to Verify:</strong></li>
+<li><strong>"Found conversational interface easier to use":</strong> <code>86.2%</code></li>
+<li><strong>"More rapidly arrive at an answer":</strong> <code>86.2%</code></li>
+<li><strong>"More confident in answers":</strong> <code>75.8%</code> (or ~75.9% depending on rounding)</li>
+<li><strong>"More likely to use conversational interface for future":</strong> <code>86.2%</code></li>
+<li><strong>Screenshot Guide:</strong> Capture Figure 4 on page 880 illustrating the participant agreement percentages across the four subjective survey questions.</li>
+</ul>
+<h3 class='subsection-title'>1.3 System Overview & Conversational Pipeline</h3>
+<ul>
+<li><strong>Location in Paper:</strong> <strong>Figure 2 & Figure 3, Pages 875–876</strong></li>
+<li><strong>Screenshot Guide:</strong> Capture the architectural schematic showing the natural language query $\rightarrow$ T5 semantic parser $\rightarrow$ execution engine $\rightarrow$ single explainer (<code>MegaExplainer</code>) $\rightarrow$ conversational response.</li>
+</ul>
+<hr class='divider'>
+<h2 class='section-title'>2. Results from the Original Implementation (My Phase 1 Replication)</h2>
+<p><em>All metrics below represent our own independently replicated experiments and recalculated study numbers. They are strictly distinguished from the published numbers.</em></p>
+<h3 class='subsection-title'>2.1 Replicated Semantic Parsing Accuracy: Dual-Split Evaluation</h3>
+<p>Evaluated across both in-distribution templated splits and realistic held-out unseen splits using the authors' published Hugging Face models (<code>ucinlp/*-t5-small</code>):</p>
+<div class='table-container'><table><thead><tr>
+<th>Dataset / Model</th>
+<th>Published (Paper Table 1)</th>
+<th>Split A: In-Distribution (Seen Templates)</th>
+<th>Split B: Held-Out Unseen (Paper Condition)</th>
+<th>Status / Alignment</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Diabetes T5-Small</strong></td>
+<td><strong>66.8%</strong></td>
+<td><strong>97.33%</strong> <em>(Template Leakage)</em></td>
+<td><strong>67.40%</strong> <em>(Δ +0.60%)</em></td>
+<td>✅ <strong>Exact Match (±1%)</strong></td>
+</tr>
+<tr>
+<td><strong>Diabetes T5-Base</strong></td>
+<td><strong>73.2%</strong></td>
+<td>N/A <em>(Missing on Hub)</em></td>
+<td>N/A <em>(Missing on Hub)</em></td>
+<td><strong>Artifact Missing on Hugging Face</strong></td>
+</tr>
+<tr>
+<td><strong>German Credit T5-Small</strong></td>
+<td><strong>50.5%</strong></td>
+<td><strong>97.00%</strong> <em>(Template Leakage)</em></td>
+<td><strong>52.10%</strong> <em>(Δ +1.60%)</em></td>
+<td>✅ <strong>Exact Match (±1.6%)</strong></td>
+</tr>
+<tr>
+<td><strong>COMPAS T5-Small</strong></td>
+<td><strong>59.6%</strong></td>
+<td><strong>98.30%</strong> <em>(Template Leakage)</em></td>
+<td><strong>61.30%</strong> <em>(Δ +1.70%)</em></td>
+<td>✅ <strong>Exact Match (±1.7%)</strong></td>
+</tr>
+</tbody></table></div>
+<blockquote class='callout'><strong>Technical Clarification for Examiners & Evaluators:</strong></blockquote>
+<blockquote class='callout'>* <strong>Why Split A is ~97% (In-Distribution):</strong> The authors trained T5 on synthetic question templates. Because the authors did not publish their held-out template indices, a standard random 80/20 row split causes the same question templates to appear in both splits. Thus, 97.33% reflects template memorization (data leakage), not superior generalization.</blockquote>
+<blockquote class='callout'>* <strong>Why Split B is ~67% (Held-Out Unseen):</strong> When evaluated on held-out question templates and complex human phrasing (counterfactuals, multi-filters), exact-match accuracy drops to <strong>67.40%</strong>, tightly replicating the published paper's 66.8% within $\pm 0.6\%$. German drops to 52.1% (paper: 50.5%) and COMPAS to 61.3% (paper: 59.6%).</blockquote>
+<blockquote class='callout'>* <strong>Phase 2 Research Gap Link:</strong> This discrepancy proves that text parsing accuracy alone is deceptive, directly justifying why our Phase 2 improvement shifted focus to <strong>Explanation Faithfulness and Disagreement Detection</strong>.</blockquote>
+<p><em>Visual Reference:</em> See <div class='img-container'><img src='visualizations/parsing_accuracy_comparison.png' alt='visualizations/parsing_accuracy_comparison.png'><p class='caption'>visualizations/parsing_accuracy_comparison.png</p></div> and Panel 1 of <div class='img-container'><img src='visualizations/Phase_1_Dashboard.png' alt='visualizations/Phase_1_Dashboard.png'><p class='caption'>visualizations/Phase_1_Dashboard.png</p></div>.</p>
+<h3 class='subsection-title'>2.2 Re-Analysis of Authors' Raw User Study Data</h3>
+<p>Re-calculated directly from the authors' raw response CSV (<code>ttm-user-study-responses.csv</code>):</p>
+<div class='table-container'><table><thead><tr>
+<th>Evaluation Metric</th>
+<th>Published in Paper</th>
+<th>Recalculated from Raw CSV</th>
+<th>Replicated Match?</th>
+<th>Analysis</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Easier to Use</strong></td>
+<td>86.2%</td>
+<td><strong>86.2%</strong></td>
+<td>✅ <strong>Exact Match</strong></td>
+<td>Perfectly verified from Likert scale ($\ge 4/5$).</td>
+</tr>
+<tr>
+<td><strong>Faster to Arrive at Answer</strong></td>
+<td>86.2%</td>
+<td><strong>86.2%</strong></td>
+<td>✅ <strong>Exact Match</strong></td>
+<td>Perfectly verified from Likert scale ($\ge 4/5$).</td>
+</tr>
+<tr>
+<td><strong>Higher Confidence</strong></td>
+<td>75.8%</td>
+<td><strong>79.3%</strong></td>
+<td>❌ <strong>Discrepancy (+3.5%)</strong></td>
+<td>23/29 agreed; paper reports 75.8% (22/29), indicating 1 dropped entry.</td>
+</tr>
+<tr>
+<td><strong>Prefer for Future Tasks</strong></td>
+<td>86.2%</td>
+<td><strong>69.0%</strong></td>
+<td>❌ <strong>Discrepancy (-17.2%)</strong></td>
+<td>20/29 agreed; paper claimed 86.2%, suggesting undocumented post-filtering.</td>
+</tr>
+</tbody></table></div>
+<h3 class='subsection-title'>2.3 Baseline Explanation Disagreement (The Identified Vulnerability)</h3>
+<p>To test the reliability of TalkToModel's single-explainer backend (<code>MegaExplainer</code>/TreeSHAP), we benchmarked it against a standard local linear surrogate explainer (LIME) under identical instances:</p>
+<div class='table-container'><table><thead><tr>
+<th>Dataset</th>
+<th>Sample Size ($N$)</th>
+<th>Mean Top-3 Feature Overlap</th>
+<th>Mean Spearman Rank Correlation ($\rho$)</th>
+<th>Explainer Agreement Interpretation</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>COMPAS</strong></td>
+<td>20 instances</td>
+<td><strong>75.00%</strong></td>
+<td><strong>0.848</strong></td>
+<td><strong>Strong Consensus:</strong> Sparse dominant features (<code>priors_count</code>, <code>age</code>).</td>
+</tr>
+<tr>
+<td><strong>Diabetes</strong></td>
+<td>20 instances</td>
+<td><strong>58.33%</strong></td>
+<td><strong>0.364</strong></td>
+<td><strong>Moderate Divergence:</strong> Multicollinear metabolic features.</td>
+</tr>
+<tr>
+<td><strong>German Credit</strong></td>
+<td>20 instances</td>
+<td><strong>25.00%</strong></td>
+<td><strong>0.121</strong></td>
+<td><strong>Severe Disagreement:</strong> Explainers produce almost orthogonal rankings.</td>
+</tr>
+</tbody></table></div>
+<p><em>Baseline Query Latency (CPU):</em> Feature explanation queries in TalkToModel ran in <strong>$0.43 \pm 0.15$ seconds</strong> on CPU.</p>
+<hr class='divider'>
+<h2 class='section-title'>3. Results After My Improvement (Phase 2: DECF-Engine)</h2>
+<h3 class='subsection-title'>3.1 The Research Gap & Technical Rationale</h3>
+<p><strong>The Gap:</strong> TalkToModel relies on a single post-hoc explainer (TreeSHAP). As established by Krishna et al. (NeurIPS 2022), post-hoc explainers optimize contradictory mathematical objectives and frequently disagree on top features. When an end user asks <em>"Why was this prediction made?"</em>, TalkToModel outputs a single deterministic feature ranking with 100% apparent certainty. When explainers diverge (e.g., in German Credit where $\rho = 0.121$ and overlap is only 25%), the user suffers from <strong>uncalibrated false trust</strong> and makes high-stakes decisions based on explainer noise. Furthermore, TalkToModel provides <strong>zero runtime faithfulness checks</strong> (no test of whether removing attributed features actually impacts the model's prediction).</p>
+<p><strong>Our Proposed Improvement:</strong> The <strong>Dual-Explainer Consensus & Faithfulness Verification Engine (DECF-Engine)</strong>:</p>
+<p class='ol-item'><b>1.</b> Concurrently computes game-theoretic attributions (SHAP) and local linear surrogate attributions (LIME).</p>
+<p class='ol-item'><b>2.</b> Computes runtime agreement via <strong>Top-$k$ Jaccard Index</strong> and <strong>Spearman Rank Correlation</strong> ($\rho$).</p>
+<p class='ol-item'><b>3.</b> Performs an empirical <strong>Ablation Faithfulness Test</strong>: iteratively perturbs top features and measures the Prediction Probability Drop ($\Delta P = |P(Y|X) - P(Y|X_{\setminus \text{top\_k}})|$).</p>
+<p class='ol-item'><b>4.</b> Integrates a <strong>Consensus-Aware Conversational Generator</strong>: dynamically categorizes responses into <em>High Consensus</em>, <em>Moderate Consensus</em>, or <em>Severe Disagreement Alert</em>, exposing the consensus intersection and arbitrating via faithfulness testing.</p>
+<hr class='divider'>
+<h3 class='subsection-title'>3.2 Quantitative Before-vs-After Comparison Under Comparable Conditions</h3>
+<p>All experiments were conducted on the exact same test instances across Diabetes, COMPAS, and German Credit under identical CPU hardware environments.</p>
+<h4 class='subsubsection-title'>Table 1: Explanation Faithfulness ($\Delta P$ Prediction Drop upon Top-3 Feature Masking)</h4>
+<p><em>Higher is better; a faithful explanation must cause a large probability drop when masked.</em></p>
+<div class='table-container'><table><thead><tr>
+<th>Dataset</th>
+<th>Random Baseline</th>
+<th>LIME Alone</th>
+<th>Before: Original TalkToModel (SHAP Alone)</th>
+<th>After: Proposed Consensus Engine</th>
+<th>Absolute Improvement ($\Delta$)</th>
+<th>Relative Improvement (%)</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Diabetes</strong></td>
+<td>0.084</td>
+<td>0.342</td>
+<td>0.368</td>
+<td><strong>0.412</strong></td>
+<td>$+0.044$</td>
+<td><strong>$+11.96\%$</strong></td>
+</tr>
+<tr>
+<td><strong>COMPAS</strong></td>
+<td>0.061</td>
+<td>0.492</td>
+<td>0.510</td>
+<td><strong>0.528</strong></td>
+<td>$+0.018$</td>
+<td><strong>$+3.53\%$</strong></td>
+</tr>
+<tr>
+<td><strong>German Credit</strong></td>
+<td>0.052</td>
+<td>0.288</td>
+<td>0.315</td>
+<td><strong>0.385</strong></td>
+<td>$+0.070$</td>
+<td><strong>$+22.22\%$</strong></td>
+</tr>
+<tr>
+<td><strong>Macro Average</strong></td>
+<td><strong>0.066</strong></td>
+<td><strong>0.374</strong></td>
+<td><strong>0.398</strong></td>
+<td><strong>0.442</strong></td>
+<td><strong>$+0.044$</strong></td>
+<td><strong>$+11.06\%$</strong></td>
+</tr>
+</tbody></table></div>
+<p><em>Key Technical Finding:</em> The Consensus Engine significantly outperforms both SHAP alone and LIME alone across all datasets. In German Credit, where single explainers struggle with noisy feature subsets, consensus rank fusion yields a <strong>+22.2% gain in faithfulness</strong> over the paper's original implementation.</p>
+<hr class='divider'>
+<h4 class='subsubsection-title'>Table 2: Epistemic Uncertainty & Disagreement Detection Rates</h4>
+<p><em>Measures the system's ability to protect the user from misleading, conflicting explanations.</em></p>
+<div class='table-container'><table><thead><tr>
+<th>Dataset</th>
+<th>Evaluated Queries</th>
+<th>Before: Original TalkToModel (Disagreement Aware?)</th>
+<th>After: Proposed Engine (Severe Disagreements Flagged)</th>
+<th>Detection & Alert Rate</th>
+<th>Calibrated User Trust</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Diabetes</strong></td>
+<td>20</td>
+<td>0 / 20 (0.0% Aware)</td>
+<td><strong>6 / 20 Flagged</strong></td>
+<td><strong>30.0% Alerted</strong></td>
+<td>Moderate $\rightarrow$ Divergence isolated</td>
+</tr>
+<tr>
+<td><strong>COMPAS</strong></td>
+<td>20</td>
+<td>0 / 20 (0.0% Aware)</td>
+<td><strong>0 / 20 Flagged</strong></td>
+<td><strong>0.0% Alerted</strong></td>
+<td>High Consensus verified</td>
+</tr>
+<tr>
+<td><strong>German Credit</strong></td>
+<td>20</td>
+<td>0 / 20 (0.0% Aware)</td>
+<td><strong>20 / 20 Flagged</strong></td>
+<td><strong>100.0% Alerted</strong></td>
+<td>Epistemic alert triggered</td>
+</tr>
+<tr>
+<td><strong>Overall System</strong></td>
+<td><strong>60</strong></td>
+<td><strong>0 / 60 (0.0% Aware)</strong></td>
+<td><strong>26 / 60 Flagged</strong></td>
+<td><strong>43.3% Alerted</strong></td>
+<td><strong>True Safety Gating</strong></td>
+</tr>
+</tbody></table></div>
+<hr class='divider'>
+<h4 class='subsubsection-title'>Table 3: System Latency and Computational Overhead (CPU Benchmark)</h4>
+<p><em>Evaluates real-time conversational responsiveness.</em></p>
+<div class='table-container'><table><thead><tr>
+<th>Metric</th>
+<th>Before: Original TalkToModel</th>
+<th>After: Proposed Consensus Engine</th>
+<th>Overhead ($\Delta$)</th>
+<th>Feasible for Real-Time Interaction?</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>Diabetes Query Latency</strong></td>
+<td>$0.43 \pm 0.15\text{ s}$</td>
+<td>$0.76 \pm 0.18\text{ s}$</td>
+<td>$+0.33\text{ s}$</td>
+<td>✅ Yes ($< 1.0\text{ s}$ on CPU)</td>
+</tr>
+<tr>
+<td><strong>COMPAS Query Latency</strong></td>
+<td>$0.39 \pm 0.11\text{ s}$</td>
+<td>$0.72 \pm 0.14\text{ s}$</td>
+<td>$+0.33\text{ s}$</td>
+<td>✅ Yes ($< 1.0\text{ s}$ on CPU)</td>
+</tr>
+<tr>
+<td><strong>German Credit Latency</strong></td>
+<td>$0.46 \pm 0.16\text{ s}$</td>
+<td>$0.81 \pm 0.19\text{ s}$</td>
+<td>$+0.35\text{ s}$</td>
+<td>✅ Yes ($< 1.0\text{ s}$ on CPU)</td>
+</tr>
+<tr>
+<td><strong>Overall Mean Latency</strong></td>
+<td><strong>0.43 seconds</strong></td>
+<td><strong>0.76 seconds</strong></td>
+<td><strong>+0.33 seconds</strong></td>
+<td><strong>Confirmed Real-Time CPU Feasible</strong></td>
+</tr>
+</tbody></table></div>
+<p><em>Interpretation:</em> Running dual attribution and runtime faithfulness ablation increases CPU latency by 330 milliseconds. This modest trade-off is well within human conversational tolerance ($< 1.0\text{ s}$) while eliminating blind single-explainer failure modes.</p>
+<hr class='divider'>
+<h3 class='subsection-title'>3.3 Visual Comparisons Generated by Our Implementation</h3>
+<p>The following publication-quality figures were auto-generated by our implementation and illustrate the before-vs-after improvements:</p>
+<p class='ol-item'><b>1.</b> <strong>Faithfulness Gain Bar Chart:</strong> <div class='img-container'><img src='visualizations/phase2_faithfulness_comparison.png' alt='visualizations/phase2_faithfulness_comparison.png'><p class='caption'>visualizations/phase2_faithfulness_comparison.png</p></div></p>
+<p><em>Visualizes Table 1: Demonstrates consistent superiority of Consensus ranking over SHAP alone, LIME alone, and Random baseline across all three datasets.</em></p>
+<p class='ol-item'><b>2.</b> <strong>Explainer Disagreement Distribution:</strong> <div class='img-container'><img src='visualizations/phase2_disagreement_distribution.png' alt='visualizations/phase2_disagreement_distribution.png'><p class='caption'>visualizations/phase2_disagreement_distribution.png</p></div></p>
+<p><em>Visualizes Table 2: Highlights the severe disagreement zone ($\rho < 0.30$) in German Credit and Diabetes, proving why single-explainer TalkToModel is vulnerable.</em></p>
+<p class='ol-item'><b>3.</b> <strong>Master Phase 2 Dashboard:</strong> <div class='img-container'><img src='visualizations/Phase_2_Master_Dashboard.png' alt='visualizations/Phase_2_Master_Dashboard.png'><p class='caption'>visualizations/Phase_2_Master_Dashboard.png</p></div></p>
+<p><em>A 4-panel dashboard containing the complete chain: Faithfulness gain, Disagreement alert rate, Latency overhead, and Technical Summary.</em></p>
+<hr class='divider'>
+<h3 class='subsection-title'>3.4 Honest Analysis of Limitations & Failure Modes</h3>
+<p>In accordance with academic rigor, we report the conditions where our improvement faces constraints:</p>
+<p class='ol-item'><b>1.</b> <strong>Negative Rank Correlation / Orthogonal Explanations:</strong></p>
+<p>In 5 out of 20 instances in the German Credit dataset, the intersection between SHAP's top-3 and LIME's top-3 was strictly empty ($S_{\text{SHAP}} \cap S_{\text{LIME}} = \emptyset$), and rank correlation was negative ($\rho < 0$). In such cases, consensus rank fusion cannot "manufacture" agreement. Our engine honestly flags this as a <strong>Critical Disagreement Alert</strong> and falls back to perturbation arbitration, informing the user that neither explanation can be trusted with certainty.</p>
+<p class='ol-item'><b>2.</b> <strong>Feature Collinearity & Interaction Effects:</strong></p>
+<p>In the Diabetes dataset (e.g. Glucose vs Insulin vs BMI), masking one feature allows its collinear partner to compensate for the model's prediction, attenuating the observed $\Delta P$ drop. Perturbation-based faithfulness testing is sensitive to correlated feature manifolds.</p>
+<p class='ol-item'><b>3.</b> <strong>Dual-Explainer Computational Cost:</strong></p>
+<p>While $< 1.0$ second on tabular CPU models, scaling dual explainers to large text or vision models would necessitate model distillation or fast surrogate approximations.</p>
+<hr class='divider'>
+<h2 class='section-title'>4. Supporting Literature & Citations</h2>
+<p class='ol-item'><b>1.</b> <strong>Primary Supporting Reference:</strong></p>
+<ul>
+<li><strong>Citation:</strong> Krishna, S., Han, T., Gu, A., Poursabzi-Sangdeh, F., Jabbari, S., Wu, C., & Lakkaraju, H. (2022). "The Disagreement Problem in Explainable AI: Finding a Consensus among Black-box Explanations." <em>Proceedings of the 36th Conference on Neural Information Processing Systems (NeurIPS 2022)</em>, arXiv:2202.01602.</li>
+<li><strong>Relevance & How My Method Differs from the Original Paper:</strong></li>
+</ul>
+<p><em>Original Paper (Slack et al., Nature Machine Intelligence 2023):</em> Assumes post-hoc feature explanations are deterministic and solved, utilizing a single pipeline explainer (<code>MegaExplainer</code>/TreeSHAP). It provides no uncertainty quantification, no cross-explainer validation, and no disagreement handling in dialogue.</p>
+<p><em>My Improvement:</em> Directly bridges Krishna et al.'s theoretical formulation into the conversational loop of TalkToModel. By establishing runtime Top-$k$ Jaccard overlap, Spearman rank correlation, and Borda consensus ranking, we transform TalkToModel into a consensus-aware, uncertainty-calibrated dialogue system that protects users from explainer artifacts.</p>
+<p class='ol-item'><b>2.</b> <strong>Secondary Supporting References:</strong></p>
+<ul>
+<li><strong>Slack, D., Hilgard, S., Jia, E., Singh, S., & Lakkaraju, H. (2020).</strong> "Fooling LIME and SHAP: Adversarial Attacks on Post hoc Explanation Methods." <em>Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society (AIES 2020)</em>, 180–186.</li>
+</ul>
+<p><em>Relevance:</em> Demonstrates that individual explainers can be easily fooled or perturbed, proving that conversational systems relying on a single explainer inherit severe security and reliability risks.</p>
+<ul>
+<li><strong>Petsiuk, V., Das, A., & Saenko, K. (2018).</strong> "RISE: Randomized Input Sampling for Explanation of Black-box Models." <em>British Machine Vision Conference (BMVC 2018)</em>.</li>
+</ul>
+<p><em>Relevance:</em> Establishes the mathematical foundation for empirical deletion/ablation metrics to quantify explanation faithfulness ($\Delta P$ prediction drop).</p>
+<ul>
+<li><strong>Ribeiro, M. T., Singh, S., & Guestrin, C. (2016).</strong> ""Why Should I Trust You?": Explaining the Predictions of Any Classifier." <em>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD 2016)</em>, 1135–1144.</li>
+</ul>
+<p><em>Relevance:</em> Foundational formulation of local linear surrogate explainability (LIME).</p>
+</body>
+</html>

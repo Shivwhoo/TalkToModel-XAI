@@ -1,71 +1,50 @@
 #!/bin/bash
 set -e
 
-echo "========================================================="
-echo "   TalkToModel Replication - Complete Run Script         "
-echo "========================================================="
+echo "========================================================================"
+echo "   TalkToModel: Complete Replication & Phase 2 Improvement Pipeline    "
+echo "========================================================================"
 
-export TALKTOMODEL_DIR="external/TalkToModel"
-PYTHON_BIN="../TalkToModel/.venv-legacy/bin/python"
+export MPLCONFIGDIR="$(pwd)/.matplotlib"
 
-if [ ! -d "$TALKTOMODEL_DIR" ]; then
-    echo "ERROR: Submodule external/TalkToModel not found."
-    echo "Please run: git submodule update --init"
-    exit 1
+# Auto-detect working Python executable
+PYTHON_BIN="python"
+if [ -f ".venv/bin/python" ] && .venv/bin/python --version >/dev/null 2>&1; then
+    PYTHON_BIN=".venv/bin/python"
+elif [ -f ".venv/Scripts/python.exe" ] && .venv/Scripts/python.exe --version >/dev/null 2>&1; then
+    PYTHON_BIN=".venv/Scripts/python.exe"
 fi
 
-if [ ! -f "$PYTHON_BIN" ]; then
-    echo "ERROR: Virtual environment not found at ../TalkToModel/.venv-legacy"
-    echo "Please create it and install requirements."
-    exit 1
-fi
+echo "Using Python executable: $PYTHON_BIN"
 
-# echo "1. Understand Data..."
-# $PYTHON_BIN experiments/01_understand_data.py || echo "Warning: 01_understand_data.py failed."
-
-# echo "2. Run test t5 (legacy)..."
-# $PYTHON_BIN experiments/02_test_t5.py || echo "Warning: 02_test_t5.py failed."
-
-# echo "3. Run test inference..."
-# $PYTHON_BIN experiments/03_test_t5_inference.py || echo "Warning: 03_test_t5_inference.py failed."
-
-echo "4. Evaluate Parsing - Multiple Datasets"
-for DATASET in diabetes german compas; do
-    MODEL="models/${DATASET}-t5-small"
-    if [ ! -d "$MODEL" ]; then
-        echo "Warning: Model $MODEL not found, downloading if possible..."
-        $PYTHON_BIN download_model.py
-    fi
-    $PYTHON_BIN experiments/04_evaluate_t5.py --dataset $DATASET --model $MODEL
-done
-
-# echo "5. Latency Experiment (New)"
-# for DATASET in diabetes german compas; do
-#     $PYTHON_BIN experiments/05_latency_experiment.py --dataset $DATASET
-# done
-
-echo "6. Explanation Quality Comparison (New)"
-for DATASET in diabetes german compas; do
-    $PYTHON_BIN experiments/06_explanation_quality.py --dataset $DATASET
-done
-
-echo "7. End-to-End Test (Sample input automatically provided for verification, if modified to take it, otherwise skip or run automatically)"
-# echo "exit" | $PYTHON_BIN experiments/07_end_to_end_talktomodel_diabetes.py
-
-echo "8. User Study Re-Analysis (New)"
-$PYTHON_BIN experiments/08_user_study_analysis.py
-
-echo "9. Generate Visualizations"
-$PYTHON_BIN experiments/09_generate_visualizations.py
-
-echo "10. Compare Accuracy"
+echo ""
+echo "=== STEP 1: Phase 1 Parsing Accuracy Comparison ==="
 $PYTHON_BIN experiments/10_compare_accuracy.py
 
-echo "11. Comprehensive Visualizations"
+echo ""
+echo "=== STEP 2: Phase 1 User Study Re-Analysis ==="
+$PYTHON_BIN experiments/08_user_study_analysis.py
+
+echo ""
+echo "=== STEP 3: Phase 1 Visualizations & Dashboard ==="
+$PYTHON_BIN experiments/09_generate_visualizations.py
 $PYTHON_BIN experiments/11_comprehensive_visualizations.py
 
-echo "========================================================="
-echo "   All automated scripts completed successfully!         "
-echo "========================================================="
-echo '12. Generate Markdown Tables'
+echo ""
+echo "=== STEP 4: Phase 2 Proposed Improvement Benchmark ==="
+echo "Running Dual-Explainer Consensus & Faithfulness Evaluation across datasets..."
+$PYTHON_BIN experiments/13_evaluate_consensus_improvement.py
+
+echo ""
+echo "=== STEP 5: Phase 2 Visualizations & Master Dashboard ==="
+$PYTHON_BIN experiments/14_generate_phase2_visualizations.py
+
+echo ""
+echo "=== STEP 6: Auto-Generate Consolidated Results Tables ==="
 $PYTHON_BIN experiments/12_generate_markdown_tables.py
+
+echo ""
+echo "========================================================================"
+echo "   All Phase 1 and Phase 2 Pipeline Steps Completed Successfully!      "
+echo "   Outputs generated in results/ and visualizations/ directories.       "
+echo "========================================================================"

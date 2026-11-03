@@ -1,2 +1,10 @@
 models/**/model.safetensors
 models/**/pytorch_model.bin
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.matplotlib/
+*.egg-info/
