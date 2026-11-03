@@ -340,11 +340,39 @@ python experiments/12_generate_markdown_tables.py
 ```
 *Outputs:* All PNGs in `visualizations/` and consolidated `replicated_results_tables.md`.
 
-#### Interactive Phase 2 Consensus Demonstration CLI
+#### Interactive Chat & Live Conversations with the Model
+
+You can interactively chat with the models in plain English in two ways:
+
+##### 1. [Recommended] Phase 2: Consensus-Aware Interactive Engine (DECF-Engine)
+Runs the live natural language dialogue loop with dual-explainer consensus (SHAP + LIME) and runtime epistemic uncertainty alerts:
 ```bash
 python experiments/15_interactive_consensus_demo.py
 ```
-*Type `demo` in the prompt to view live executions of High Consensus (COMPAS) and Severe Disagreement (German Credit).*
+**Example English queries you can type directly:**
+- `"Why did the model predict patient 288 has diabetes?"`
+- `"Why was loan applicant 95 denied credit?"`
+- `"Explain features for applicant 12"`
+- `"filter id 45 and explain features [e]"`
+- Type `demo` to automatically run pre-configured High Consensus and Severe Disagreement case studies side-by-side.
+- Type `exit` or `quit` to end the session.
+
+##### 2. Phase 1: Original TalkToModel End-to-End Chat (Single Explainer)
+Run the authors' original conversational pipeline for individual datasets:
+```bash
+# Talk with Diabetes Model:
+python experiments/07_end_to_end_talktomodel_diabetes.py
+
+# Talk with COMPAS Recidivism Model:
+python experiments/07_end_to_end_talktomodel_compas.py
+
+# Talk with German Credit Risk Model:
+python experiments/07_end_to_end_talktomodel_german.py
+```
+**Example queries to ask:**
+- `"what are the important features for person 1?"`
+- `"why did you predict person 10 is high risk?"`
+- `"explain the prediction for patient 25"`
 
 ---
 
