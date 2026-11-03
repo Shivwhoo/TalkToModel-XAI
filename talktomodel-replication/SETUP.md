@@ -23,7 +23,18 @@ The authors' code (from ~2023) required freezing specific versions to avoid runt
 - **Sentence-Transformers**: A dummy wrapper is used inside our scripts to avoid `huggingface-hub` API issues when loading the outdated model architecture.
 
 ## Running the Code
-Once the environment is activated, you can reproduce all results by running:
-```bash
+
+### 1. Talk to the Model Interactively (DECF-Engine)
+Chat with the model in plain English:
+\ash
+python experiments/15_interactive_consensus_demo.py
+\
+
+### 2. Full Reproducibility Pipeline
+\ash
+# On Linux / macOS:
 ./run_all.sh
-```
+
+# On Windows (PowerShell):
+powershell -ExecutionPolicy Bypass -File .\run_all.ps1
+\

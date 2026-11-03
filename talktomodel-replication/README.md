@@ -17,6 +17,20 @@
 
 ---
 
+> ### 💬 Quick Start: Talk to the Model (Interactive CLI)
+> **Run this single command to chat directly with the model in plain English:**
+> ```bash
+> python experiments/15_interactive_consensus_demo.py
+> ```
+> * **Natural Language Questions:** Ask questions in plain English like:
+>   * `Why did the model predict patient 288 has diabetes?`
+>   * `Why was loan applicant 95 denied credit?`
+>   * `Explain features for applicant 12`
+> * **Automated Walkthrough:** Type `demo` at the prompt to run side-by-side case studies demonstrating **High Consensus** (verified trust) vs. **Severe Disagreement Alert** (false-certainty prevention).
+> * **Exit:** Type `exit` or `quit` to end the session.
+
+---
+
 ## Table of Contents
 1. [Executive Summary & The Evaluation Chain](#1-executive-summary--the-evaluation-chain)
 2. [Research Gap & Technical Motivation](#2-research-gap--technical-motivation)
