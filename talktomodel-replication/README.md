@@ -191,6 +191,8 @@ talktomodel-replication/
 │   ├── consensus_engine.py             # [NEW] Core Phase 2 DECF-Engine implementation
 │   ├── lime_explanation.py             # Tabular LIME explainer module
 │   └── lime_visualization.py           # Feature attribution bar chart renderer
+├── Experimental_Results_and_Comparison_BEST.pdf # [NEW] Final 10-page submission PDF (publication-grade)
+├── generate_best_pdf.py                # [NEW] Generator script for BEST PDF
 ├── EXPERIMENTAL_RESULTS_DOCUMENT.md    # Complete material for submission results PDF
 ├── presentation_outline.md             # 5-minute replication demo outline
 ├── VIDEO_SCRIPT.md                     # Complete 10-minute video presentation script
@@ -232,8 +234,8 @@ talktomodel-replication/
 ### Setup Steps
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<username>/talktomodel-replication.git
-cd talktomodel-replication
+git clone https://github.com/Shivwhoo/TalkToModel-XAI.git
+cd TalkToModel-XAI/talktomodel-replication
 
 # 2. Initialize submodules
 git submodule update --init --recursive
