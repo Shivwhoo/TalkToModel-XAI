@@ -1,18 +1,11 @@
 """
+
+PROPOSED SOLUTION -
+
 Consensus-Aware Dual-Explainer & Faithfulness Verification Engine (DECF-Engine)
 Phase 2 Improvement for TalkToModel
 
-Authors: Sachin Kumar, Shiv Kishore, Udit Dadhich, Sudhanshu Baberwal
-Supporting Literature:
-  - Krishna et al. (NeurIPS 2022): 'The Disagreement Problem in Explainable AI:
-    Finding a Consensus among Black-box Explanations'
-  - Slack et al. (AIES 2020): 'Fooling LIME and SHAP: Adversarial Attacks on Post hoc Explanation Methods'
-  - Petsiuk et al. (BMVC 2018): Deletion & Insertion Metrics for Faithfulness
 
-Addresses Research Gap:
-  TalkToModel (Slack et al., Nature Machine Intelligence 2023) relies solely on a single
-  explainer (MegaExplainer / SHAP). This creates uncalibrated confidence and vulnerability
-  to explainer disagreement, where SHAP and LIME diverge significantly on high-stakes decisions.
 """
 
 import math
